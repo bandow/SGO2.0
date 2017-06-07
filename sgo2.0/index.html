@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <style>
+    	.mui-bar-nav {background-color: #000;box-shadow:none;}
+		.mui-title {color: #fff; }
+		.mui-bar-nav a {color: #fff; }
+		.logo-text{position:absolute;top:20%;left:10%;width:60%;}
+		.logo-text img{width:100%;}
+		.mui-slider-indicator{bottom:80px;}
+		.mui-slider-indicator .mui-indicator{width:15px;height:2px;margin:0;box-shadow:none;background:#f6ac1d;border-radius:0;}
+		.mui-bar-tab{display:flex;display:-webkit-flex;align-items:center;justify-content:center;}
+		.mui-bar-tab .mui-tab-item-sgo{flex:1;text-align:center;}
+		.mui-bar-tab .mui-tab-item-sgo .img{width:24px;height: 24px;margin: 0 auto;font-size: 0;display: flex;justify-content: center;align-items: center}
+		.mui-bar-tab .mui-tab-item-sgo .img img{width:auto;height:auto;max-height:100%;max-width:100%;}
+		.mui-tab-item-sgo .mui-tab-label{color:#C0C0C0;font-size:14px;}
+		.mui-tab-item-sgo .mui-tab-label.on{color:#F6AC1D;}
+    </style>
+    <script type="text/javascript" charset="utf-8">
+		//mui初始化
+		mui.init();
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">酒店狗</h1>
+	</header>
+	<div class="mui-content">
+		<div id="slider" class="mui-slider" >
+		  <div class="mui-slider-group mui-slider-loop">
+		    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+		    <div class="mui-slider-item mui-slider-item-duplicate">
+		      <a href="#">
+		        <img src="img/slide1.jpg" alt="">
+		      </a>
+		    </div>
+		    <!-- 第一张 -->
+		    <div class="mui-slider-item">
+		      <a href="#">
+		        <img src="img/slide1.jpg" alt="">
+		      </a>
+		    </div>
+		    <!-- 第二张 -->
+		    <div class="mui-slider-item">
+		      <a href="#">
+		        <img src="img/slide2.jpg" alt="">
+		      </a>
+		    </div>
+		    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+		    <div class="mui-slider-item mui-slider-item-duplicate">
+		      <a href="#">
+		        <img src="img/slide2.jpg" alt="">
+		      </a>
+		    </div>
+		  </div>
+		  <div class="logo-text">
+		  	<img src="img/logo_text.png" alt="" />
+		  </div>
+		  <div class="mui-slider-indicator">
+		    <div class="mui-indicator mui-active"></div>
+		    <div class="mui-indicator"></div>
+		  </div>
+		</div>
+	</div>
+	<nav class="mui-bar mui-bar-tab">
+	    <a href="index.html" class="mui-tab-item-sgo">
+	        <div class="img"><img src="img/footer_icon1_on.png" alt="" /></div>
+	        <span class="mui-tab-label on">首页</span>
+	    </a>
+	    <a href="order.html" class="mui-tab-item-sgo">
+	        <div class="img"><img src="img/footer_icon2.png" alt="" /></div>
+	        <span class="mui-tab-label">订单</span>
+	    </a>
+	    <a href="user.html" class="mui-tab-item-sgo">
+	        <div class="img"><img src="img/footer_icon3.png" alt="" /></div>
+	        <span class="mui-tab-label">我的</span>
+	    </a>
+	</nav>
+</body>
+</html>
