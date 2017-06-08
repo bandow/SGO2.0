@@ -3,28 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title></title>
-    <script src="js/mui.min.js"></script>
+    <title></title>  
     <link href="css/mui.min.css" rel="stylesheet"/>
-    <style>
-    	.mui-bar-nav {background-color: #000;box-shadow:none;}
-		.mui-title {color: #fff; }
-		.mui-bar-nav a {color: #fff; }
-		.logo-text{position:absolute;top:20%;left:10%;width:60%;}
-		.logo-text img{width:100%;}
-		.mui-slider-indicator{bottom:80px;}
-		.mui-slider-indicator .mui-indicator{width:15px;height:2px;margin:0;box-shadow:none;background:#f6ac1d;border-radius:0;}
-		.mui-bar-tab{display:flex;display:-webkit-flex;align-items:center;justify-content:center;}
-		.mui-bar-tab .mui-tab-item-sgo{flex:1;text-align:center;}
-		.mui-bar-tab .mui-tab-item-sgo .img{width:24px;height: 24px;margin: 0 auto;font-size: 0;display: flex;justify-content: center;align-items: center}
-		.mui-bar-tab .mui-tab-item-sgo .img img{width:auto;height:auto;max-height:100%;max-width:100%;}
-		.mui-tab-item-sgo .mui-tab-label{color:#C0C0C0;font-size:14px;}
-		.mui-tab-item-sgo .mui-tab-label.on{color:#F6AC1D;}
-    </style>
-    <script type="text/javascript" charset="utf-8">
-		//mui初始化
-		mui.init();
-    </script>
+    <link href="css/swiper-3.4.2.min.css" rel="stylesheet"/>
+    <link href="css/index.css" rel="stylesheet"/>
 </head>
 <body>
 	<header class="mui-bar mui-bar-nav">
@@ -67,6 +49,46 @@
 		    <div class="mui-indicator"></div>
 		  </div>
 		</div>
+		<div class="line-tab-box">
+			<a href="">
+				<img src="img/index_icon1.png" alt="">
+				<p>狗窝</p>
+			</a>
+			<a href="">
+				<img src="img/index_icon2.png" alt="">
+				<p>附近酒店</p>
+			</a>
+			<a href="">
+				<img src="img/index_icon3.png" alt="">
+				<p>附近生活</p>
+			</a>
+		</div>
+		<div class="condition-search">
+			<div class="city-line">
+				<i><span class="mui-icon mui-icon-location"></span></i>
+				<div class="city-selected-box">
+					<div class="city-selected sgo-arrow">广州</div>
+					<div class="my-location">
+						<i><img src="img/index_icon4.png" alt=""></i>
+						<p>我的位置</p>
+					</div>
+				</div>
+			</div>
+			<div class="time-select">
+				<i><img src="img/index_icon5.png" alt=""></i>
+				<div id="date" class="sgo-arrow">
+					<p><span>08月17日</span><span>入住</span></p>
+					<p><span>08月20日</span><span>离店</span><span>共一晚</span></p>
+				</div>
+			</div>
+			<div class="key-word-line">
+				<i></i>
+				<div class="key-word">搜索关键词</div>
+			</div>
+			<div class="submit-box">
+				<button type="button" class="mui-btn mui-btn-warning">搜索</button>
+			</div>
+		</div>
 	</div>
 	<nav class="mui-bar mui-bar-tab">
 	    <a href="index.html" class="mui-tab-item-sgo">
@@ -82,5 +104,17 @@
 	        <span class="mui-tab-label">我的</span>
 	    </a>
 	</nav>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		//mui初始化
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		var slider = mui('#slider');
+		slider.slider({
+			interval: 1000
+		});
+    </script>
+	<script src="js/swiper-3.4.2.min.js"></script>
 </body>
 </html>
