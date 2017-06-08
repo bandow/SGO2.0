@@ -9,88 +9,176 @@
     <link href="css/index.css" rel="stylesheet"/>
 </head>
 <body>
-	<header class="mui-bar mui-bar-nav">
-	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-	    <h1 class="mui-title">酒店狗</h1>
-	</header>
-	<div class="mui-content">
-		<div id="slider" class="mui-slider" >
-		  <div class="mui-slider-group mui-slider-loop">
-		    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-		    <div class="mui-slider-item mui-slider-item-duplicate">
-		      <a href="#">
-		        <img src="img/slide1.jpg" alt="">
-		      </a>
-		    </div>
-		    <!-- 第一张 -->
-		    <div class="mui-slider-item">
-		      <a href="#">
-		        <img src="img/slide1.jpg" alt="">
-		      </a>
-		    </div>
-		    <!-- 第二张 -->
-		    <div class="mui-slider-item">
-		      <a href="#">
-		        <img src="img/slide2.jpg" alt="">
-		      </a>
-		    </div>
-		    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-		    <div class="mui-slider-item mui-slider-item-duplicate">
-		      <a href="#">
-		        <img src="img/slide2.jpg" alt="">
-		      </a>
-		    </div>
-		  </div>
-		  <div class="logo-text">
-		  	<img src="img/logo_text.png" alt="" />
-		  </div>
-		  <div class="mui-slider-indicator">
-		    <div class="mui-indicator mui-active"></div>
-		    <div class="mui-indicator"></div>
-		  </div>
-		</div>
-		<div class="line-tab-box">
-			<a href="">
-				<img src="img/index_icon1.png" alt="">
-				<p>狗窝</p>
-			</a>
-			<a href="">
-				<img src="img/index_icon2.png" alt="">
-				<p>附近酒店</p>
-			</a>
-			<a href="">
-				<img src="img/index_icon3.png" alt="">
-				<p>附近生活</p>
-			</a>
-		</div>
-		<div class="condition-search">
-			<div class="city-line">
-				<i><span class="mui-icon mui-icon-location"></span></i>
-				<div class="city-selected-box">
-					<div class="city-selected sgo-arrow">广州</div>
-					<div class="my-location">
-						<i><img src="img/index_icon4.png" alt=""></i>
-						<p>我的位置</p>
+	<div class="app-page-wrapper">
+		<div class="mui-content index-content">
+			<div id="slider" class="mui-slider" >
+			  <div class="mui-slider-group mui-slider-loop">
+			    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+			    <div class="mui-slider-item mui-slider-item-duplicate">
+			      <a href="#">
+			        <img src="img/slide1.jpg" alt="">
+			      </a>
+			    </div>
+			    <!-- 第一张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="img/slide1.jpg" alt="">
+			      </a>
+			    </div>
+			    <!-- 第二张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="img/slide2.jpg" alt="">
+			      </a>
+			    </div>
+			    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+			    <div class="mui-slider-item mui-slider-item-duplicate">
+			      <a href="#">
+			        <img src="img/slide2.jpg" alt="">
+			      </a>
+			    </div>
+			  </div>
+			  <div class="logo-text">
+			  	<img src="img/logo_text.png" alt="" />
+			  </div>
+			  <div class="mui-slider-indicator">
+			    <div class="mui-indicator mui-active"></div>
+			    <div class="mui-indicator"></div>
+			  </div>
+			</div>
+			<div class="line-tab-box">
+				<a href="">
+					<img src="img/index_icon1.png" alt="">
+					<p>狗窝</p>
+				</a>
+				<a href="">
+					<img src="img/index_icon2.png" alt="">
+					<p>附近酒店</p>
+				</a>
+				<a href="">
+					<img src="img/index_icon3.png" alt="">
+					<p>附近生活</p>
+				</a>
+			</div>
+			<div class="condition-search">
+				<div class="city-line">
+					<i><img src="img/index_icon6.png" alt="" /></i>
+					<div class="city-selected-box">
+						<div class="city-selected sgo-arrow" id="citySelected">广州</div>
+						<div class="my-location">
+							<i><img src="img/index_icon4.png" alt=""></i>
+							<p>我的位置</p>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="time-select">
-				<i><img src="img/index_icon5.png" alt=""></i>
-				<div id="date" class="sgo-arrow">
-					<p><span>08月17日</span><span>入住</span></p>
-					<p><span>08月20日</span><span>离店</span><span>共一晚</span></p>
+				<div class="time-select">
+					<i><img src="img/index_icon5.png" alt=""></i>
+					<div id="date" class="sgo-arrow">
+						<p><span>08月17日</span><span>入住</span></p>
+						<p><span>08月20日</span><span>离店</span><span>共一晚</span></p>
+					</div>
+				</div>
+				<div class="key-word-line">
+					<i><img src="img/index_icon7.png" alt="" /></i>
+					<div class="key-word sgo-arrow">搜索关键词</div>
+				</div>
+				<div class="submit-box">
+					<button type="button" class="mui-btn mui-btn-warning">搜索</button>
 				</div>
 			</div>
-			<div class="key-word-line">
-				<i></i>
-				<div class="key-word">搜索关键词</div>
+			<div class="hot-room">
+				<div class="title">
+					<h2>热门住宿</h2>
+					<a href="">查看更多>></a>
+				</div>
+				<div class="hotCity-container">
+			    	<div class="swiper-wrapper">
+				        <div class="swiper-slide">
+				        	<a href="#">
+				        		<div class="text">
+							        <h5>GUANG ZHOU</h5>
+							        <p>广州</p>
+						        </div>
+					        	<img src="img/index_gz.jpg" alt="">
+				        	</a>  
+				        </div>
+				        <div class="swiper-slide">
+					        <a href="#">
+					         	<div class="text">
+							        <h5>BEI JING</h5>
+							        <p>北京</p>
+						        </div>
+					        	<img src="img/index_sh.jpg" alt="">
+					        </a>
+				        </div>
+				        <div class="swiper-slide">
+					        <a href="#">
+					         	<div class="text">
+							        <h5>SHANG HAI</h5>
+							        <p>上海</p>
+						        </div>
+					        	<img src="img/index_wh.jpg" alt="">
+				        	</a>
+				        </div>
+	
+				    </div>
+				</div>
+	
 			</div>
-			<div class="submit-box">
-				<button type="button" class="mui-btn mui-btn-warning">搜索</button>
+			<div class="recommendHouse">
+				<div class="title"><h2>房源推荐</h2></div>
+				<div class="recommendHouse-container">
+				    <div class="swiper-wrapper">
+				        <div class="swiper-slide">
+					        <a href="#">
+					        	<div class="img">
+					        		<img src="img/index_hotel1.jpg" alt="">
+					        		<i><img src="img/collect_icon.png" alt="" /></i>
+					        		<div class="recommen-text">
+					        			<span>特惠</span>
+					        			<span>距离0.6公里</span>
+					        			<p>￥<span>388</span>起</p>
+					        		</div>
+					        	</div>
+					        	<div class="bottom-text">
+					        		<p>广州市永泰商务酒店</p>
+					        		<div class="r">
+					        			<i class="star1"></i>
+					        			<p>1.0分 | 388评论</p>
+					        		</div>
+					        	</div>
+					        </a>
+				        </div>
+				        <div class="swiper-slide">
+					        <a href="#">
+					        	<div class="img">
+					        		<img src="img/index_hotel2.jpg" alt="">
+					        		<i><img src="img/collect_icon.png" alt="" /></i>
+					        		<div class="recommen-text">
+					        			<span>特惠</span>
+					        			<span>距离0.6公里</span>
+					        			<p>￥<span>388</span>起</p>
+					        		</div>
+					        	</div>
+					        	<div class="bottom-text">
+					        		<p>广州市永泰商务酒店</p>
+					        		<div class="r">
+					        			<i class="star5"></i>
+					        			<p>5.0分 | 24评论</p>
+					        		</div>
+					        	</div>
+					        </a>
+				        </div>
+				    </div>
+				</div>
+			</div>
+			<div class="footer-logo">
+				<img src="img/logo.png" alt="" />
+				<p>Copyright © 2017 HOTELSGO.CN</p>
+				<p>粤ICP备16042444号-1</p>
 			</div>
 		</div>
-	</div>
-	<nav class="mui-bar mui-bar-tab">
+		<nav class="mui-bar mui-bar-tab">
 	    <a href="index.html" class="mui-tab-item-sgo">
 	        <div class="img"><img src="img/footer_icon1_on.png" alt="" /></div>
 	        <span class="mui-tab-label on">首页</span>
@@ -104,6 +192,75 @@
 	        <span class="mui-tab-label">我的</span>
 	    </a>
 	</nav>
+	</div>
+	<div class="sgo-page-wrapper" id="citySelectPage">
+		<header>
+		    <a class="sgo-arrow" id="closePage"></a>
+		    <h2 class="mui-title">请选择目的地</h2>
+		</header>
+		<div class="mui-content">
+			<div class="search">
+				<div class="mui-input-row mui-search">
+				    <input type="search" class="mui-input-clear" placeholder="">
+				</div>
+			</div>
+		    <div class="list">
+		    	<div class="city-title"><h6>当前位置</h6></div>
+		    	<div class="location"><p>广州市天河区天河路</p></div>
+		    	<div class="city-title"><h6>最近访问</h6></div>
+		    	<div class="history">
+		    		<ul>
+		    			<li><a href="">重庆</a></li>
+		    			<li><a href="">古镇酒店</a></li>
+		    		</ul>
+		    	</div>
+		    	<div class="city-title"><h6>热门城市</h6></div>
+		    	<div class="hot-city">
+		    		<ul>
+		    			<li class="active"><a href="">重庆</a></li>
+		    			<li><a href="">北京</a></li>
+		    			<li><a href="">北京</a></li>
+		    			<li><a href="">北京</a></li>
+		    			<li><a href="">北京</a></li>
+		    			<li><a href="">北京</a></li>
+		    			<li><a href="">北京</a></li>
+		    			<li><a href="">北京</a></li>
+		    			<li><a href="">重庆</a></li>
+		    			<li><a href="">北京</a></li>
+		    			<li><a href="">北京</a></li>
+		    			<li><a href="">北京</a></li>
+		    			<li><a href="">北京</a></li>
+		    			<li><a href="">北京</a></li>
+		    			<li><a href="">北京</a></li>
+		    			<li><a href="">北京</a></li>
+		    		</ul>
+		    	</div>
+		    	<div class="city-title"><h6>A</h6></div>
+		    	<div class="city-list-select">
+		    		<dl>
+		    			<dd><a href="">阿贝</a></dd>
+		    			<dd><a href="">阿尔山市</a></dd>
+		    			<dd><a href="">阿克苏</a></dd>
+		    			<dd><a href="">阿拉尔</a></dd>
+		    			<dd><a href="">阿拉善盟</a></dd>
+		    			<dd><a href="">阿拉善盟阿拉善盟</a></dd>
+		    		</dl>
+		    	</div>
+		    	<div class="city-title"><h6>A</h6></div>
+		    	<div class="city-list-select">
+		    		<dl>
+		    			<dd><a href="">阿贝</a></dd>
+		    			<dd><a href="">阿尔山市</a></dd>
+		    			<dd><a href="">阿克苏</a></dd>
+		    			<dd><a href="">阿拉尔</a></dd>
+		    			<dd><a href="">阿拉善盟</a></dd>
+		    			<dd><a href="">阿拉善盟阿拉善盟</a></dd>
+		    		</dl>
+		    	</div>
+		    </div>
+		</div>
+	</div>
+
 	<script src="js/mui.min.js"></script>
 	<script type="text/javascript" charset="utf-8">
 		//mui初始化
@@ -116,5 +273,37 @@
 		});
     </script>
 	<script src="js/swiper-3.4.2.min.js"></script>
+	<script type="text/javascript">
+		var mySwiperHot = new Swiper('.hotCity-container',{
+			watchSlidesProgress : true,
+			watchSlidesVisibility : true,
+			spaceBetween : 10,
+			slidesPerView : 2.5,
+			loop : true,
+		});
+		var mySwiperRecommendHouse = new Swiper('.recommendHouse-container',{
+			watchSlidesProgress : true,
+			watchSlidesVisibility : true,
+			spaceBetween : 10,
+			slidesPerView :1.1,
+			loop : true,
+		});
+		
+		var appPageWrapper=document.querySelector(".app-page-wrapper");
+		var indexContent=document.querySelector(".index-content");
+		var citySelected=document.getElementById("citySelected");
+		var citySelectPage=document.getElementById("citySelectPage")
+		var closePage=document.getElementById("closePage");
+		citySelected.onclick=function(){
+			citySelectPage.setAttribute('class','sgo-page-wrapper active');
+			setTimeout(function(){
+				appPageWrapper.style.display='none';
+			},500)
+		}
+		closePage.onclick=function(){
+			citySelectPage.setAttribute('class','sgo-page-wrapper');
+			appPageWrapper.style.display='block';
+		}
+	</script>
 </body>
 </html>
