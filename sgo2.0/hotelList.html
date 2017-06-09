@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/hotelList.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="list-page-wrapper">
+			<header>
+				<a href="">
+					<span>广州市(205家)</span>
+					<span class="mui-icon mui-icon-arrowdown"></span>
+				</a>
+			</header>
+			<div class="list-title">
+				<div class="date" id="date">
+					<div class="l">
+						<p>住 05-17</p>
+						<p>离 05-21</p>
+					</div>
+					<span class="mui-icon mui-icon-arrowdown"></span>
+				</div>
+				<div class="sort">
+					<p>智能排序</p>
+					<span class="mui-icon mui-icon-arrowdown"></span>
+				</div>
+				<div class="selector">
+					<p>综合筛选</p>
+					<span class="mui-icon mui-icon-arrowdown"></span>
+				</div>
+			</div>
+			<div class="hotel-list">
+				<div class="mui-content">
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			//启用双击监听
+			mui.init({
+				gestureConfig:{
+					doubletap:true
+				},
+				subpages:[{
+					url:'hotelList_sub.html',
+					id:'hotelList_sub.html',
+					styles:{
+						top: '93px',
+						bottom: '0px',
+					}
+				}]
+			});
+		
+			var contentWebview = null;
+			document.querySelector('header').addEventListener('doubletap',function () {
+				if(contentWebview==null){
+					contentWebview = plus.webview.currentWebview().children()[0];
+				}
+				contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
+			});
+		</script>
+	</body>
+</html>

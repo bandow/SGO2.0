@@ -32,7 +32,7 @@
 		      cursor: default;
 		      position: absolute;
 		      bottom:0;
-		      height:92vh;
+		      height:80vh;
 		      overflow-y: auto;
 		}
 		.date-picker-wrapper .month-wrapper2 {-webkit-overflow-scrolling : touch; }
@@ -174,7 +174,7 @@
 					<div class="key-word sgo-arrow">搜索关键词</div>
 				</div>
 				<div class="submit-box">
-					<button type="button" class="mui-btn mui-btn-warning">搜索</button>
+					<button type="button" class="mui-btn mui-btn-warning" id="hotelList">搜索</button>
 				</div>
 			</div>
 			<div class="hot-room">
@@ -392,6 +392,7 @@
 		var closePage=document.getElementById("closePage");
 		var sgoPageWrapperHeader=document.querySelector('.sgo-page-wrapper-header');
 		var sidebarRightSide=document.querySelector('.sidebar-right-side');
+		var hotelList=document.getElementById('hotelList');
 		citySelected.onclick=function(){
 			appPageWrapper.setAttribute('class','app-page-wrapper active');
 			citySelectPage.style.display='block';
@@ -415,6 +416,9 @@
 				sgoPageWrapperHeader.style.zIndex=-1;
 				sidebarRightSide.style.zIndex=-1;
 			},0)
+		}
+		hotelList.onclick=function(){
+			location.href="hotelList.html";
 		}
 	</script>
 	<script src="js/jquery-1.12.2.min.js" ></script>
