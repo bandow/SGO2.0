@@ -22,8 +22,17 @@
 				</ul>
 			</div>
 		</div>
+		<!--暂无可用酒店 begin-->
+		<div class="null-hotel-list">
+			<img src="img/exclamatory_icon.png" alt="" />
+			<p>暂无可用酒店，请重新选择</p>
+		</div>
+		<!--暂无可用酒店 end-->
 		<script src="js/mui.min.js"></script>
 		<script>
+			
+			
+			
 			mui.init({
 				pullRefresh: {
 					container: '#pullrefresh',
@@ -34,8 +43,12 @@
 						contentrefresh: '正在加载...',
 						callback: pullupRefresh
 					}
-				}
+				} 
+				
 			});
+			
+			
+			
 			/**
 			 * 下拉刷新具体业务实现
 			 */
@@ -46,13 +59,14 @@
 					for (var i = cells.length, len = i + 3; i < len; i++) {
 						var li = document.createElement('li');
 						li.className = 'mui-table-view-cell';
-						li.innerHTML ='<a href="#"><div class="img"><img src="img/index_hotel1.jpg" alt=""><i><img src="img/collect_icon.png" alt="" /></i><div class="recommen-text"><span>特惠</span><span>距离0.6公里</span><p>￥<span>388</span>起</p></div></div><div class="bottom-text"><p>广州市永泰商务酒店</p><div class="r"><i class="star5"></i><p>1.0分 | 388评论</p></div></div></a>';
+						li.innerHTML ='<a href="javascript;"><div class="img"><img src="img/index_hotel1.jpg" alt=""><i><img src="img/collect_color_icon.png" alt="" /></i><div class="recommen-text"><span class="preferential">特惠</span><span class="breakfast">送早餐</span><span class="coupon">入住送劵</span><span class="distance">距离0.6公里</span><p>￥<span>388</span>起</p></div></div><div class="bottom-text"><p>广州市永泰商务酒店</p><div class="r"><i class="star5"></i><p>1.0分 | 388评论</p></div></div></a>';
 						//下拉刷新，新纪录插到最前面；
 						table.insertBefore(li, table.firstChild);
 					}
 					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
 				}, 1500);
 			}
+			
 			var count = 0;
 			/**
 			 * 上拉加载具体业务实现
@@ -66,7 +80,7 @@
 						var li = document.createElement('li');
 						li.className = 'mui-table-view-cell';
 						li.className = 'mui-table-view-cell';
-						li.innerHTML ='<a href="#"><div class="img"><img src="img/index_hotel1.jpg" alt=""><i><img src="img/collect_icon.png" alt="" /></i><div class="recommen-text"><span>特惠</span><span>距离0.6公里</span><p>￥<span>388</span>起</p></div></div><div class="bottom-text"><p>广州市永泰商务酒店</p><div class="r"><i class="star5"></i><p>1.0分 | 388评论</p></div></div></a>';
+						li.innerHTML ='<a href="javascript:;"><div class="img"><img src="img/index_hotel1.jpg" alt=""><i><img src="img/collect_icon.png" alt="" /></i><div class="recommen-text"><span class="preferential">特惠</span><span class="breakfast">送早餐</span><span class="coupon">入住送劵</span><span class="distance">距离0.6公里</span><p>￥<span>388</span>起</p></div></div><div class="bottom-text"><p>广州市永泰商务酒店</p><div class="r"><i class="star5"></i><p>1.0分 | 388评论</p></div></div></a>';
 						table.appendChild(li);
 					}
 				}, 1500);
@@ -83,6 +97,15 @@
 					mui('#pullrefresh').pullRefresh().pullupLoading();
 				});
 			}
+			
+			
+			mui('.mui-table-view').on('tap', '.mui-table-view-cell', function () {  
+			  //var sId = this.getElementsByTagName('p')[1].id.substring(1, 2);
+              mui.openWindow({  
+                  url: "hotelInfo.html"  
+              })  
+            })
+			
 		</script>
 	</body>
 

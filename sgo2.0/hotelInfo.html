@@ -1,0 +1,578 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/swiper-3.4.2.min.css" rel="stylesheet"/>
+		<link href="css/hotelInfo.css" rel="stylesheet" />
+		<link href="css/daterangepicker.css" rel="stylesheet">
+        <style>
+    	.date-picker-wrapper{z-index:10!important;}
+    	.date-picker-wrapper .last-date-selected{background-color: #ffe5b4 !important;border-radius: 0 100% 100% 0;}
+    	.date-picker-wrapper .first-date-selected{background-color: #ffe5b4 !important;border-radius: 100% 0 0 100%;}
+    	.date-picker-wrapper .first-date-selected>div{background:#f6ac1d; border-radius:100%;}
+    	.date-picker-wrapper .last-date-selected>div{background:#f6ac1d;border-radius:100%;}
+		.swiper-pagination{text-align:center;}
+		.swiper-pagination-bullet{background:#fff;opacity:1;border:1px solid #ccc;}
+		.swiper-pagination-bullet-active{background:#e25946;border:1px solid #e25946;}  
+		.date-picker-wrapper {position: absolute;z-index: 1;border: none;background-color: #fff;padding: 0;font-size: 12px;line-height: 20px;color: #aaa;font-family: Arial,sans-serif;box-shadow: none;box-sizing: initial;overflow-y:auto;}
+		.date-picker-wrapper .month-wrapper table .day.lalala { background-color:orange; }
+		.options { display:none; border-left:6px solid #8ae; padding:10px; font-size:12px; line-height:1.4; background-color:#eee; border-radius:4px;}
+		.date-picker-wrapper.date-range-picker19 .day.first-date-selected { background-color: red !important; }
+		.date-picker-wrapper.date-range-picker19 .day.last-date-selected { background-color: orange !important; }
+		.date-picker-wrapper .month-wrapper table{width:100% !important;border-top: 1px solid #f2f2f2;}
+		.date-picker-wrapper.no-shortcuts {padding-bottom: 0;}
+		.date-picker-wrapper .month-wrapper {
+		      border: none;
+		      border-radius: 0;
+		      background-color: #fff;
+		      padding: 0;
+		      cursor: default;
+		      position: absolute;
+		      bottom:0;
+		      height:80vh;
+		      overflow-y: auto;
+		}
+		.date-picker-wrapper .month-wrapper2 {-webkit-overflow-scrolling : touch; }
+		.date-picker-wrapper .month-wrapper table th, .date-picker-wrapper .month-wrapper table td{
+		    width: 14.2857143%;
+		    padding:0;
+		    -webkit-box-sizing: border-box; /*Safari3.2+*/
+		    box-sizing: border-box;
+		}
+		  .date-picker-wrapper .drp_top-bar {
+		      position: absolute;
+		      padding: 0;
+		      left: 0;
+		      width: 100%;
+		      top:0;
+		      height: 8vh;
+		      background: #f2f2f2;
+		      line-height: 8vh;
+		  }
+		  .date-picker-wrapper .drp_top-bar .apply-btn.disabled,.date-picker-wrapper .drp_top-bar .apply-btn{
+		    border: 0;
+		      background: none;
+		      display: block;
+		      height: 8vh;
+		      top: 0;
+		      right: 20px;
+		      color:#333;
+		  }
+		  .date-picker-wrapper .month-name{    
+		    color: #000;
+		      font-size: 14px;
+		  }
+		  .date-picker-wrapper .drp_top-bar .default-top,.date-picker-wrapper .drp_top-bar.normal .normal-top{
+		      text-align: center;
+		      color: #333;
+		      font-weight: bold;
+		      background:#fff;
+		  }
+		  .date-picker-wrapper .selected-days {
+		      font-weight: bold;
+		      font-size: 14px;
+		      font-style: normal;
+		  }
+		  .date-picker-wrapper .month-wrapper table .week-name {
+		      height: 50px;
+		      line-height: 50px;
+		  }
+		  .date-picker-wrapper table .caption {
+		      height: 50px;
+		  }
+		  .date-picker-wrapper .month-wrapper table .day.checked{
+		    background-color: #ffe5b4;    
+		  }
+		  .date-picker-wrapper .month-wrapper table .day.toMonth.valid.checked {
+		      color: #f6ac1d;
+		      cursor: pointer;
+		  }
+		  .date-picker-wrapper .month-wrapper table .day.real-today{
+		    background-color:transparent;
+		  }
+		  .date-picker-wrapper .month-wrapper table .day{
+		    line-height:3.8;
+		    font-size:12px;
+		  }
+</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ia21oG6eioiE5yKW2ERRB2P6lOcpAyGh"></script>
+	</head>
+
+	<body>
+		<div class="sgo-page-wrapper">
+			<header class="swiper-container">
+				<div class="top">
+					<span class="mui-icon mui-icon-back" onclick="goback()"></span>
+					<i><img src="img/collect_icon.png" alt=""></i>
+				</div>
+				<div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<a href="#">
+				        	<img src="img/hotel_info1.jpg" alt="">
+			        	</a>  
+			        </div>
+			        <div class="swiper-slide">
+				        <a href="#">
+				        	<img src="img/hotel_info1.jpg" alt="">
+				        </a>
+			        </div>
+			    </div>
+			    <div class="swiper-pagination"></div>
+			    <div class="text">
+			    	<div class="title"><p>广州市永泰商务酒店</p></div>
+			    	<div class="text-list">
+			    		<span class="preferential">特惠</span>
+			    		<span class="breakfast">送早餐</span>
+			    		<span class="coupon">入住送劵</span>
+			    		<span class="distance">距离0.6公里 还剩2间房！</span>
+			    	</div>
+			    </div>
+			</header>
+			<div class="mui-content">
+				<div class="info">
+					<div class="map-comment">
+						<div class="map">
+							<div id="infoMap"></div>
+							<a href="map.html">导航</a>
+						</div>						
+						<div class="comment-text">
+							<h3>5.0</h3>
+							<p>推荐入住</p>
+							<i class="star5"></i>
+							<a href="hotelComment.html"><span>324评论</span><span class="mui-icon mui-icon-arrowright"></span></a>
+						</div>
+					</div>
+					<div class="items phone">
+						<a href="tel:020-98388558;">
+							<p><span class="mui-icon mui-icon-phone"></span><span>联系电话 020-9838 8558</span></p>
+							<span class="mui-icon mui-icon-arrowright"></span>
+						</a>
+					</div>
+					<div class="items introduction">
+						<p><i><img src="img/info_icon1.png" alt="" /></i><span>酒店简介</span></p>
+						<p>
+							<i><img src="img/wifi_color.png" alt="" /></i>
+							<i><img src="img/tv_color.png" alt=""  /></i>
+							<i><img src="img/bathing_color.png" alt="" /></i>
+							<i><img src="img/run_color.png" alt="" /></i>
+							<i><img src="img/ice_color.png" alt="" /></i>
+						</p>
+						<a class="info-details" href="javascript:;">详情<span class="mui-icon mui-icon-arrowright"></span></a>
+					</div>
+				</div>
+				<div class="date" id="date">
+					<div class="l">
+						<i>
+							<img src="img/index_icon5.png" alt="" />
+						</i>
+						<p>
+							<span id="checkInDay" class="check-in-day">5月24日</span>
+							入住
+						</p>
+					</div>
+					<div class="m">
+						<span>共<span id="num">3</span>天<span>
+					</div>
+					<div class="r">
+						<i>
+							<img src="img/index_icon5.png" alt="" />
+						</i>
+						<p>
+							<span id="checkOutDay" class="check-out-day">5月25日</span>
+							离店
+						</p>
+					</div>
+				</div>
+				<div class="info-list">
+					<ul class="all-items">
+						<li class="items-list active">
+							<a class="items-a" href="javascript:;">
+					            <img class="" src="img/hotel_info2.jpg">
+				            	<div class="text">
+				            		<h3>行政房</h3>
+					                <p class='mui-ellipsis'>35-59m 大床1.8m 有wifi</p>
+					                <p class="recommen-text"><span class="preferential">特惠</span><span class="breakfast">送早餐</span></p>
+				            	</div>
+				                <div class="money">
+				                	<p>¥<span>588</span>起</p>
+				                </div>
+				                <span class="mui-icon mui-icon-arrowdown"></span>
+					        </a>
+							<ul class="all-items-sub">
+								<li class="items-list-sub">
+									<div class="title">
+										<h3>酒店狗会员价</h3>
+										<p><span>送积分</span><span>8折</span></p>
+									</div>
+									<div class="money-sub">
+										<p>¥<span>588</span></p>
+									</div>
+									<a href="">预定</a>
+								</li>
+								<li class="items-list-sub">
+									<div class="title">
+										<h3>预付价</h3>
+										<p><span>需预付</span></p>
+									</div>
+									<div class="money-sub">
+										<p>¥<span>588</span></p>
+									</div>
+									<a href="javascript:;" class="full">满房</a>
+								</li>
+							</ul>
+						</li>
+						<li class="items-list">
+							<a class="items-a" href="javascript:;">
+					            <img class="" src="img/hotel_info2.jpg">
+				            	<div class="text">
+				            		<h3>行政房</h3>
+					                <p class='mui-ellipsis'>35-59m 大床1.8m 有wifi</p>
+					                <p class="recommen-text"><span class="preferential">特惠</span><span class="breakfast">送早餐</span></p>
+				            	</div>
+				                <div class="money">
+				                	<p>¥<span>588</span>起</p>
+				                </div>
+				                <span class="mui-icon mui-icon-arrowdown"></span>
+					        </a>
+							<ul class="all-items-sub">
+								<li class="items-list-sub">
+									<div class="title">
+										<h3>酒店狗会员价</h3>
+										<p><span>送积分</span><span>8折</span></p>
+									</div>
+									<div class="money-sub">
+										<p>¥<span>588</span></p>
+									</div>
+									<a href="">预定</a>
+								</li>
+								<li class="items-list-sub">
+									<div class="title">
+										<h3>预付价</h3>
+										<p><span>需预付</span></p>
+									</div>
+									<div class="money-sub">
+										<p>¥<span>588</span></p>
+									</div>
+									<a href="javascript:;" class="full">满房</a>
+								</li>
+							</ul>
+						</li>
+						<li class="items-list">
+							<a class="items-a" href="javascript:;">
+					            <img class="" src="img/hotel_info2.jpg">
+				            	<div class="text">
+				            		<h3>行政房</h3>
+					                <p class='mui-ellipsis'>35-59m 大床1.8m 有wifi</p>
+					                <p class="recommen-text"><span class="preferential">特惠</span><span class="breakfast">送早餐</span></p>
+				            	</div>
+				                <div class="money sell-out">
+				                	<p>¥<span>588</span>起</p>
+				                	<p>已售完</p>
+				                </div>
+				                <span class="mui-icon mui-icon-arrowdown"></span>
+					        </a>
+							<ul class="all-items-sub">
+								<li class="items-list-sub">
+									<div class="title">
+										<h3>酒店狗会员价</h3>
+										<p><span>送积分</span><span>8折</span></p>
+									</div>
+									<div class="money-sub">
+										<p>¥<span>588</span></p>
+									</div>
+									<a href="javascript:;" class="full">满房</a>
+								</li>
+								<li class="items-list-sub">
+									<div class="title">
+										<h3>预付价</h3>
+										<p><span>需预付</span></p>
+									</div>
+									<div class="money-sub">
+										<p>¥<span>588</span></p>
+									</div>
+									<a href="javascript:;" class="full">满房</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			    <div class="recommendHouse">
+					<div class="title"><h2>附近热销酒店</h2></div>
+					<div class="recommendHouse-container">
+					    <div class="swiper-wrapper">
+					        <div class="swiper-slide">
+						        <a href="#">
+						        	<div class="img">
+						        		<img src="img/index_hotel1.jpg" alt="">
+						        		<i><img src="img/collect_icon.png" alt="" /></i>
+						        		<div class="recommen-text">
+						        			<span class="preferential">特惠</span>
+						        			<span class="distance">距离0.6公里</span>
+						        			<p>￥<span>388</span>起</p>
+						        		</div>
+						        	</div>
+						        	<div class="bottom-text">
+						        		<p>广州市永泰商务酒店</p>
+						        		<div class="r">
+						        			<i class="star1"></i>
+						        			<p>1.0分 | 388评论</p>
+						        		</div>
+						        	</div>
+						        </a>
+					        </div>
+					        <div class="swiper-slide">
+						        <a href="#">
+						        	<div class="img">
+						        		<img src="img/index_hotel2.jpg" alt="">
+						        		<i><img src="img/collect_icon.png" alt="" /></i>
+						        		<div class="recommen-text">
+						        			<span>特惠</span>
+						        			<span>距离0.6公里</span>
+						        			<p>￥<span>388</span>起</p>
+						        		</div>
+						        	</div>
+						        	<div class="bottom-text">
+						        		<p>广州市永泰商务酒店</p>
+						        		<div class="r">
+						        			<i class="star5"></i>
+						        			<p>5.0分 | 24评论</p>
+						        		</div>
+						        	</div>
+						        </a>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sgo-mask" onclick="closePageInfo();"></div>
+		<div class="sgo-page-info">
+			<div class="container">
+				<h2>广州市永泰商务酒店</h2>
+				<h4>广州市天河区天河北路278号岗顶大厦</h4>
+				<div class="hotel-item">
+					<h3>酒店设施</h3>
+					<ul>
+						<li>
+							<i><img src="img/wifi.png" alt="" /></i>
+							<p>WIFI</p>	
+						</li>
+						<li>
+							<i><img src="img/bathing.png" alt="" /></i>
+							<p>游泳馆</p>
+						</li>
+						<li>
+							<i><img src="img/toiletries.png" alt="" /></i>
+							<p>洗漱品</p>
+						</li>
+						<li>
+							<i><img src="img/run.png" alt="" /></i>
+							<p>健身房</p>
+						</li>
+						<li>
+							<i><img src="img/heater.png" alt="" /></i>
+							<p>热水器</p>
+						</li>
+						<li>
+							<i><img src="img/air-conditioner.png" alt="" /></i>
+							<p>空调</p>
+						</li>
+						<li>
+							<i><img src="img/tv.png" alt="" /></i>
+							<p>超级电视</p>
+						</li>
+						<li>
+							<i><img src="img/ice.png" alt="" /></i>
+							<p>冰箱 </p>
+						</li>
+					</ul>
+					<a href="">查看全部设施<span class="mui-icon mui-icon-arrowdown"></span></a>
+				</div>
+				<div class="hotel-text">
+					<h3>酒店简介</h3>
+					<p>广州白云万达希尔顿酒店坐落于白云新城，地处风景怡人的白云山脚下，酒店为万达广场的一部分，扶梯举步可达步行街、购物中心、美食天堂、名品店、Imax电影院及各大娱乐点。毗邻白云国际会展中心，步行5分钟可达地铁站，距公园、博物馆、观光游览点仅数分钟车程，仅10分钟车程可到达广州CBD，25分钟可达琶洲交易会。</p>
+				</div>
+				<div class="hotel-policies">
+					<h3>酒店政策</h3>
+				</div>
+			</div>
+			<div onclick="closePageInfo();" class="close"><img src="img/info_close.png" alt="" /></div>
+		</div>
+		<div class="sgo-page-room">
+			<h2>商务大床房</h2>
+			<p><span>窗户：有窗</span><span>早餐：送早1份</span></p>
+			<p><span>面积：18m</span><span>楼层：2楼</span></p>
+			<p><span>床型：1.8m大床</span><span>最大入住：2人</span></p>
+			<div onclick="closePageRoom();" class="close"><img src="img/info_close.png" alt="" /></div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			function goback(){
+				window.history.go(-1);
+			}
+		</script>
+		
+		<script src="js/swiper-3.4.2.min.js"></script>
+		<script type="text/javascript">
+			var mySwiper = new Swiper('.swiper-container',{
+				pagination : '.swiper-pagination',
+				paginationType : 'fraction',
+				loop : true,
+				autoplay : 5000,
+				//paginationType : 'progress',
+				//paginationType : 'custom',
+			});
+			var mySwiperRecommendHouse = new Swiper('.recommendHouse-container',{
+				watchSlidesProgress : true,
+				watchSlidesVisibility : true,
+				spaceBetween : 10,
+				slidesPerView :1.1,
+				loop : true,
+			});
+		</script>
+		<script>
+			// 百度地图API功能
+			var map = new BMap.Map("infoMap");
+			var point = new BMap.Point(113.345651,23.140021);
+			//创建自己logo
+			var pt = new BMap.Point(113.345651,23.140021);
+			var myIcon = new BMap.Icon("img/map_logo.png", new BMap.Size(40,40));
+			var marker2 = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+			map.addOverlay(marker2);              // 将标注添加到地图
+			map.centerAndZoom(new BMap.Point(113.345382,23.14145), 16);        //设置中心点
+		    var opts = {
+			  position : point,    // 指定文本标注所在的地理位置
+			  offset   : new BMap.Size(-160, -60)    //设置文本偏移量
+			}
+			var label = new BMap.Label("广州市天河区天河北路278号岗顶大厦（地铁岗顶C出口）", opts);  // 创建文本标注对象
+				label.setStyle({
+					 color : "#de5a4c",
+					 fontSize : "12px",
+					 height : "30px",
+					 lineHeight : "30px",
+					 fontFamily:"微软雅黑",
+					 border:"none"
+				 });
+			map.addOverlay(label);  
+		</script>
+		<script src="js/jquery-1.12.2.min.js" ></script>
+		<script src="js/moment.min.js" ></script>
+		<script src="js/jquery.daterangepicker.js" ></script>
+		<script>
+			Date.prototype.Format = function (fmt) { //author: meizz  
+		      var o = {  
+		          "M+": this.getMonth() + 1, //月份  
+		          "d+": this.getDate(), //日  
+		          "h+": this.getHours(), //小时  
+		          "m+": this.getMinutes(), //分  
+		          "s+": this.getSeconds(), //秒  
+		          "q+": Math.floor((this.getMonth() + 3) / 3), //季度  
+		          "S": this.getMilliseconds() //毫秒  
+		      };  
+		      if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));  
+		      for (var k in o)  
+		          if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));  
+		      return fmt;  
+		   }; 
+			//var arrRoomState = [];
+			$(document).ready(function () {
+
+			    var myDate = new Date();
+			    var m=myDate.getMonth()+1;
+			    var day=myDate.getDate();
+			    var hDay=myDate.getDate()+1;
+			    
+			    //初始化当天时间
+			    $(".check-in-day").html(m+"月"+day+"日");
+			    $(".check-out-day").html(m+"月"+hDay+"日");
+			
+			    //初始化1晚
+			    var num=$("#checkInDay").html()-$("#checkOutDay").html();
+			    $("#num").html(num);
+			    $("#num").html("1");
+			    
+			
+			    $('#date').dateRangePicker({
+		    	
+			      startDate: new Date(),  //默认今天开始
+			      getValue: function(){   //选择开始和结束的日期      
+			        if ($('#checkInDay').html() && $('#checkOutDay').html() )
+			          return $('#checkInDay').html() + ' to ' + $('#checkOutDay').html();
+			        else
+			          return '';
+			      },
+			      setValue: function(s,s1,s2){  //回调页面上
+			        $('#checkInDay').html(s1);
+			        $('#checkOutDay').html(s2);
+			      },
+			      showDateFilter: function(time, date){   //显示价格          
+			      	//var newTime = new Date(time).Format("yyyy-MM-dd");            
+			      	//var data = arrRoomState[newTime];
+			      	/*if (data) {
+			      		var html='<div style="padding:0;">';
+					        html+='<span style="font-size:14px;">'+date+'</span>';
+					        html+='<div style="opacity:1;">￥'+data.roomrate+'</div>';
+					        html+='</div>';
+					    return html;
+			        }else{*/
+			        	var html='<div style="padding:0;">';
+				            html+='<span style="font-size:14px;">'+date+'</span>';
+				            //html+='<div style="opacity:1;">已租</div>';
+				            html+='</div>';
+				        return html;
+			        //}      
+			      },
+			     /* beforeShowDay: function(t){//禁止被选的房价 	
+			  		  var newTime = t.Format("yyyy-MM-dd");
+			  		  var data = arrRoomState[newTime];
+			  		  var valid  = false;
+			        if (data != null && data != undefined) {
+			        	 valid = data.isbook;  
+			        }
+			  			var _class = '';
+			  			var _tooltip = valid ? '' : '不能选择已定的房价';
+			  			return [valid,_class,_tooltip];
+			  		},*/
+			      showShortcuts:false,   //去掉快捷html
+			      inline:false,
+			      singleMonth:false,  //true显示1个月，false为2个月
+			      batchMode:true,
+			      stickyMonths:true, //如果是true，只会有一个以前和一个下一个按钮。点击他们将改变两个月。
+			      // extraClass:'dengcb',  //添加class
+			      showTopbar:false,     //true显示确定按钮 false不显示确定按钮选择好就确定
+			      selectForward:false,   //true选择开始的时间前面就不能选，默认false
+			      selectBackward:false,  //true只能选择1天     
+		    	})
+		  }); 
+		</script>
+		
+		<script type="text/javascript">
+			$(function(){
+				$(".all-items li").on("click",function(){
+					$(this).addClass("active").siblings().removeClass("active");
+				});
+				$(".info-details").on("click",function(){
+					$(".sgo-page-info").addClass("active");
+					$(".sgo-mask").show();
+				});
+				$(".items-a img").on("click",function(){
+					$(".sgo-page-room").addClass("active");
+				});
+				
+			});
+			function closePageInfo(){
+				$(".sgo-page-info").removeClass("active");
+				$(".sgo-mask").hide();
+			}
+			function closePageRoom(){
+				$(".sgo-page-room").removeClass("active");
+			}
+		</script>
+	</body>
+
+</html>

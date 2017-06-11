@@ -304,7 +304,10 @@ ol, ul {
 	align-items:center;
 	line-height:1.7;
 }
-.recommen-text>span:nth-child(1){
+.recommen-text>span{
+	margin-right:5px;
+}
+.recommen-text>.preferential{
 	color:#000;
 	font-size:12px;
 	background:#f6ac1d;
@@ -312,11 +315,26 @@ ol, ul {
 	border-radius:3px;
 	padding:0 5px;
 }
-.recommen-text>span:nth-child(2){
+.recommen-text>.breakfast{
+	color:#000;
+	font-size:12px;
+	background:#bdd966;
+	display:inline-block;
+	border-radius:3px;
+	padding:0 5px;
+}
+.recommen-text>.coupon{
+	color:#000;
+	font-size:12px;
+	background:#fa5b5b;
+	display:inline-block;
+	border-radius:3px;
+	padding:0 5px;
+}
+.recommen-text>.distance{
 	color:#fff;
 	font-size:12px;
 	flex:1;
-	margin-left:5px;
 }
 .recommen-text>p{
 	margin:0;
@@ -484,7 +502,7 @@ ol, ul {
     text-align: center;
     line-height: 1.5;
     color: #4d4d4d;
-    padding-top: 4px;
+    padding:4px 0;
     border-radius:3px;
     font-size:14px;
 }
