@@ -1,0 +1,389 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/dropload.css">
+		<link rel="stylesheet" href="css/ordersSubmit.css" />
+	</head>
+
+	<body>
+		<div class="sgo-page-submit">
+			<header class="orders-submit-header">
+			    <a onclick="goback()" href="javascript:;"><span class="mui-icon mui-icon-back"></span></a>
+			    <h1>提交订单</h1>
+			</header>
+			<div class="submit-info">
+				<div class="t">
+					<div class="img">
+						<img src="img/hotel_info2.jpg" alt="" />
+					</div>
+					<div class="text">
+						<h2>广州市永泰商务酒店</h2>
+						<h4>5-25日-5月27日 共2晚</h4>
+						<h4>高级豪华间</h4>
+					</div>
+				</div>
+				<div class="b">
+					<i><img src="img/index_icon6.png" alt="" /></i>
+					<p>广州市天河区天河北路278号岗顶大厦（地铁岗顶C出口）</p>
+				</div>
+			</div>
+			<div class="items sgo-arrow room-item">
+				<span>房  间  数</span>
+				<span><em class="number">1</em>间</span>
+			</div>
+			<div class="items sgo-arrow time-item">
+				<span>留房时间</span>
+				<span class="time">18:00</span>
+			</div>
+			<div class="items name-submit">
+				<span>入  住  人</span>
+				<span>邓紫棋</span>
+				<i><img src="img/ordersubmit_icon1.png" alt="" /></i>
+			</div>
+			<div class="items sgo-arrow">
+				<span>联系电话</span>
+				<span>18688855588</span>
+			</div>
+			<div class="items E-coupon sgo-arrow">
+				<span>抵用券</span>
+				<span>请使用抵用券</span>
+			</div>
+			<div class="submit-prompt">
+				<h5><i><img src="img/ordersubmit_icon2.png" alt="" /></i>温馨提示</h5> 
+				<p>1.预订房费，我们将为您一直保留房间并不可取消 </p>
+				<p>2.取消预订单或预订未到优惠券不返还 </p>
+				<p>3.酒店办理入住若为当天14:00，早到可能需要等待</p>
+				<p>4.索要发票请到酒店前台</p>
+			</div>
+			<div class="submit-money">
+				<div class="money">
+					<span>总额：¥1865.00</span>
+					<span>明细</span>
+					<span class="mui-icon mui-icon-arrowup"></span>
+				</div>
+				<button id="btn">提交订单</button>
+			</div>	
+		</div>
+		<div class="sgo-mask mui-backdrop"></div>
+		<div class="room-number">
+			<h3>请选择房间数</h3>
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell active"><span class="mui-icon mui-icon-checkmarkempty"></span><span>1</span></li>
+			    <li class="mui-table-view-cell"><span class="mui-icon mui-icon-checkmarkempty"></span><span>2</span></li>
+			    <li class="mui-table-view-cell"><span class="mui-icon mui-icon-checkmarkempty"></span><span>3</span></li>
+			    <li class="mui-table-view-cell"><span class="mui-icon mui-icon-checkmarkempty"></span><span>4</span></li>
+			</ul>
+		</div>
+		<div class="selector-time">
+			<h3>保留时间 </h3>
+			<p>请确保在保留时间内到店，逾期未到可能会被酒店取消。入住当天14:00前到店 可能需要等待！</p>
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell active"><span class="mui-icon mui-icon-checkmarkempty"></span><span>18:00</span></li>
+			    <li class="mui-table-view-cell"><span class="mui-icon mui-icon-checkmarkempty"></span><span>20:00</span></li>
+			    <li class="mui-table-view-cell"><span class="mui-icon mui-icon-checkmarkempty"></span><span>整晚保留</span><a href="#">需预付</a></li>
+			</ul>
+		</div>
+		<div class="money-info">
+			<h3><span>房费明细</span><span>总额：¥1865.00</span></h3>
+			<p><span>2017-05-25 标准大床房 （2间）</span><span>¥576.00</span></p>
+			<p><span>2017-05-25 标准大床房 （2间）</span><span>¥576.00</span></p>
+			<p><span>2017-05-25 标准大床房 （2间）</span><span>¥576.00</span></p>
+			<p><span>100元现金优惠券（1张）</span><span>-¥100.00</span></p>
+		</div>
+		<div class="selector-coupon">
+			<header class="orders-coupon-header">
+			    <a onclick="couponHide();" href="javascript:;"><span class="mui-icon mui-icon-back"></span></a>
+			    <h1>选择优惠券</h1>
+			    <a href="javascript:couponNoHide();">放弃使用</a>
+			</header>
+			<div class="coupon-container">
+				<p>共有3张可用优惠券</p>
+				<div class="coupon-list lists">
+					<i><img src="img/g_icon.png" alt="" /></i>
+					<div class="t">
+						<div class="l">
+							<h2><span>¥</span>20</h2>
+							<p>满¥100可用</p>
+						</div>
+						<div class="r">
+						    <h2>新人红包</h2>
+						    <p>使用期限2017.08.24-2017.11.28 </p>
+						</div>
+					</div>
+					<div class="b">
+						<p><span>使用规则</span><span class="mui-icon mui-icon-arrowdown"></span></p>
+						<div class="text">
+							<p>1、不可退还</p>
+							<p>2、优惠不可叠加使用</p>
+							<p>3、仅限酒店狗预订房晚使用</p>
+						</div>
+					</div>
+				</div>
+				<div class="coupon-list lists">
+					<i><img src="img/g_icon.png" alt="" /></i>
+					<div class="t">
+						<div class="l">
+							<h2><span>¥</span>20</h2>
+							<p>满¥100可用</p>
+						</div>
+						<div class="r">
+						    <h2>新人红包</h2>
+						    <p>使用期限2017.08.24-2017.11.28 </p>
+						</div>
+					</div>
+					<div class="b">
+						<p><span>使用规则</span><span class="mui-icon mui-icon-arrowdown"></span></p>
+						<div class="text">
+							<p>1、不可退还</p>
+							<p>2、优惠不可叠加使用</p>
+							<p>3、仅限酒店狗预订房晚使用</p>
+						</div>
+					</div>
+				</div>
+				<div class="coupon-list lists">
+					<i><img src="img/g_icon.png" alt="" /></i>
+					<div class="t">
+						<div class="l">
+							<h2><span>¥</span>80</h2>
+							<p>满¥100可用</p>
+						</div>
+						<div class="r">
+						    <h2>新人红包</h2>
+						    <p>使用期限2017.08.24-2017.11.28 </p>
+						</div>
+					</div>
+					<div class="b">
+						<p><span>使用规则</span><span class="mui-icon mui-icon-arrowdown"></span></p>
+						<div class="text">
+							<p>1、不可退还</p>
+							<p>2、优惠不可叠加使用</p>
+							<p>3、仅限酒店狗预订房晚使用</p>
+						</div>
+					</div>
+				</div>
+				<div class="coupon-list lists">
+					<i><img src="img/g_icon.png" alt="" /></i>
+					<div class="t">
+						<div class="l">
+							<h2><span>¥</span>20</h2>
+							<p>满¥100可用</p>
+						</div>
+						<div class="r">
+						    <h2>新人红包</h2>
+						    <p>使用期限2017.08.24-2017.11.28 </p>
+						</div>
+					</div>
+					<div class="b">
+						<p><span>使用规则</span><span class="mui-icon mui-icon-arrowdown"></span></p>
+						<div class="text">
+							<p>1、不可退还</p>
+							<p>2、优惠不可叠加使用</p>
+							<p>3、仅限酒店狗预订房晚使用</p>
+						</div>
+					</div>
+				</div>
+				<div class="coupon-list lists">
+					<i><img src="img/g_icon.png" alt="" /></i>
+					<div class="t">
+						<div class="l">
+							<h2><span>¥</span>20</h2>
+							<p>满¥100可用</p>
+						</div>
+						<div class="r">
+						    <h2>新人红包</h2>
+						    <p>使用期限2017.08.24-2017.11.28 </p>
+						</div>
+					</div>
+					<div class="b">
+						<p><span>使用规则</span><span class="mui-icon mui-icon-arrowdown"></span></p>
+						<div class="text">
+							<p>1、不可退还</p>
+							<p>2、优惠不可叠加使用</p>
+							<p>3、仅限酒店狗预订房晚使用</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			function goback(){
+				window.history.go(-1);
+			}
+			//点击房间数
+			var mask=document.querySelector(".sgo-mask");
+			var roomItme=document.querySelector(".room-item");
+			var roomNum=document.querySelector(".room-number");
+			var roomNumList=roomNum.getElementsByTagName("li");
+			var oNumber=document.querySelector(".number");
+			function roomNumShow(){
+				roomNum.className="room-number on";
+				mask.style.display="block";
+			}
+			function roomNumHide(){
+				roomNum.className="room-number";
+				mask.style.display="none";
+			}
+			roomItme.onclick=function(){
+				roomNumShow();
+			}
+			//点击列表房间数
+			for(var i=0;i<roomNumList.length;i++){
+				roomNumList[i].index=i;
+				roomNumList[i].onclick=function(){
+					for(var j=0;j<roomNumList.length;j++){
+						roomNumList[j].setAttribute('class','mui-table-view-cell');
+					}
+					roomNumList[this.index].setAttribute('class','mui-table-view-cell active');
+					roomNumHide();
+					oNumber.innerHTML=roomNumList[this.index].childNodes[1].innerHTML;
+				}
+			}
+			//点击选择时间段
+			var timeItem=document.querySelector(".time-item");
+			var selectorTime=document.querySelector(".selector-time");
+			var selectorTimeList=selectorTime.getElementsByTagName("li");
+			var oTime=document.querySelector(".time");
+			function selectorTimeShow(){
+				selectorTime.className="selector-time on";
+				mask.style.display="block";
+			}
+			function selectorTimeHide(){
+				selectorTime.className="selector-time";
+				mask.style.display="none";
+			}
+			//点击列表房间数
+			for(var i=0;i<selectorTimeList.length;i++){
+				selectorTimeList[i].index=i;
+				selectorTimeList[i].onclick=function(){
+					for(var j=0;j<selectorTimeList.length;j++){
+						selectorTimeList[j].setAttribute('class','mui-table-view-cell');
+					}
+					selectorTimeList[this.index].setAttribute('class','mui-table-view-cell active');
+					selectorTimeHide();
+					oTime.innerHTML=selectorTimeList[this.index].childNodes[1].innerHTML;
+				}
+			}
+			timeItem.onclick=function(){
+				selectorTimeShow();
+			}
+			//点击房费明细
+			var money=document.querySelector(".money");
+			var moneyInfo=document.querySelector(".money-info");
+			var submitMoney=document.querySelector(".submit-money");
+			function moneyInfoShow(){
+				moneyInfo.className="money-info on";
+				moneyInfo.style.zIndex=3;
+				submitMoney.style.zIndex=4;
+				mask.style.display="block";
+			}
+			function moneyInfoHide(){
+				moneyInfo.className="money-info";
+				moneyInfo.style.zIndex=-1;
+				submitMoney.style.zIndex=0;
+				mask.style.display="none";
+			}
+			money.onclick=function(){
+				moneyInfoShow();
+			}
+			//点击覆盖层
+			mask.onclick=function(){
+				roomNumHide();
+				selectorTimeHide();
+				moneyInfoHide();
+			}
+		</script>
+		<script src="js/zepto.min.js"></script>
+		<script src="js/dropload.min.js"></script>
+		<script>
+			$(function(){
+				$(".coupon-list .t").on("click",function(){
+					$(this).parent().addClass("on").siblings().removeClass("on");
+					couponHide();
+					$(".E-coupon span:last-child").html("-"+$(this).find(".l h2").html());
+				});
+				$(".coupon-list .b>p").on("click",function(){
+					$(this).next().show();
+				});
+				$(".E-coupon").on("click",function(){
+					$(".sgo-page-submit").hide();
+					$(".selector-coupon").show();
+				});
+				
+				//提交
+				$("#btn").on("click",function(){
+					location.href="ordersConfirm.html";
+				});
+			});
+			
+			function couponHide(){
+				$(".sgo-page-submit").show();
+				$(".selector-coupon").hide();
+			}
+			function couponNoHide(){
+				$(".sgo-page-submit").show();
+				$(".selector-coupon").hide();
+				$(".E-coupon span:last-child").html("请使用抵用券");
+				$(".coupon-list").removeClass("on");
+			}
+			
+			//下拉加载
+			$(function(){
+			  var counter = 0;
+			  // 每页展示4个
+			  var num = 4;
+			  var pageStart = 0,pageEnd = 0;
+			  // dropload
+			  $('.coupon-container').dropload({
+			      scrollArea : window,
+			      loadDownFn : function(me){
+			          $.ajax({
+			              type: 'GET',
+			              url: '/data/update.json',
+			              dataType: 'json',
+			              success: function(data){
+			                  var result = '';
+			                  counter++;
+			                  pageEnd = num * counter;
+			                  pageStart = pageEnd - num;
+
+			                  for(var i = pageStart; i < pageEnd; i++){
+			                      result +=   '<a class="item opacity" href="'+data.lists[i].link+'">'
+			                                      +'<img src="'+data.lists[i].pic+'" alt="">'
+			                                      +'<h3>'+data.lists[i].title+'</h3>'
+			                                      +'<span class="date">'+data.lists[i].date+'</span>'
+			                                  +'</a>';
+			                      if((i + 1) >= data.lists.length){
+			                          // 锁定
+			                          me.lock();
+			                          // 无数据
+			                          me.noData();
+			                          break;
+			                      }
+			                  }
+			                  // 为了测试，延迟1秒加载
+			                  setTimeout(function(){
+			                      $('.lists').append(result);
+			                      // 每次数据加载完，必须重置
+			                      me.resetload();
+			                  },1000);
+			              },
+			              error: function(xhr, type){
+			                  console.log('Ajax error!');
+			                  // 即使加载出错，也得重置
+			                  me.resetload();
+			              }
+			          });
+			      }
+			  });
+			});
+		</script>
+	</body>
+
+</html>

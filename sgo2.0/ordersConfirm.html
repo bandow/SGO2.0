@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/ordersConfirm.css" />
+	</head>
+
+	<body>
+		<header class="orders-confirm-header">
+		    <a onclick="goback()" href="javascript:;"><span class="mui-icon mui-icon-back"></span></a>
+		    <h1>提交订单</h1>
+		</header>
+		<div class="confirm-success">
+			<img src="img/confirm_icon1.png" alt="" />
+			<p>恭喜您预订成功</p>
+		</div>
+		<div class="confirm-content">
+			<h2>广州市永泰商务酒店</h2>
+			<h4>5-25日-5月27日 共2晚</h4>
+			<h4>高级豪华间</h4>
+			<p><i><img src="img/index_icon6.png" alt="" /></i><span>广州市天河区天河北路278号岗顶大厦（地铁岗顶C出口）</span></p>
+		</div>
+		<div class="count-down">
+			<p>支付剩余时间</p>
+			<div class="time" id="time">
+				<span>29</span>:<span>30</span>
+			</div>
+		</div>
+		<div class="pay">
+			<p><i><img src="img/confirm_icon2.png" alt="" /></i><span>微信支付</span></p>
+			<i><img src="img/confirm_icon3.png" alt="" /></i>
+		</div>
+		<div class="btn">
+			<button class="confirm-btn">确定支付</button>
+		</div>
+		<div class="foot">
+			<p><i><img src="img/confirm_icon4.png" alt="" /></i><span>担保留房</span></p>
+			<p><i><img src="img/confirm_icon4.png" alt="" /></i><span>快速入住</span></p>
+			<p><i><img src="img/confirm_icon4.png" alt="" /></i><span>赠送积分</span></p>
+		</div>
+		
+		<div class="sgo-mask mui-backdrop"></div>
+		<div class="kindly-reminder">
+			<h3>温馨提示</h3>
+			<p>好房源一眨眼就没了，确定要放弃付款吗？</p>
+			<div class="kindly-reminder-btn">
+				<a href="javascript:gobackTwo();">去意已决</a>
+				<a href="javascript:closeReminder();">我再想想</a>
+			</div>
+		</div>
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			function goback(){
+				openReminder();
+			}
+			function gobackTwo(){
+				window.history.go(-1);
+			}
+			var mask=document.querySelector(".sgo-mask");
+			var kindlyReminder=document.querySelector(".kindly-reminder");
+			var confirmBtn=document.querySelector(".confirm-btn");
+			function closeReminder(){
+				mask.style.display="none";
+				kindlyReminder.style.display="none";
+			}
+			function openReminder(){
+				mask.style.display="block";
+				kindlyReminder.style.display="block";
+			}
+			mask.onclick=function(){
+				closeReminder();
+			}
+			//支付
+			confirmBtn.onclick=function(){
+				location.href="payFail.html";
+			}
+			//1.前面补0
+	        function p(n){
+	            return n<10?'0'+n:n;
+	        }
+	        //2.倒计时
+	        function getMyTime(){           
+	            var startDate=new Date();
+	            var endDate=new Date('2017/10/17 11:15:00');
+	            var countDown=(endDate.getTime()-startDate.getTime())/1000;
+	            var day=parseInt(countDown/(24*60*60));
+	            var h=parseInt(countDown/(60*60)%24);
+	            var m=parseInt(countDown/60%60);
+	            var s=parseInt(countDown%60);                
+	            document.getElementById('time').innerHTML='<span>'+p(m)+'</span>'+':'+'<span>'+p(s)+'</span>';
+	            setTimeout('getMyTime()',500);
+	            if(countDown<=0){
+	              document.getElementById('time').innerHTML='活动结束'; 
+	            }              
+	        }
+	        getMyTime();  
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/payFail.css" />
+	</head>
+
+	<body>
+		<header class="pay-fail-header">
+		    <a onclick="goback()" href="javascript:;"><span class="mui-icon mui-icon-back"></span></a>
+		    <h1>温馨提示</h1>
+		</header>
+		<div class="fail">
+			<img src="img/fail_icon.png" alt="" />
+			<h5>支付失败</h5>
+			<p>您的订单号：0245876</p>
+			<a href="ordersConfirm.html">重新支付</a>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			function goback(){
+				window.history.go(-1);
+			}
+		</script>
+	</body>
+
+</html>
