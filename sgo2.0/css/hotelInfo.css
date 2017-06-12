@@ -697,6 +697,8 @@ margin: 5%; }
 	display:flex;
 	align-items:center;
 	flex-wrap:wrap;
+	height:134px;
+	overflow:hidden;
 }
 .hotel-item ul li{
 	margin-top:10px;
@@ -745,11 +747,12 @@ margin: 5%; }
 
 .sgo-page-room{
 	position:fixed;
+	top:0;
 	left:0;
 	bottom:0;
 	right:0;
 	z-index:3;
-	padding:10px;
+	padding:0;
 	height:auto;
 	background:rgba(0,0,0,.8);
 	-webkit-transition:all .5s;
@@ -763,8 +766,32 @@ margin: 5%; }
 	-webkit-transform:translate3d(0,0,0);
 	transform:translate3d(0,0,0);
 }
+.room-container{
+	line-height: 0;
+	position:relative;
+}
+.room-container .swiper-slide img{
+	width:100%;
+	height:auto;
+}
+.room-container .swiper-pagination{
+	bottom:15px;
+	background: #000;
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	left: 50%;
+	margin-left:-25px;
+	text-align: center;
+	color: #fff;
+	border-radius: 30px;
+}
+.room-container .text .text-list{
+	padding:10px 20px;
+	background:rgba(0,0,0,.3);
+}
 .sgo-page-room h2{
-	padding-bottom:10px;
+	padding:0 10px 10px 10px;
 	margin-bottom:15px;
 	color:#fff;
 	font-size:18px;
@@ -774,6 +801,7 @@ margin: 5%; }
 .sgo-page-room p{
 	color:#fff;
 	font-size:14px;
+	padding:10px;
 }
 .sgo-page-room p span:nth-child(1){
 	width:60%;

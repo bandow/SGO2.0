@@ -7,100 +7,102 @@
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/hotelList.css" rel="stylesheet">
 		<link href="css/daterangepicker.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/jquery.range.css">
         <style>
-    	.date-picker-wrapper{z-index:10!important;}
-    	.date-picker-wrapper .last-date-selected{background-color: #ffe5b4 !important;border-radius: 0 100% 100% 0;}
-    	.date-picker-wrapper .first-date-selected{background-color: #ffe5b4 !important;border-radius: 100% 0 0 100%;}
-    	.date-picker-wrapper .first-date-selected>div{background:#f6ac1d; border-radius:100%;}
-    	.date-picker-wrapper .last-date-selected>div{background:#f6ac1d;border-radius:100%;}
-		.swiper-pagination{text-align:center;}
-		.swiper-pagination-bullet{background:#fff;opacity:1;border:1px solid #ccc;}
-		.swiper-pagination-bullet-active{background:#e25946;border:1px solid #e25946;}  
-		.date-picker-wrapper {position: absolute;z-index: 1;border: none;background-color: #fff;padding: 0;font-size: 12px;line-height: 20px;color: #aaa;font-family: Arial,sans-serif;box-shadow: none;box-sizing: initial;overflow-y:auto;}
-		.date-picker-wrapper .month-wrapper table .day.lalala { background-color:orange; }
-		.options { display:none; border-left:6px solid #8ae; padding:10px; font-size:12px; line-height:1.4; background-color:#eee; border-radius:4px;}
-		.date-picker-wrapper.date-range-picker19 .day.first-date-selected { background-color: red !important; }
-		.date-picker-wrapper.date-range-picker19 .day.last-date-selected { background-color: orange !important; }
-		.date-picker-wrapper .month-wrapper table{width:100% !important;border-top: 1px solid #f2f2f2;}
-		.date-picker-wrapper.no-shortcuts {padding-bottom: 0;}
-		.date-picker-wrapper .month-wrapper {
-		      border: none;
-		      border-radius: 0;
-		      background-color: #fff;
-		      padding: 0;
-		      cursor: default;
-		      position: absolute;
-		      bottom:0;
-		      height:80vh;
-		      overflow-y: auto;
-		}
-		.date-picker-wrapper .month-wrapper2 {-webkit-overflow-scrolling : touch; }
-		.date-picker-wrapper .month-wrapper table th, .date-picker-wrapper .month-wrapper table td{
-		    width: 14.2857143%;
-		    padding:0;
-		    -webkit-box-sizing: border-box; /*Safari3.2+*/
-		    box-sizing: border-box;
-		}
-		  .date-picker-wrapper .drp_top-bar {
-		      position: absolute;
-		      padding: 0;
-		      left: 0;
-		      width: 100%;
-		      top:0;
-		      height: 8vh;
-		      background: #f2f2f2;
-		      line-height: 8vh;
-		  }
-		  .date-picker-wrapper .drp_top-bar .apply-btn.disabled,.date-picker-wrapper .drp_top-bar .apply-btn{
-		    border: 0;
-		      background: none;
-		      display: block;
-		      height: 8vh;
-		      top: 0;
-		      right: 20px;
-		      color:#333;
-		  }
-		  .date-picker-wrapper .month-name{    
-		    color: #000;
-		      font-size: 14px;
-		  }
-		  .date-picker-wrapper .drp_top-bar .default-top,.date-picker-wrapper .drp_top-bar.normal .normal-top{
-		      text-align: center;
-		      color: #333;
-		      font-weight: bold;
-		      background:#fff;
-		  }
-		  .date-picker-wrapper .selected-days {
-		      font-weight: bold;
-		      font-size: 14px;
-		      font-style: normal;
-		  }
-		  .date-picker-wrapper .month-wrapper table .week-name {
-		      height: 50px;
-		      line-height: 50px;
-		  }
-		  .date-picker-wrapper table .caption {
-		      height: 50px;
-		  }
-		  .date-picker-wrapper .month-wrapper table .day.checked{
-		    background-color: #ffe5b4;    
-		  }
-		  .date-picker-wrapper .month-wrapper table .day.toMonth.valid.checked {
-		      color: #f6ac1d;
-		      cursor: pointer;
-		  }
-		  .date-picker-wrapper .month-wrapper table .day.real-today{
-		    background-color:transparent;
-		  }
-		  .date-picker-wrapper .month-wrapper table .day{
-		    line-height:3.8;
-		    font-size:12px;
-		  }
-</style>
+	    	.date-picker-wrapper{z-index:10!important;}
+	    	.date-picker-wrapper .last-date-selected{background-color: #ffe5b4 !important;border-radius: 0 100% 100% 0;}
+	    	.date-picker-wrapper .first-date-selected{background-color: #ffe5b4 !important;border-radius: 100% 0 0 100%;}
+	    	.date-picker-wrapper .first-date-selected>div{background:#f6ac1d; border-radius:100%;}
+	    	.date-picker-wrapper .last-date-selected>div{background:#f6ac1d;border-radius:100%;}
+			.swiper-pagination{text-align:center;}
+			.swiper-pagination-bullet{background:#fff;opacity:1;border:1px solid #ccc;}
+			.swiper-pagination-bullet-active{background:#e25946;border:1px solid #e25946;}  
+			.date-picker-wrapper {position: absolute;z-index: 1;border: none;background-color: #fff;padding: 0;font-size: 12px;line-height: 20px;color: #aaa;font-family: Arial,sans-serif;box-shadow: none;box-sizing: initial;overflow-y:auto;}
+			.date-picker-wrapper .month-wrapper table .day.lalala { background-color:orange; }
+			.options { display:none; border-left:6px solid #8ae; padding:10px; font-size:12px; line-height:1.4; background-color:#eee; border-radius:4px;}
+			.date-picker-wrapper.date-range-picker19 .day.first-date-selected { background-color: red !important; }
+			.date-picker-wrapper.date-range-picker19 .day.last-date-selected { background-color: orange !important; }
+			.date-picker-wrapper .month-wrapper table{width:100% !important;border-top: 1px solid #f2f2f2;}
+			.date-picker-wrapper.no-shortcuts {padding-bottom: 0;}
+			.date-picker-wrapper .month-wrapper {
+			      border: none;
+			      border-radius: 0;
+			      background-color: #fff;
+			      padding: 0;
+			      cursor: default;
+			      position: absolute;
+			      bottom:0;
+			      height:80vh;
+			      overflow-y: auto;
+			}
+			.date-picker-wrapper .month-wrapper2 {-webkit-overflow-scrolling : touch; }
+			.date-picker-wrapper .month-wrapper table th, .date-picker-wrapper .month-wrapper table td{
+			    width: 14.2857143%;
+			    padding:0;
+			    -webkit-box-sizing: border-box; /*Safari3.2+*/
+			    box-sizing: border-box;
+			}
+			  .date-picker-wrapper .drp_top-bar {
+			      position: absolute;
+			      padding: 0;
+			      left: 0;
+			      width: 100%;
+			      top:0;
+			      height: 8vh;
+			      background: #f2f2f2;
+			      line-height: 8vh;
+			  }
+			  .date-picker-wrapper .drp_top-bar .apply-btn.disabled,.date-picker-wrapper .drp_top-bar .apply-btn{
+			    border: 0;
+			      background: none;
+			      display: block;
+			      height: 8vh;
+			      top: 0;
+			      right: 20px;
+			      color:#333;
+			  }
+			  .date-picker-wrapper .month-name{    
+			    color: #000;
+			      font-size: 14px;
+			  }
+			  .date-picker-wrapper .drp_top-bar .default-top,.date-picker-wrapper .drp_top-bar.normal .normal-top{
+			      text-align: center;
+			      color: #333;
+			      font-weight: bold;
+			      background:#fff;
+			  }
+			  .date-picker-wrapper .selected-days {
+			      font-weight: bold;
+			      font-size: 14px;
+			      font-style: normal;
+			  }
+			  .date-picker-wrapper .month-wrapper table .week-name {
+			      height: 50px;
+			      line-height: 50px;
+			  }
+			  .date-picker-wrapper table .caption {
+			      height: 50px;
+			  }
+			  .date-picker-wrapper .month-wrapper table .day.checked{
+			    background-color: #ffe5b4;    
+			  }
+			  .date-picker-wrapper .month-wrapper table .day.toMonth.valid.checked {
+			      color: #f6ac1d;
+			      cursor: pointer;
+			  }
+			  .date-picker-wrapper .month-wrapper table .day.real-today{
+			    background-color:transparent;
+			  }
+			  .date-picker-wrapper .month-wrapper table .day{
+			    line-height:3.8;
+			    font-size:12px;
+			  }
+	</style>
 	</head>
 	<body>
 		<div class="list-page-wrapper">
 			<header>
+				<span onclick="goback()" class="mui-icon mui-icon-back"></span>
 				<a href="">
 					<span>广州市(205家)</span>
 					<span class="mui-icon mui-icon-arrowdown"></span>
@@ -140,19 +142,10 @@
 		<div class="selector-content">
 			<div class="price">
 				<div class="title"><h5>价格</h5></div>
-				<ul class="mark">
-					<li><span>¥0</span></li>
-					<li><span>¥500</span></li>
-					<li><span>¥1000</span></li>
-					<li><span>¥1500</span></li>
-					<li><span>¥2000</span></li>
-					<li><span>不限</span></li>
-				</ul>
 				<div class="line" id="line">
-					<form method="post">
-						<input type="range" name="range" min="0" max="5" step="0" value="0" />
-					</form>
+					<input type="hidden" class="slider-input" value="0,0" />
 				</div>
+					 
 			</div>
 			<div class="items">
 				<div class="title"><h5>特色主题</h5></div>
@@ -173,8 +166,12 @@
 				</ul>
 			</div>
 			<div class="items">
-				<div class="title"><h5>区域</h5><a href="">更多>></a></div>
+				<div class="title"><h5>区域</h5><a class="more-li1" href="javascript:;">更多>></a></div>
 				<ul class="area">
+					<li>天河城</li>
+					<li>中山大学</li>
+					<li>天河城</li>
+					<li>中山大学</li>
 					<li>天河城</li>
 					<li>中山大学</li>
 					<li>天河城</li>
@@ -186,8 +183,8 @@
 				</ul>
 			</div>
 			<div class="items">
-				<div class="title"><h5>商圈</h5><a href="">更多>></a></div>
-				<ul class="trading-area ">
+				<div class="title"><h5>商圈</h5><a class="more-li2" href="javascript:">更多>></a></div>
+				<ul class="trading-area">
 					<li>木鱼石花园</li>
 					<li>火车站东站</li>
 					<li>解放路</li>
@@ -196,12 +193,15 @@
 					<li>解放路</li>
 					<li>解放路</li>
 					<li>解放路</li>
+					<li>木鱼石花园</li>
+					<li>火车站东站</li>
+					<li>解放路</li>
 				</ul>
 			</div>
-			<div class="btn">
-				<a id="empty" href="javascript:;">重置</a>
-				<a href="javascript:;">确定</a>
-			</div>
+		</div>
+		<div class="btn">
+			<a id="empty" href="javascript:;">重置</a>
+			<a id="confirmSelector" href="javascript:;">确定</a>
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
@@ -228,6 +228,10 @@
 				contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
 			});
 
+			function goback(){
+				window.history.go(-1);
+			}
+
 			var flag=false;
 			var flag2=false;
 			var items=document.querySelector('.selector-content');  
@@ -237,11 +241,15 @@
 			var sortP=sort.getElementsByTagName('p')[0];
 			var sortList=document.querySelector('.sort-list');
 			var sortListItems=sortList.getElementsByTagName('li');
+			var btn=document.querySelector('.btn');
 			
 			var selector=document.querySelector('.selector');
 			var selectorContent=document.querySelector('.selector-content');
 			
 			var empty=document.getElementById("empty");  
+			var confirmSelector=document.getElementById("confirmSelector");  
+			
+
 			
 
 			//选择
@@ -262,8 +270,7 @@
 			selectList('.star-hotel');
 			selectList('.area');
 			selectList('.trading-area');
-			
-			
+				
 			function sortShow(){
 				sort.setAttribute('class','sort on');
 				sortList.setAttribute('class','sort-list on');
@@ -309,12 +316,14 @@
 			function selectorShow(){
 				selector.setAttribute('class','selector on');
 				selectorContent.setAttribute('class','selector-content on');
+				btn.setAttribute('class','btn btn-active');
 				mask.style.display='block';
 				flag2=true;
 			}
 			function selectorHide(){
 				selector.setAttribute('class','selector');
 				selectorContent.setAttribute('class','selector-content');
+				btn.setAttribute('class','btn');
 				mask.style.display='none';
 				flag2=false;
 			}
@@ -322,218 +331,144 @@
 				sortHide();
 				selectorHide();
 			}
-		</script>
-		<script type="text/javascript">
-			(function() {
-              var lineUl=document.querySelector(".mark");
-              var lineLi=lineUl.getElementsByTagName("li");    
-              var f = document.forms[0],
-                  range = f['range'],
-                  // result = f['result'],
-                  cachedRangeValue = localStorage.rangeValue ? localStorage.rangeValue : 0; 
+ 			
+ 			//确定综合筛选
+ 			confirmSelector.onclick=function(){
+ 				selectorHide();
+ 			}
+			
 
-              // 检测浏览器是否是足够酷
-              // 识别range input.
-              var o = document.createElement('input');
-              o.type = 'range';
-              if ( o.type === 'text' ) alert('不好意思，你的浏览器还不够酷，试试最新的Opera浏览器吧。');
-
-              // 设置初始值
-              // 无论是否本地存储了，都设置值为0
-              range.value = cachedRangeValue;
-              // result.value = cachedRangeValue;
-
-              // 当用户选择了个值，更新本地存储
-              range.addEventListener("mouseup", function() {
-                  console.log("你选择的值是：" + range.value + ". 我现在正在用本地存储保存此值。在现代浏览器上刷新并检测。");
-                  localStorage ? (localStorage.rangeValue = range.value) : alert("数据保存到了数据库或是其他什么地方。");
-
-              }, false);
-
-              // 滑动时显示选择的值
-              range.addEventListener("change", function() {
-                  // result.value = range.value;
-                  if(range.value==0){
-                     lineLi[0].className="line-active"; 
-                     lineLi[1].className="";
-                     lineLi[2].className="";
-                     lineLi[3].className="";
-                     lineLi[4].className="";
-                     lineLi[5].className="";
-                  }
-                  if(range.value==1){  
-                    lineLi[0].className="line-active";                               
-                    lineLi[1].className="line-active";
-                    lineLi[2].className="";
-                     lineLi[3].className="";
-                     lineLi[4].className="";
-                     lineLi[5].className="";
-                  }
-                  if(range.value==2){  
-                    lineLi[0].className="line-active";                               
-                    lineLi[1].className="line-active";                              
-                    lineLi[2].className="line-active";
-                    lineLi[3].className="";
-                     lineLi[4].className="";
-                     lineLi[5].className="";
-                  }
-                  if(range.value==3){    
-                  lineLi[0].className="line-active";                               
-                    lineLi[1].className="line-active";                              
-                    lineLi[2].className="line-active";                            
-                    lineLi[3].className="line-active";
-                     lineLi[4].className="";
-                     lineLi[5].className="";
-                  }
-                  if(range.value==4){   
-                  lineLi[0].className="line-active";                               
-                    lineLi[1].className="line-active";                              
-                    lineLi[2].className="line-active";                            
-                    lineLi[3].className="line-active";                             
-                    lineLi[4].className="line-active";
-                    lineLi[5].className="";
-                  }
-                  if(range.value==5){   
-                    lineLi[0].className="line-active";                               
-                    lineLi[1].className="line-active";                              
-                    lineLi[2].className="line-active";                            
-                    lineLi[3].className="line-active";                             
-                    lineLi[4].className="line-active";                             
-                    lineLi[5].className="line-active";
-                  }
-              }, false);
-
-              //
-              empty.onclick=function(){
-                 range.value = cachedRangeValue;
-                 lineLi[0].className="line-active"; 
-                 lineLi[1].className="";
-                 lineLi[2].className="";
-                 lineLi[3].className="";
-                 lineLi[4].className="";
-                 lineLi[5].className=""; 
-                 
-                 for(var i=0;i<itemsLi.length;i++){
-            		itemsLi[i].className='';
-            	}  
-              }
-          })();
 		</script>
 		<script src="js/jquery-1.12.2.min.js" ></script>
 		<script src="js/moment.min.js" ></script>
 		<script src="js/jquery.daterangepicker.js" ></script>
+		<script src="js/jquery.range-min.js"></script>
 		<script>
-		Date.prototype.Format = function (fmt) { //author: meizz  
-	      var o = {  
-	          "M+": this.getMonth() + 1, //月份  
-	          "d+": this.getDate(), //日  
-	          "h+": this.getHours(), //小时  
-	          "m+": this.getMinutes(), //分  
-	          "s+": this.getSeconds(), //秒  
-	          "q+": Math.floor((this.getMonth() + 3) / 3), //季度  
-	          "S": this.getMilliseconds() //毫秒  
-	      };  
-	      if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));  
-	      for (var k in o)  
-	          if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));  
-	      return fmt;  
-	    }; 
+			Date.prototype.Format = function (fmt) { //author: meizz  
+		      var o = {  
+		          "M+": this.getMonth() + 1, //月份  
+		          "d+": this.getDate(), //日  
+		          "h+": this.getHours(), //小时  
+		          "m+": this.getMinutes(), //分  
+		          "s+": this.getSeconds(), //秒  
+		          "q+": Math.floor((this.getMonth() + 3) / 3), //季度  
+		          "S": this.getMilliseconds() //毫秒  
+		      };  
+		      if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));  
+		      for (var k in o)  
+		          if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));  
+		      return fmt;  
+		    }; 
+			  $(document).ready(function () {
+			  
+			    var myDate = new Date();
+			    var m=myDate.getMonth()+1;
+			    var day=myDate.getDate();
+			    var hDay=myDate.getDate()+1;
+			    
+			    //初始化当天时间
+			    $(".check-in-day").html(m+"月"+day+"日");
+			    $(".check-out-day").html(m+"月"+hDay+"日");
 
-  //var arrRoomState = [];
-  $(document).ready(function () {
-    /*arrRoomState['2016-10-09']={day:'2016-10-09',roomrate:260,isbook:true};
-    arrRoomState['2016-10-10']={day:'2016-10-10',roomrate:260,isbook:true};
-    arrRoomState['2016-10-11']={day:'2016-10-11',roomrate:260,isbook:true};
-    arrRoomState['2016-10-12']={day:'2016-10-12',roomrate:260,isbook:true};
-    arrRoomState['2016-10-13']={day:'2016-10-13',roomrate:260,isbook:true};
-    arrRoomState['2016-10-14']={day:'2016-10-14',roomrate:260,isbook:false};
-    arrRoomState['2016-10-15']={day:'2016-10-15',roomrate:260,isbook:true};
-    arrRoomState['2016-10-16']={day:'2016-10-16',roomrate:260,isbook:true};
-    arrRoomState['2016-10-17']={day:'2016-10-17',roomrate:260,isbook:true};
-    arrRoomState['2016-10-18']={day:'2016-10-18',roomrate:260,isbook:true};
-    arrRoomState['2016-10-19']={day:'2016-10-19',roomrate:260,isbook:true};
-    arrRoomState['2016-10-20']={day:'2016-10-20',roomrate:260,isbook:true};
-    arrRoomState['2016-10-21']={day:'2016-10-21',roomrate:260,isbook:false};
-    arrRoomState['2016-10-22']={day:'2016-10-22',roomrate:260,isbook:true};
-    arrRoomState['2016-10-23']={day:'2016-10-23',roomrate:260,isbook:true};
-    arrRoomState['2016-10-24']={day:'2016-10-24',roomrate:260,isbook:true};
-    arrRoomState['2016-10-25']={day:'2016-10-25',roomrate:260,isbook:true};
-    arrRoomState['2016-10-26']={day:'2016-10-26',roomrate:260,isbook:true};
-  	arrRoomState['2016-10-27']={day:'2016-10-27',roomrate:260,isbook:true};
-    arrRoomState['2016-10-28']={day:'2016-10-28',roomrate:250,isbook:false};
-    arrRoomState['2016-10-29']={day:'2016-10-29',roomrate:240,isbook:false};*/
+			    //初始化1晚
+			    var num=$("#checkInDay").html()-$("#checkOutDay").html();
+			    $("#num").html(num);
+			    $("#num").html("1");
+			    
+			    $('#date').click(function(){
+			    	sortHide();
+			    	selectorHide();
+			    })
 
-    var myDate = new Date();
-    var m=myDate.getMonth()+1;
-    var day=myDate.getDate();
-    var hDay=myDate.getDate()+1;
-    
-    //初始化当天时间
-    $(".check-in-day").html(m+"月"+day+"日");
-    $(".check-out-day").html(m+"月"+hDay+"日");
+			    $('#date').dateRangePicker({
+			    	
+			      startDate: new Date(),  //默认今天开始
+			      getValue: function(){   //选择开始和结束的日期      
+			        if ($('#checkInDay').html() && $('#checkOutDay').html() )
+			          return $('#checkInDay').html() + ' to ' + $('#checkOutDay').html();
+			        else
+			          return '';
+			      },
+			      setValue: function(s,s1,s2){  //回调页面上
+			        $('#checkInDay').html(s1);
+			        $('#checkOutDay').html(s2);
+			      },
+			      showDateFilter: function(time, date){   //显示价格          
+			      	//var newTime = new Date(time).Format("yyyy-MM-dd");            
+			      	//var data = arrRoomState[newTime];
+			      	/*if (data) {
+			      		var html='<div style="padding:0;">';
+					        html+='<span style="font-size:14px;">'+date+'</span>';
+					        html+='<div style="opacity:1;">￥'+data.roomrate+'</div>';
+					        html+='</div>';
+					    return html;
+			        }else{*/
+			        	var html='<div style="padding:0;">';
+				            html+='<span style="font-size:14px;">'+date+'</span>';
+				            //html+='<div style="opacity:1;">已租</div>';
+				            html+='</div>';
+				        return html;
+			        //}      
+			      },
+			     /* beforeShowDay: function(t){//禁止被选的房价 	
+			  		  var newTime = t.Format("yyyy-MM-dd");
+			  		  var data = arrRoomState[newTime];
+			  		  var valid  = false;
+			        if (data != null && data != undefined) {
+			        	 valid = data.isbook;  
+			        }
+			  			var _class = '';
+			  			var _tooltip = valid ? '' : '不能选择已定的房价';
+			  			return [valid,_class,_tooltip];
+			  		},*/
+			      showShortcuts:false,   //去掉快捷html
+			      inline:false,
+			      singleMonth:false,  //true显示1个月，false为2个月
+			      batchMode:true,
+			      stickyMonths:true, //如果是true，只会有一个以前和一个下一个按钮。点击他们将改变两个月。
+			      // extraClass:'dengcb',  //添加class
+			      showTopbar:false,     //true显示确定按钮 false不显示确定按钮选择好就确定
+			      selectForward:false,   //true选择开始的时间前面就不能选，默认false
+			      selectBackward:false,  //true只能选择1天     
+			    })
+			  }); 
+	    </script>
+	    <script>
+	    	//滑动选取数值范围
+	    	$('.slider-input').jRange({
+			    from: 0,
+			    to: 2500,
+			    //step: 1,
+			    scale: ['¥0','¥500','¥1000','¥1500','¥2000','不限'],
+			    format: '%s',
+			    width: 'auto',
+			    showLabels: false,
+			    isRange : false
+			});
 
-    //初始化1晚
-    var num=$("#checkInDay").html()-$("#checkOutDay").html();
-    $("#num").html(num);
-    $("#num").html("1");
-    
-    $('#date').click(function(){
-    	sortHide();
-    	selectorHide();
-    })
+			//重置
+			empty.onclick=function(){
+				$(".slider-input").val(0);
+				$(".pointer").css("left","0");
+				$(".selected-bar").css("width","0");
+                for(var i=0;i<itemsLi.length;i++){
+            		itemsLi[i].className='';
+            	}  
+            }
 
-    $('#date').dateRangePicker({
-    	
-      startDate: new Date(),  //默认今天开始
-      getValue: function(){   //选择开始和结束的日期      
-        if ($('#checkInDay').html() && $('#checkOutDay').html() )
-          return $('#checkInDay').html() + ' to ' + $('#checkOutDay').html();
-        else
-          return '';
-      },
-      setValue: function(s,s1,s2){  //回调页面上
-        $('#checkInDay').html(s1);
-        $('#checkOutDay').html(s2);
-      },
-      showDateFilter: function(time, date){   //显示价格          
-      	//var newTime = new Date(time).Format("yyyy-MM-dd");            
-      	//var data = arrRoomState[newTime];
-      	/*if (data) {
-      		var html='<div style="padding:0;">';
-		        html+='<span style="font-size:14px;">'+date+'</span>';
-		        html+='<div style="opacity:1;">￥'+data.roomrate+'</div>';
-		        html+='</div>';
-		    return html;
-        }else{*/
-        	var html='<div style="padding:0;">';
-	            html+='<span style="font-size:14px;">'+date+'</span>';
-	            //html+='<div style="opacity:1;">已租</div>';
-	            html+='</div>';
-	        return html;
-        //}      
-      },
-     /* beforeShowDay: function(t){//禁止被选的房价 	
-  		  var newTime = t.Format("yyyy-MM-dd");
-  		  var data = arrRoomState[newTime];
-  		  var valid  = false;
-        if (data != null && data != undefined) {
-        	 valid = data.isbook;  
-        }
-  			var _class = '';
-  			var _tooltip = valid ? '' : '不能选择已定的房价';
-  			return [valid,_class,_tooltip];
-  		},*/
-      showShortcuts:false,   //去掉快捷html
-      inline:false,
-      singleMonth:false,  //true显示1个月，false为2个月
-      batchMode:true,
-      stickyMonths:true, //如果是true，只会有一个以前和一个下一个按钮。点击他们将改变两个月。
-      // extraClass:'dengcb',  //添加class
-      showTopbar:false,     //true显示确定按钮 false不显示确定按钮选择好就确定
-      selectForward:false,   //true选择开始的时间前面就不能选，默认false
-      selectBackward:false,  //true只能选择1天     
-    })
-  }); 
-	</script>
+            //点击更多
+		    $(".more-li1").on("click",function(){
+				$(".area").css({
+					height:'auto',
+					overflow:'inherit',
+				});
+		    });
+		    $(".more-li2").on("click",function(){
+				$(".trading-area").css({
+					height:'auto',
+					overflow:'inherit',
+				});
+		    });
+	    </script>
 	</body>
 </html>

@@ -10,95 +10,95 @@
 		<link href="css/hotelInfo.css" rel="stylesheet" />
 		<link href="css/daterangepicker.css" rel="stylesheet">
         <style>
-    	.date-picker-wrapper{z-index:10!important;}
-    	.date-picker-wrapper .last-date-selected{background-color: #ffe5b4 !important;border-radius: 0 100% 100% 0;}
-    	.date-picker-wrapper .first-date-selected{background-color: #ffe5b4 !important;border-radius: 100% 0 0 100%;}
-    	.date-picker-wrapper .first-date-selected>div{background:#f6ac1d; border-radius:100%;}
-    	.date-picker-wrapper .last-date-selected>div{background:#f6ac1d;border-radius:100%;}
-		.swiper-pagination{text-align:center;}
-		.swiper-pagination-bullet{background:#fff;opacity:1;border:1px solid #ccc;}
-		.swiper-pagination-bullet-active{background:#e25946;border:1px solid #e25946;}  
-		.date-picker-wrapper {position: absolute;z-index: 1;border: none;background-color: #fff;padding: 0;font-size: 12px;line-height: 20px;color: #aaa;font-family: Arial,sans-serif;box-shadow: none;box-sizing: initial;overflow-y:auto;}
-		.date-picker-wrapper .month-wrapper table .day.lalala { background-color:orange; }
-		.options { display:none; border-left:6px solid #8ae; padding:10px; font-size:12px; line-height:1.4; background-color:#eee; border-radius:4px;}
-		.date-picker-wrapper.date-range-picker19 .day.first-date-selected { background-color: red !important; }
-		.date-picker-wrapper.date-range-picker19 .day.last-date-selected { background-color: orange !important; }
-		.date-picker-wrapper .month-wrapper table{width:100% !important;border-top: 1px solid #f2f2f2;}
-		.date-picker-wrapper.no-shortcuts {padding-bottom: 0;}
-		.date-picker-wrapper .month-wrapper {
-		      border: none;
-		      border-radius: 0;
-		      background-color: #fff;
-		      padding: 0;
-		      cursor: default;
-		      position: absolute;
-		      bottom:0;
-		      height:80vh;
-		      overflow-y: auto;
-		}
-		.date-picker-wrapper .month-wrapper2 {-webkit-overflow-scrolling : touch; }
-		.date-picker-wrapper .month-wrapper table th, .date-picker-wrapper .month-wrapper table td{
-		    width: 14.2857143%;
-		    padding:0;
-		    -webkit-box-sizing: border-box; /*Safari3.2+*/
-		    box-sizing: border-box;
-		}
-		  .date-picker-wrapper .drp_top-bar {
-		      position: absolute;
-		      padding: 0;
-		      left: 0;
-		      width: 100%;
-		      top:0;
-		      height: 8vh;
-		      background: #f2f2f2;
-		      line-height: 8vh;
-		  }
-		  .date-picker-wrapper .drp_top-bar .apply-btn.disabled,.date-picker-wrapper .drp_top-bar .apply-btn{
-		    border: 0;
-		      background: none;
-		      display: block;
-		      height: 8vh;
-		      top: 0;
-		      right: 20px;
-		      color:#333;
-		  }
-		  .date-picker-wrapper .month-name{    
-		    color: #000;
-		      font-size: 14px;
-		  }
-		  .date-picker-wrapper .drp_top-bar .default-top,.date-picker-wrapper .drp_top-bar.normal .normal-top{
-		      text-align: center;
-		      color: #333;
-		      font-weight: bold;
-		      background:#fff;
-		  }
-		  .date-picker-wrapper .selected-days {
-		      font-weight: bold;
-		      font-size: 14px;
-		      font-style: normal;
-		  }
-		  .date-picker-wrapper .month-wrapper table .week-name {
-		      height: 50px;
-		      line-height: 50px;
-		  }
-		  .date-picker-wrapper table .caption {
-		      height: 50px;
-		  }
-		  .date-picker-wrapper .month-wrapper table .day.checked{
-		    background-color: #ffe5b4;    
-		  }
-		  .date-picker-wrapper .month-wrapper table .day.toMonth.valid.checked {
-		      color: #f6ac1d;
-		      cursor: pointer;
-		  }
-		  .date-picker-wrapper .month-wrapper table .day.real-today{
-		    background-color:transparent;
-		  }
-		  .date-picker-wrapper .month-wrapper table .day{
-		    line-height:3.8;
-		    font-size:12px;
-		  }
-</style>
+	    	.date-picker-wrapper{z-index:10!important;}
+	    	.date-picker-wrapper .last-date-selected{background-color: #ffe5b4 !important;border-radius: 0 100% 100% 0;}
+	    	.date-picker-wrapper .first-date-selected{background-color: #ffe5b4 !important;border-radius: 100% 0 0 100%;}
+	    	.date-picker-wrapper .first-date-selected>div{background:#f6ac1d; border-radius:100%;}
+	    	.date-picker-wrapper .last-date-selected>div{background:#f6ac1d;border-radius:100%;}
+			.swiper-pagination{text-align:center;}
+			.swiper-pagination-bullet{background:#fff;opacity:1;border:1px solid #ccc;}
+			.swiper-pagination-bullet-active{background:#e25946;border:1px solid #e25946;}  
+			.date-picker-wrapper {position: absolute;z-index: 1;border: none;background-color: #fff;padding: 0;font-size: 12px;line-height: 20px;color: #aaa;font-family: Arial,sans-serif;box-shadow: none;box-sizing: initial;overflow-y:auto;}
+			.date-picker-wrapper .month-wrapper table .day.lalala { background-color:orange; }
+			.options { display:none; border-left:6px solid #8ae; padding:10px; font-size:12px; line-height:1.4; background-color:#eee; border-radius:4px;}
+			.date-picker-wrapper.date-range-picker19 .day.first-date-selected { background-color: red !important; }
+			.date-picker-wrapper.date-range-picker19 .day.last-date-selected { background-color: orange !important; }
+			.date-picker-wrapper .month-wrapper table{width:100% !important;border-top: 1px solid #f2f2f2;}
+			.date-picker-wrapper.no-shortcuts {padding-bottom: 0;}
+			.date-picker-wrapper .month-wrapper {
+			      border: none;
+			      border-radius: 0;
+			      background-color: #fff;
+			      padding: 0;
+			      cursor: default;
+			      position: absolute;
+			      bottom:0;
+			      height:80vh;
+			      overflow-y: auto;
+			}
+			.date-picker-wrapper .month-wrapper2 {-webkit-overflow-scrolling : touch; }
+			.date-picker-wrapper .month-wrapper table th, .date-picker-wrapper .month-wrapper table td{
+			    width: 14.2857143%;
+			    padding:0;
+			    -webkit-box-sizing: border-box; /*Safari3.2+*/
+			    box-sizing: border-box;
+			}
+			  .date-picker-wrapper .drp_top-bar {
+			      position: absolute;
+			      padding: 0;
+			      left: 0;
+			      width: 100%;
+			      top:0;
+			      height: 8vh;
+			      background: #f2f2f2;
+			      line-height: 8vh;
+			  }
+			  .date-picker-wrapper .drp_top-bar .apply-btn.disabled,.date-picker-wrapper .drp_top-bar .apply-btn{
+			    border: 0;
+			      background: none;
+			      display: block;
+			      height: 8vh;
+			      top: 0;
+			      right: 20px;
+			      color:#333;
+			  }
+			  .date-picker-wrapper .month-name{    
+			    color: #000;
+			      font-size: 14px;
+			  }
+			  .date-picker-wrapper .drp_top-bar .default-top,.date-picker-wrapper .drp_top-bar.normal .normal-top{
+			      text-align: center;
+			      color: #333;
+			      font-weight: bold;
+			      background:#fff;
+			  }
+			  .date-picker-wrapper .selected-days {
+			      font-weight: bold;
+			      font-size: 14px;
+			      font-style: normal;
+			  }
+			  .date-picker-wrapper .month-wrapper table .week-name {
+			      height: 50px;
+			      line-height: 50px;
+			  }
+			  .date-picker-wrapper table .caption {
+			      height: 50px;
+			  }
+			  .date-picker-wrapper .month-wrapper table .day.checked{
+			    background-color: #ffe5b4;    
+			  }
+			  .date-picker-wrapper .month-wrapper table .day.toMonth.valid.checked {
+			      color: #f6ac1d;
+			      cursor: pointer;
+			  }
+			  .date-picker-wrapper .month-wrapper table .day.real-today{
+			    background-color:transparent;
+			  }
+			  .date-picker-wrapper .month-wrapper table .day{
+			    line-height:3.8;
+			    font-size:12px;
+			  }
+		</style>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ia21oG6eioiE5yKW2ERRB2P6lOcpAyGh"></script>
 	</head>
 
@@ -107,7 +107,7 @@
 			<header class="swiper-container">
 				<div class="top">
 					<span class="mui-icon mui-icon-back" onclick="goback()"></span>
-					<i><img src="img/collect_icon.png" alt=""></i>
+					<i class="collect-hotel"><img src="img/collect_icon.png" alt=""></i>
 				</div>
 				<div class="swiper-wrapper">
 			        <div class="swiper-slide">
@@ -389,8 +389,20 @@
 							<i><img src="img/ice.png" alt="" /></i>
 							<p>冰箱 </p>
 						</li>
+						<li>
+							<i><img src="img/air-conditioner.png" alt="" /></i>
+							<p>空调</p>
+						</li>
+						<li>
+							<i><img src="img/tv.png" alt="" /></i>
+							<p>超级电视</p>
+						</li>
+						<li>
+							<i><img src="img/ice.png" alt="" /></i>
+							<p>冰箱 </p>
+						</li>
 					</ul>
-					<a href="">查看全部设施<span class="mui-icon mui-icon-arrowdown"></span></a>
+					<a onclick="developIcon()" href="javascript:;">查看全部设施<span class="mui-icon mui-icon-arrowdown"></span></a>
 				</div>
 				<div class="hotel-text">
 					<h3>酒店简介</h3>
@@ -403,6 +415,21 @@
 			<div onclick="closePageInfo();" class="close"><img src="img/info_close.png" alt="" /></div>
 		</div>
 		<div class="sgo-page-room">
+		     <div class="room-container">
+				<div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<a href="#">
+				        	<img src="img/hotel_info1.jpg" alt="">
+			        	</a>  
+			        </div>
+			        <div class="swiper-slide">
+				        <a href="#">
+				        	<img src="img/hotel_info1.jpg" alt="">
+				        </a>
+			        </div>
+			    </div>
+			    <div class="swiper-pagination"></div>
+			</div>
 			<h2>商务大床房</h2>
 			<p><span>窗户：有窗</span><span>早餐：送早1份</span></p>
 			<p><span>面积：18m</span><span>楼层：2楼</span></p>
@@ -415,6 +442,7 @@
 			function goback(){
 				window.history.go(-1);
 			}
+
 		</script>
 		
 		<script src="js/swiper-3.4.2.min.js"></script>
@@ -434,6 +462,14 @@
 				slidesPerView :1.1,
 				loop : true,
 			});
+			var mySwiper = new Swiper('.room-container',{
+				pagination : '.swiper-pagination',
+				paginationType : 'fraction',
+				loop : true,
+				autoplay : 5000,
+				//paginationType : 'progress',
+				//paginationType : 'custom',
+			});
 		</script>
 		<script>
 			// 百度地图API功能
@@ -451,7 +487,7 @@
 			}
 			var label = new BMap.Label("广州市天河区天河北路278号岗顶大厦（地铁岗顶C出口）", opts);  // 创建文本标注对象
 				label.setStyle({
-					 color : "#de5a4c",
+					 color : "#474747",
 					 fontSize : "12px",
 					 height : "30px",
 					 lineHeight : "30px",
@@ -563,6 +599,11 @@
 				$(".items-a img").on("click",function(){
 					$(".sgo-page-room").addClass("active");
 				});
+
+				//点击收藏
+				$(".collect-hotel").on("click",function(){
+					$(this).find("img").attr('src','img/collect_color_icon.png');
+				});
 				
 			});
 			function closePageInfo(){
@@ -571,6 +612,13 @@
 			}
 			function closePageRoom(){
 				$(".sgo-page-room").removeClass("active");
+			}
+
+			function developIcon(){
+				$(".hotel-item ul").css({
+					height:'auto',
+					overflow:'inherit'
+				});
 			}
 		</script>
 	</body>

@@ -1003,6 +1003,18 @@
 				});
 			});
 
+			box.find('.cancel').click(function()
+			{
+				closeDatePicker();
+				var dateRange = getDateString(new Date(opt.start))+ opt.separator +getDateString(new Date(opt.end));
+				$(self).trigger('datepicker-apply',
+				{
+					'value': dateRange,
+					'date1' : new Date(opt.start),
+					'date2' : new Date(opt.end)
+				});
+			});
+
 			box.find('[custom]').click(function()
 			{
 				var valueName = $(this).attr('custom');
@@ -2077,7 +2089,7 @@
 
 			var _colspan = opt.showWeekNumbers ? 6 : 5;
 			html += '<div class="month-wrapper">' +
-				'<table class="month1" cellspacing="0" border="0" cellpadding="0"><thead><tr class="caption"><th style="width:27px;"><span class="prev">&lt;</span></th><th colspan="'+_colspan+'" class="month-name"></th><th style="width:27px;">' + (opt.singleDate || !opt.stickyMonths ? '<span class="next">&gt;</span>': '') + '</th></tr><tr class="week-name">'+getWeekHead()+'</thead><tbody></tbody></table>';
+			'<table class="month1" cellspacing="0" border="0" cellpadding="0"><thead><tr class="caption"><th style="width:27px;"><span class="prev">&lt;</span></th><th colspan="'+_colspan+'" class="month-name"></th><th style="width:27px;"><span class="cancel">取消</span>' + (opt.singleDate || !opt.stickyMonths ? '<span class="next">&gt;</span>': '') + '</th></tr><tr class="week-name">'+getWeekHead()+'</thead><tbody></tbody></table>';
 
 			if ( hasMonth2() )
 			{

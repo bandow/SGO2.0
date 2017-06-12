@@ -47,7 +47,7 @@
 		      padding: 0;
 		      left: 0;
 		      width: 100%;
-		      top:0;
+		      top:12vh;
 		      height: 8vh;
 		      background: #f2f2f2;
 		      line-height: 8vh;
@@ -171,7 +171,7 @@
 				</div>
 				<div class="key-word-line">
 					<i><img src="img/index_icon7.png" alt="" /></i>
-					<div class="key-word sgo-arrow">搜索关键词</div>
+					<div class="key-word sgo-arrow"><input type="text" placeholder="搜索关键词"></div>
 				</div>
 				<div class="submit-box">
 					<button type="button" class="mui-btn mui-btn-warning" id="hotelList">搜索</button>
@@ -287,7 +287,7 @@
 		<div class="mui-content">
 			<div class="search">
 				<div class="mui-input-row mui-search">
-				    <input type="search" class="mui-input-clear" placeholder="">
+				    <input type="search" class="mui-input-clear" placeholder="" id="s_custname" value=""  AutoComplete="off" size=60 maxlength=256>
 				</div>
 			</div>
 		    <div class="list">
@@ -344,6 +344,39 @@
 		    		</dl>
 		    	</div>
 		    </div>
+		    <div id="listName">  
+	            <ul>  
+	                <li>刘一</li>  
+	                <li>刘二</li>  
+	                <li>刘三</li>  
+	                <li>陈一</li>  
+	                <li>陈二</li>  
+	                <li>陈三</li>  
+	                <li>张一</li>  
+	                <li>张二</li>  
+	                <li>张三</li>  
+	                <li>李二</li>  
+	                <li>李三</li>  
+	                <li>李四</li>  
+	                <li>王三</li>  
+	                <li>王四 </li>  
+	                <li>王五 </li>  
+	                <li>赵四 </li>  
+	                <li>赵五 </li>  
+	                <li>赵五</li>  
+	                <li>孙五</li>  
+	                <li>孙六 </li>  
+	                <li>孙七</li>  
+	                <li>周六</li>  
+	                <li>周七  </li>  
+	                <li>周八</li>  
+	                <li>吴七</li>  
+	                <li>吴八 </li>  
+	                <li>吴九 </li>  
+	                <li>郑八</li>  
+	                <li>郑十</li>  
+	            </ul>  
+	        </div>
 		</div>
 	</div>
     <div class="sgo-page-wrapper-header">
@@ -424,6 +457,7 @@
 	<script src="js/jquery-1.12.2.min.js" ></script>
 	<script src="js/moment.min.js" ></script>
 	<script src="js/jquery.daterangepicker.js" ></script>
+	<script src="js/inputselect.js"></script>
 	<script>
 		Date.prototype.Format = function (fmt) { //author: meizz  
 	      var o = {  
@@ -441,96 +475,228 @@
 	      return fmt;  
 	    }; 
 
-  //var arrRoomState = [];
-  $(document).ready(function () {
-    /*arrRoomState['2016-10-09']={day:'2016-10-09',roomrate:260,isbook:true};
-    arrRoomState['2016-10-10']={day:'2016-10-10',roomrate:260,isbook:true};
-    arrRoomState['2016-10-11']={day:'2016-10-11',roomrate:260,isbook:true};
-    arrRoomState['2016-10-12']={day:'2016-10-12',roomrate:260,isbook:true};
-    arrRoomState['2016-10-13']={day:'2016-10-13',roomrate:260,isbook:true};
-    arrRoomState['2016-10-14']={day:'2016-10-14',roomrate:260,isbook:false};
-    arrRoomState['2016-10-15']={day:'2016-10-15',roomrate:260,isbook:true};
-    arrRoomState['2016-10-16']={day:'2016-10-16',roomrate:260,isbook:true};
-    arrRoomState['2016-10-17']={day:'2016-10-17',roomrate:260,isbook:true};
-    arrRoomState['2016-10-18']={day:'2016-10-18',roomrate:260,isbook:true};
-    arrRoomState['2016-10-19']={day:'2016-10-19',roomrate:260,isbook:true};
-    arrRoomState['2016-10-20']={day:'2016-10-20',roomrate:260,isbook:true};
-    arrRoomState['2016-10-21']={day:'2016-10-21',roomrate:260,isbook:false};
-    arrRoomState['2016-10-22']={day:'2016-10-22',roomrate:260,isbook:true};
-    arrRoomState['2016-10-23']={day:'2016-10-23',roomrate:260,isbook:true};
-    arrRoomState['2016-10-24']={day:'2016-10-24',roomrate:260,isbook:true};
-    arrRoomState['2016-10-25']={day:'2016-10-25',roomrate:260,isbook:true};
-    arrRoomState['2016-10-26']={day:'2016-10-26',roomrate:260,isbook:true};
-  	arrRoomState['2016-10-27']={day:'2016-10-27',roomrate:260,isbook:true};
-    arrRoomState['2016-10-28']={day:'2016-10-28',roomrate:250,isbook:false};
-    arrRoomState['2016-10-29']={day:'2016-10-29',roomrate:240,isbook:false};*/
+	  $(document).ready(function () {
+	    var myDate = new Date();
+	    var m=myDate.getMonth()+1;
+	    var day=myDate.getDate();
+	    var hDay=myDate.getDate()+1;
+	    
+	    //初始化当天时间
+	    $(".check-in-day").html(m+"月"+day+"日");
+	    $(".check-out-day").html(m+"月"+hDay+"日");
 
-    var myDate = new Date();
-    var m=myDate.getMonth()+1;
-    var day=myDate.getDate();
-    var hDay=myDate.getDate()+1;
-    
-    //初始化当天时间
-    $(".check-in-day").html(m+"月"+day+"日");
-    $(".check-out-day").html(m+"月"+hDay+"日");
+	    //初始化1晚
+	    var num=$("#checkInDay").html()-$("#checkOutDay").html();
+	    $("#num").html(num);
+	    $("#num").html("1");
+	   
 
-    //初始化1晚
-    var num=$("#checkInDay").html()-$("#checkOutDay").html();
-    $("#num").html(num);
-    $("#num").html("1");
-    
-
-    $('#date').dateRangePicker({
-      startDate: new Date(),  //默认今天开始
-      getValue: function(){   //选择开始和结束的日期      
-        if ($('#checkInDay').html() && $('#checkOutDay').html() )
-          return $('#checkInDay').html() + ' to ' + $('#checkOutDay').html();
-        else
-          return '';
-      },
-      setValue: function(s,s1,s2){  //回调页面上
-        $('#checkInDay').html(s1);
-        $('#checkOutDay').html(s2);
-      },
-      showDateFilter: function(time, date){   //显示价格          
-      	//var newTime = new Date(time).Format("yyyy-MM-dd");            
-      	//var data = arrRoomState[newTime];
-      	/*if (data) {
-      		var html='<div style="padding:0;">';
-		        html+='<span style="font-size:14px;">'+date+'</span>';
-		        html+='<div style="opacity:1;">￥'+data.roomrate+'</div>';
-		        html+='</div>';
-		    return html;
-        }else{*/
-        	var html='<div style="padding:0;">';
-	            html+='<span style="font-size:14px;">'+date+'</span>';
-	            //html+='<div style="opacity:1;">已租</div>';
-	            html+='</div>';
-	        return html;
-        //}      
-      },
-     /* beforeShowDay: function(t){//禁止被选的房价 	
-  		  var newTime = t.Format("yyyy-MM-dd");
-  		  var data = arrRoomState[newTime];
-  		  var valid  = false;
-        if (data != null && data != undefined) {
-        	 valid = data.isbook;  
-        }
-  			var _class = '';
-  			var _tooltip = valid ? '' : '不能选择已定的房价';
-  			return [valid,_class,_tooltip];
-  		},*/
-      showShortcuts:false,   //去掉快捷html
-      inline:false,
-      singleMonth:false,  //true显示1个月，false为2个月
-      batchMode:true,
-      stickyMonths:true, //如果是true，只会有一个以前和一个下一个按钮。点击他们将改变两个月。
-      // extraClass:'dengcb',  //添加class
-      showTopbar:false,     //true显示确定按钮 false不显示确定按钮选择好就确定
-      selectForward:false,   //true选择开始的时间前面就不能选，默认false
-      selectBackward:false,  //true只能选择1天     
-    })
-  }); 
+	    $('#date').dateRangePicker({
+	      startDate: new Date(),  //默认今天开始
+	      getValue: function(){   //选择开始和结束的日期      
+	        if ($('#checkInDay').html() && $('#checkOutDay').html() )
+	          return $('#checkInDay').html() + ' to ' + $('#checkOutDay').html();
+	        else
+	          return '';
+	      },
+	      setValue: function(s,s1,s2){  //回调页面上
+	        $('#checkInDay').html(s1);
+	        $('#checkOutDay').html(s2);
+	      },
+	      showDateFilter: function(time, date){   //显示价格          
+	      	//var newTime = new Date(time).Format("yyyy-MM-dd");            
+	      	//var data = arrRoomState[newTime];
+	      	/*if (data) {
+	      		var html='<div style="padding:0;">';
+			        html+='<span style="font-size:14px;">'+date+'</span>';
+			        html+='<div style="opacity:1;">￥'+data.roomrate+'</div>';
+			        html+='</div>';
+			    return html;
+	        }else{*/
+	        	var html='<div style="padding:0;">';
+		            html+='<span style="font-size:14px;">'+date+'</span>';
+		            //html+='<div style="opacity:1;">已租</div>';
+		            html+='</div>';
+		        return html;
+	        //}      
+	      },
+	     /* beforeShowDay: function(t){//禁止被选的房价 	
+	  		  var newTime = t.Format("yyyy-MM-dd");
+	  		  var data = arrRoomState[newTime];
+	  		  var valid  = false;
+	        if (data != null && data != undefined) {
+	        	 valid = data.isbook;  
+	        }
+	  			var _class = '';
+	  			var _tooltip = valid ? '' : '不能选择已定的房价';
+	  			return [valid,_class,_tooltip];
+	  		},*/
+	      showShortcuts:false,   //去掉快捷html
+	      inline:false,
+	      singleMonth:false,  //true显示1个月，false为2个月
+	      batchMode:true,
+	      stickyMonths:true, //如果是true，只会有一个以前和一个下一个按钮。点击他们将改变两个月。
+	      // extraClass:'dengcb',  //添加class
+	      showTopbar:false,     //true显示确定按钮 false不显示确定按钮选择好就确定
+	      selectForward:false,   //true选择开始的时间前面就不能选，默认false
+	      selectBackward:false,  //true只能选择1天  
+	    })
+	    .bind('datepicker-apply',function(event,obj)
+		{
+		    console.log(obj);
+		})
+		.bind('datepicker-close',function()
+		{
+		    console.log('close');
+		});           
+	}); 
 	</script>
+	<script>
+	    //编辑框下拉列表
+        var flag1 = 0;  
+		var flag2 = 0;  
+		var pos=-1, pos2=-1;  
+		  
+		function init(){      
+		    var t, t2;    
+		    //$("#listName").css("top",$("#inputBox").css("top")+$("#inputBox").css("height"));  
+		   // $("#listName").css("left",$("#inputBox").css("left"));  
+		    hide();  
+		    //$("li").css("font-size",$("#s_custemail").css("font-size"));  
+		   // $("li").css("font-size",$("#s_custname").css("font-size"));  
+		   // $("li").css("text-align","left");  
+		      
+		    bindInput();  
+		   
+		    var name = $("#s_custname");  
+		  
+		    $("#listName li").mouseup(function(){  
+		        var str = $(this).text();  
+		        setValue(name, str);  
+		    });   
+		  
+		    $('#listName li').mousemove(function(e){  
+		        pos2 = getMouseLocation(e);  
+		    });  
+		  
+		    $("#s_custname").blur(function(){  
+		        if( pos==-1 || !isOutOfBound(pos,0) ){  
+		            pos = -1;  
+		            hide();  
+		        }  
+		    });
+			
+			$("#s_custname").on("input",function(){
+				 if($("#s_custname").val()==""){
+			    	hide();
+			    }  
+			})
+		}  
+		  
+		  
+		function bindInput(){  
+		    //IE  
+		    if (window.ActiveXObject){  
+		        document.getElementById('s_custname').attachEvent("onpropertychange",show2);  
+		    }else{  
+		        $("#s_custname").bind("input",show2);  
+		    }  
+		}  
+		   	  
+		function show2(){  
+		    var s_value = $("#s_custname").val();  
+		    $("#listName").children().children("li").hide();  
+		    showListName();  
+		    if(s_value.length >= 1){  
+		        $("#listName").children().children("li").each(function(){  
+		            var tmp = $(this).text().substr(0,$(this).text().length);  
+		                          
+		            if(tmp && s_value==tmp.substr(0,s_value.length)){  
+		                $(this).show();  
+		                flag1 = 1;  
+		            }  
+		        });  
+		    }  
+		}  
+		  
+		function hide(){  
+		    $("#listName").css("display","none");  
+
+		    $(".list").css('display', 'block'); 
+		    $(".sidebar-right-side").css('display', 'block');
+		}  
+		  
+		function setValue(obj, str){  
+		    obj.val(str);  
+		    hide();  
+		    obj.focus();  
+		}  
+		  	  
+		function showListName(){  
+		    var obj = $('#s_custname');  
+		    $("#listName").css("left",0);  
+		    $("#listName").css("top", parseInt(obj.offset().top + obj.outerHeight()));      
+		    $("#listName").css('display', 'block'); 
+
+
+		    $(".list").css('display', 'none'); 
+		    $(".sidebar-right-side").css('display', 'none');
+		}  
+		  
+		function getEvent() //同时兼容ie和ff的写法  
+		{  
+		    if (document.all)  
+		        return window.event;  
+		    func = getEvent.caller;  
+		    while (func != null) {  
+		        var arg0 = func.arguments[0];  
+		        if (arg0) {  
+		            if ((arg0.constructor == Event   
+		                || arg0.constructor == MouseEvent)   
+		                || (typeof (arg0) == "object" && arg0.preventDefault && arg0.stopPropagation)) {  
+		                return arg0;  
+		            }  
+		        }  
+		        func = func.caller;  
+		    }  
+		    return null;  
+		}  
+		  
+		function getMouseLocation(event) {  
+		    var __is_ff = (navigator.userAgent.indexOf("Firefox") != -1); //Firefox   
+		    var e = getEvent(event);  
+		    var mouseX = 0;  
+		    var mouseY = 0;  
+		    var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;  
+		    var scrollY = document.documentElement.scrollTop || document.body.scrollTop;  
+		    if (__is_ff) {  
+		        mouseX = e.layerX + document.body.scrollLeft;  
+		        mouseY = e.layerY + document.body.scrollLeft;  
+		    }  
+		    else {  
+		        mouseX = e.pageX || e.clientX + scrollX;  
+		        mouseY = e.pageY || e.clientY + scrollY;  
+		    }  
+		    return { x: mouseX, y: mouseY };  
+		}  
+		  
+		function isOutOfBound(pos, flag){  
+		    var obj;  
+		    if (flag) {  
+		        obj = $('#listName');  
+		    }  
+		    if (pos && obj   
+		        &&pos.x >= obj.offset().left  
+		        && pos.x <= obj.offset().left+obj.outerWidth()  
+		        && pos.y >= obj.offset().top  
+		        && pos.y <= obj.offset().top+obj.outerHeight() ) {  
+		        return true;  
+		    };  
+		    return false;  
+		}  
+
+
+	 $(document).ready(function(){init();}); 
+    </script>
 </body>
 </html>

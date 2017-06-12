@@ -49,6 +49,13 @@ ol, ul {
 	padding:10px 0;
 	border-bottom:1px solid #eee;
 }
+
+.list-page-wrapper header .mui-icon-back{
+	position:absolute;
+	left:10px;
+	color: #999;
+}
+
 .list-page-wrapper header a{
 	display:-webkit-flex;
 	display:flex;
@@ -249,8 +256,8 @@ ol, ul {
 	top: 93px;
 	z-index: 1;
 	width: 100%;
-	height: 80%;
-  overflow: auto;
+	height:50%;
+    overflow: auto;
 	background-color:#fff;
 	border-top: 1px solid #f6ac1d;
 	-webkit-transition:all .5s;
@@ -303,6 +310,7 @@ ol, ul {
 .line {
   padding: 0 25px;
   position: relative; 
+  margin:10px 0 30px 0;
 }
 .line input[type="range"] {
     -webkit-appearance: none;
@@ -353,7 +361,9 @@ ol, ul {
 	align-items:center;
 	flex-wrap:wrap;
 	border-bottom:1px solid #ddd;
-	padding:0 10px 10px 10px;
+	margin:0 10px 10px 10px;
+	height:74px;
+	overflow:hidden;
 }
 .selector-content .items ul li{
 	  width: 24%;
@@ -379,6 +389,11 @@ ol, ul {
 	display:-webkit-flex;
 	display:flex;
 	align-items:center;
+	position:fixed;
+	left:0;
+	top:62%;
+	z-index:-3;
+	width:100%;
 }
 .btn a{
 	line-height:3;
@@ -393,4 +408,8 @@ ol, ul {
 .btn a:last-child{
 	flex:4;
 	background:#f6ac1d;
+}
+
+.btn.btn-active{
+	z-index:3;
 }

@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8">
 		<title>Hello MUI</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
 		<link rel="stylesheet" href="css/mui.min.css">
 		<link href="css/hotelList.css" rel="stylesheet">
 	</head>
-
 	<body>
 		<!--下拉刷新容器-->
 		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
@@ -30,9 +27,6 @@
 		<!--暂无可用酒店 end-->
 		<script src="js/mui.min.js"></script>
 		<script>
-			
-			
-			
 			mui.init({
 				pullRefresh: {
 					container: '#pullrefresh',
@@ -46,9 +40,6 @@
 				} 
 				
 			});
-			
-			
-			
 			/**
 			 * 下拉刷新具体业务实现
 			 */
@@ -66,7 +57,6 @@
 					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
 				}, 1500);
 			}
-			
 			var count = 0;
 			/**
 			 * 上拉加载具体业务实现
@@ -96,9 +86,7 @@
 				mui.ready(function() {
 					mui('#pullrefresh').pullRefresh().pullupLoading();
 				});
-			}
-			
-			
+			}			
 			mui('.mui-table-view').on('tap', '.mui-table-view-cell', function () {  
 			  //var sId = this.getElementsByTagName('p')[1].id.substring(1, 2);
               mui.openWindow({  
@@ -108,5 +96,4 @@
 			
 		</script>
 	</body>
-
 </html>

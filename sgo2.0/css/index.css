@@ -212,6 +212,13 @@ ol, ul {
 	color:#bbb;
 	font-size:14px;
 }
+.key-word input{
+	outline:none;
+	background:none;
+	border:0;
+	margin:0;
+	padding:0;
+}
 .submit-box{
 	padding:10px;
 	width:100%;
@@ -540,4 +547,32 @@ ol, ul {
 	text-align:center;
 	font-size:14px;
 	color:#f0ad4e;
+}
+
+
+
+
+
+
+
+
+
+#listName{
+	position: absolute;
+    top: 80px;
+    left: 0;
+    display:none;
+    background: #fff;
+    width: 100%;
+}
+#listName ul{
+	margin:0;
+	padding:0;
+}
+#listName ul li{
+	border-bottom:1px solid #ddd;
+	 padding: 10px;
+}
+.mui-input-row.mui-search .mui-icon-clear{
+	z-index: 100 !important;
 }
