@@ -104,7 +104,7 @@
 
 	<body>
 		<div class="sgo-page-wrapper">
-			<header class="swiper-container">
+			<header class="swiper-container page-header">
 				<div class="top">
 					<span class="mui-icon mui-icon-back" onclick="goback()"></span>
 					<i class="collect-hotel"><img src="img/collect_icon.png" alt=""></i>
@@ -175,7 +175,7 @@
 						</p>
 					</div>
 					<div class="m">
-						<span>共<span id="num">3</span>天<span>
+						<span>共<span id="num">3</span>天</span>
 					</div>
 					<div class="r">
 						<i>
@@ -436,6 +436,27 @@
 			<p><span>床型：1.8m大床</span><span>最大入住：2人</span></p>
 			<div onclick="closePageRoom();" class="close"><img src="img/info_close.png" alt="" /></div>
 		</div>
+		<div class="sgo-page-img">
+			<header class="img-header">
+			    <a class="img-left" href="javascript:;"><span class="mui-icon mui-icon-back"></span></a>
+			    <h1>酒店图片</h1>
+			</header>
+			<div class="img-swiper-container">
+				<div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<a href="#">
+				        	<img src="img/hotel_info1.jpg" alt="">
+			        	</a>  
+			        </div>
+			        <div class="swiper-slide">
+				        <a href="#">
+				        	<img src="img/hotel_info1.jpg" alt="">
+				        </a>
+			        </div>
+			    </div>
+			    <div class="swiper-pagination"></div>
+			</div>
+		</div>
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init();
@@ -463,6 +484,14 @@
 				loop : true,
 			});
 			var mySwiper = new Swiper('.room-container',{
+				pagination : '.swiper-pagination',
+				paginationType : 'fraction',
+				loop : true,
+				autoplay : 5000,
+				//paginationType : 'progress',
+				//paginationType : 'custom',
+			});
+			var mySwiper = new Swiper('.img-swiper-container',{
 				pagination : '.swiper-pagination',
 				paginationType : 'fraction',
 				loop : true,
@@ -603,6 +632,17 @@
 				//点击收藏
 				$(".collect-hotel").on("click",function(){
 					$(this).find("img").attr('src','img/collect_color_icon.png');
+				});
+
+
+				//查看大图
+				$(".page-header").on("click",function(){
+					$(".sgo-page-wrapper").hide();
+					$(".sgo-page-img").addClass("on");
+				});
+				$(".img-header a").on("click",function(){
+					$(".sgo-page-wrapper").show();
+					$(".sgo-page-img").removeClass("on");
 				});
 				
 			});

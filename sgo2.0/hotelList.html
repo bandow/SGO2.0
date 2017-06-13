@@ -457,17 +457,40 @@
             }
 
             //点击更多
+            var flag=false,falg1=false;
 		    $(".more-li1").on("click",function(){
-				$(".area").css({
-					height:'auto',
-					overflow:'inherit',
-				});
+		    	if(!flag){
+		    		$(".area").css({
+						height:'auto',
+						overflow:'inherit',
+					});
+					$(this).text("收起>>");
+					flag=true;
+		    	}else{
+					$(".area").css({
+						height:'74px',
+						overflow:'hidden',
+					});
+					$(this).text("更多>>");
+					flag=false
+		    	}	
 		    });
 		    $(".more-li2").on("click",function(){
-				$(".trading-area").css({
-					height:'auto',
-					overflow:'inherit',
-				});
+				if(!falg1){
+					$(".trading-area").css({
+						height:'auto',
+						overflow:'inherit',
+					});
+					$(this).text("收起>>");
+					falg1=true;
+				}else{
+					$(".trading-area").css({
+						height:'74px',
+						overflow:'hidden',
+					});
+					$(this).text("更多>>");
+					falg1=false
+				}
 		    });
 	    </script>
 	</body>
