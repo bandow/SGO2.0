@@ -402,7 +402,7 @@
 							<p>冰箱 </p>
 						</li>
 					</ul>
-					<a onclick="developIcon()" href="javascript:;">查看全部设施<span class="mui-icon mui-icon-arrowdown"></span></a>
+					<a class="developIcon-a" onclick="developIcon()" href="javascript:;">查看全部设施<span class="mui-icon mui-icon-arrowdown"></span></a>
 				</div>
 				<div class="hotel-text">
 					<h3>酒店简介</h3>
@@ -653,12 +653,24 @@
 			function closePageRoom(){
 				$(".sgo-page-room").removeClass("active");
 			}
-
+			//查看全部设施
+			var flag=false;
 			function developIcon(){
-				$(".hotel-item ul").css({
-					height:'auto',
-					overflow:'inherit'
-				});
+				if(!flag){
+					$(".hotel-item ul").css({
+						height:'auto',
+						overflow:'inherit'
+					});
+					$(".developIcon-a").html('收起<span class="mui-icon mui-icon-arrowup"></span>');
+					flag=true;
+				}else{
+					$(".hotel-item ul").css({
+						height:'134px',
+						overflow:'hidden'
+					});
+					$(".developIcon-a").html('查看全部设施<span class="mui-icon mui-icon-arrowdown"></span>');
+					flag=false;
+				}
 			}
 		</script>
 	</body>

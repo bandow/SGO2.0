@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<link href="css/mui.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/order.css">
+	<link rel="stylesheet" href="css/dropload.css">
 </head>
 <body>
     
@@ -14,11 +15,312 @@
     <a onclick="goback()" href="javascript:;"><span class="mui-icon mui-icon-back"></span></a>
     <h1>我的订单</h1>
 </header>
+<div class="order-container">
+	<ul class="tab">
+		<li class="cur">
+			<img src="img/order_icon1.png" alt="" />
+			<p>全部订单</p>
+		</li>
+		<li>
+			<i>2</i>
+			<img src="img/order_icon2.png" alt="" />
+			<p>待付款</p>
+		</li>
+		<li>
+			<i>5</i>
+			<img src="img/order_icon3.png" alt="" />
+			<p>待入住</p>
+		</li>
+		<li>
+			<i>2</i>
+			<img src="img/order_icon4.png" alt="" />
+			<p>待评价</p>
+		</li>
+	</ul>
+	<div class="order-all">
+		<div class="order-items lists" style="display: block;">
+			<div class="list-item">
+				<i><img src="img/order_icon5.png" alt="" /></i>
+				<div class="t">
+					<div class="l">
+						<h2>广州市永泰商务酒店</h2>
+						<p>2017-5-25 至 2017-5-27 </p>
+                        <p>2晚  2间  高级豪华间</p>
+					</div>
+					<div class="r"><p>已退房</p></div>
+				</div>
+				<div class="b">
+					<p>￥1470.00</p>
+					<div class="btn">
+						<a href="">再次预订</a>
+						<a class="comment" href="">点评</a>
+					</div>
+				</div>
+			</div>
+			<div class="list-item">
+				<div class="t">
+					<div class="l">
+						<h2>广州市永泰商务酒店</h2>
+						<p>2017-5-25 至 2017-5-27 </p>
+                        <p>2晚  2间  高级豪华间</p>
+					</div>
+					<div class="r"><p>预订</p></div>
+				</div>
+				<div class="b">
+					<p>￥1470.00</p>
+					<div class="btn">
+						<a href="">取消</a>
+						<a class="pay" href="">支付</a>
+					</div>
+				</div>
+			</div>
+			<div class="list-item">
+				<div class="t">
+					<div class="l">
+						<h2>广州市永泰商务酒店</h2>
+						<p>2017-5-25 至 2017-5-27 </p>
+                        <p>2晚  2间  高级豪华间</p>
+					</div>
+					<div class="r"><p>已支付</p></div>
+				</div>
+				<div class="b">
+					<p>￥1470.00</p>
+					<div class="btn">
+						<a href="">再次预订</a>
+					</div>
+				</div>
+			</div>
+			<div class="list-item">
+				<div class="t">
+					<div class="l">
+						<h2>广州市永泰商务酒店</h2>
+						<p>2017-5-25 至 2017-5-27 </p>
+                        <p>2晚  2间  高级豪华间</p>
+					</div>
+					<div class="r"><p>已支付</p></div>
+				</div>
+				<div class="b">
+					<p>￥1470.00</p>
+					<div class="btn">
+						<a href="">再次预订</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="order-items lists">
+			<div class="list-item">
+				<div class="t">
+					<div class="l">
+						<h2>广州市永泰商务酒店</h2>
+						<p>2017-5-25 至 2017-5-27 </p>
+                        <p>2晚  2间  高级豪华间</p>
+					</div>
+					<div class="r"><p>预订</p></div>
+				</div>
+				<div class="b">
+					<p>￥1470.00</p>
+					<div class="btn">
+						<a href="">取消</a>
+						<a class="pay" href="">支付</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="order-items lists">
+			<div class="list-item">
+				<div class="t">
+					<div class="l">
+						<h2>广州市永泰商务酒店</h2>
+						<p>2017-5-25 至 2017-5-27 </p>
+                        <p>2晚  2间  高级豪华间</p>
+					</div>
+					<div class="r"><p>已支付</p></div>
+				</div>
+				<div class="b">
+					<p>￥1470.00</p>
+					<div class="btn">
+						<a href="">再次预订</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="order-items lists">
+			<div class="list-item">
+				<i><img src="img/order_icon5.png" alt="" /></i>
+				<div class="t">
+					<div class="l">
+						<h2>广州市永泰商务酒店</h2>
+						<p>2017-5-25 至 2017-5-27 </p>
+                        <p>2晚  2间  高级豪华间</p>
+					</div>
+					<div class="r"><p>已退房</p></div>
+				</div>
+				<div class="b">
+					<p>￥1470.00</p>
+					<div class="btn">
+						<a href="">再次预订</a>
+						<a class="comment" href="">点评</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <script src="js/mui.min.js"></script>
 <script>
-	mui.init({
-		swipeBack:true //启用右滑关闭功能
-	});
+	mui.init();
+	function goback(){
+		window.history.go(-1);
+	}
+</script>
+<script src="js/zepto.min.js"></script>
+<script src="js/dropload.min.js"></script>
+<script>
+$(function(){
+    var itemIndex = 0;
+    var tab1LoadEnd = false;
+    var tab2LoadEnd = false;
+    var tab3LoadEnd = false;
+    var tab4LoadEnd = false;
+    // tab
+    $('.tab li').on('click',function(){
+        var $this = $(this);
+        itemIndex = $this.index();
+        $this.addClass('cur').siblings('li').removeClass('cur');
+        $('.lists').eq(itemIndex).show().siblings('.lists').hide();
+
+        // 如果选中菜单一
+        if(itemIndex == '0'){
+            // 如果数据没有加载完
+            if(!tab1LoadEnd){
+                // 解锁
+                dropload.unlock();
+                dropload.noData(false);
+            }else{
+                // 锁定
+                dropload.lock('down');
+                dropload.noData();
+            }
+        // 如果选中菜单二
+        }else if(itemIndex == '1'){
+            if(!tab2LoadEnd){
+                // 解锁
+                dropload.unlock();
+                dropload.noData(false);
+            }else{
+                // 锁定
+                dropload.lock('down');
+                dropload.noData();
+            }
+        }else if(itemIndex == '2'){
+            if(!tab3LoadEnd){
+                // 解锁
+                dropload.unlock();
+                dropload.noData(false);
+            }else{
+                // 锁定
+                dropload.lock('down');
+                dropload.noData();
+            }
+        }else if(itemIndex == '3'){
+            if(!tab4LoadEnd){
+                // 解锁
+                dropload.unlock();
+                dropload.noData(false);
+            }else{
+                // 锁定
+                dropload.lock('down');
+                dropload.noData();
+            }
+        }
+        // 重置
+        dropload.resetload();
+    });
+
+    var counter = 0;
+    // 每页展示4个
+    var num = 4;
+    var pageStart = 0,pageEnd = 0;
+
+    // dropload
+    var dropload = $('.order-all').dropload({
+        scrollArea : window,
+        loadDownFn : function(me){
+            // 加载菜单一的数据
+            if(itemIndex == '0'){
+                $.ajax({
+                    type: 'GET',
+                    url: 'data/more.json',
+                    dataType: 'json',
+                    success: function(data){
+                        var result = '';
+                        counter++;
+                        pageEnd = num * counter;
+                        pageStart = pageEnd - num;
+
+                        if(pageStart <= data.lists.length){
+                            for(var i = pageStart; i < pageEnd; i++){
+                                result +=   '<a class="item opacity" href="'+data.lists[i].link+'">'
+                                                +'<img src="'+data.lists[i].pic+'" alt="">'
+                                                +'<h3>'+data.lists[i].title+'</h3>'
+                                                +'<span class="date">'+data.lists[i].date+'</span>'
+                                            +'</a>';
+                                if((i + 1) >= data.lists.length){
+                                    // 数据加载完
+                                    tab1LoadEnd = true;
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData();
+                                    break;
+                                }
+                            }
+                            // 为了测试，延迟1秒加载
+                            setTimeout(function(){
+                                $('.lists').eq(0).append(result);
+                                // 每次数据加载完，必须重置
+                                me.resetload();
+                            },1000);
+                        }
+                    },
+                    error: function(xhr, type){
+                        console.log('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            // 加载菜单二的数据
+            }else if(itemIndex == '1'){
+                $.ajax({
+                    type: 'GET',
+                    url: '../public/scripts/json/update.json',
+                    dataType: 'json',
+                    success: function(data){
+                        var result = '';
+                        for(var i = 0; i < data.lists.length; i++){
+                            result +=   '<a class="item opacity" href="'+data.lists[i].link+'">'
+                                            +'<img src="'+data.lists[i].pic+'" alt="">'
+                                            +'<h3>'+data.lists[i].title+'</h3>'
+                                            +'<span class="date">'+data.lists[i].date+'</span>'
+                                        +'</a>';
+                        }
+                        // 为了测试，延迟1秒加载
+                        setTimeout(function(){
+                            $('.lists').eq(1).append(result);
+                            // 每次数据加载完，必须重置
+                            me.resetload();
+                        },1000);
+                    },
+                    error: function(xhr, type){
+                        console.log('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            }
+        }
+    });
+});
 </script>
 </html>

@@ -131,6 +131,15 @@ em{
 .name-submit span:nth-child(2){
 	flex: 1;
 }
+.items span:nth-child(2) input{
+	margin: 0;
+	padding:0;
+	background:none;
+	border:none;
+	outline:none;
+	font-size:14px;
+	height: 21px;
+}
 .name-submit i{
 	float:right;
 	width:15px;

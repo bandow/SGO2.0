@@ -42,12 +42,12 @@
 			</div>
 			<div class="items name-submit">
 				<span>入  住  人</span>
-				<span>邓紫棋</span>
+				<span><input type="text" placeholder="邓紫棋" /></span>
 				<i><img src="img/ordersubmit_icon1.png" alt="" /></i>
 			</div>
 			<div class="items sgo-arrow">
 				<span>联系电话</span>
-				<span>18688855588</span>
+				<span><input type="text" placeholder="18688855588" /></span>
 			</div>
 			<div class="items E-coupon sgo-arrow">
 				<span>抵用券</span>
@@ -308,8 +308,9 @@
 					couponHide();
 					$(".E-coupon span:last-child").html("-"+$(this).find(".l h2").html());
 				});
+				//点击使用规则
 				$(".coupon-list .b>p").on("click",function(){
-					$(this).next().show();
+					$(this).next().toggle();
 				});
 				$(".E-coupon").on("click",function(){
 					$(".sgo-page-submit").hide();
