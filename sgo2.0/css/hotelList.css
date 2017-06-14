@@ -43,8 +43,11 @@ ol, ul {
 }
 
 .list-page-wrapper header{
-  position: relative;
-  z-index: 2;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index: 2;
 	background-color:#fff;
 	padding:10px 0;
 	border-bottom:1px solid #eee;
@@ -65,8 +68,11 @@ ol, ul {
 	font-size:16px;
 }
 .list-title{
-	position: relative;
+	position: fixed;
+	top:45px;
+	left:0;
 	z-index: 2;
+	width:100%;
 	padding:10px 20px;
 	background-color:#fff;
 	display:-webkit-flex;
@@ -110,26 +116,21 @@ ol, ul {
 	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
-.mui-scroll .mui-table-view{
-	margin: 0;
-	padding: 0;
-	background:none;
+
+.hotel-list{
+	padding-top:94px!important;
 }
-.mui-table-view:before{background-color:#efeff4;}
-.mui-scroll ul li{
-	background:#fff;
+.hotel-list a{
 	margin:10px;
-	padding:0!important;
+	background:#fff;
+	display:block;
 }
-.mui-scroll ul li a{
-    margin:0!important;
-}
-.mui-scroll .img{
+.hotel-list .img{
 	position:relative !important;
 	font-size:0;
 	line-height:0;
 }
-.mui-scroll .img i{
+.hotel-list .img i{
 	position:absolute;
 	top:10px;
 	right:10px;
@@ -137,14 +138,14 @@ ol, ul {
 	height:auto;
 	display:block;
 }
-.mui-scroll .img i img{
+.hotel-list .img i img{
 	width:100%;
 }
-.mui-scroll .img>img{
+.hotel-list .img>img{
 	width:100%;
 	height:auto;
 }
-.mui-scroll .img>.recommen-text{
+.hotel-list .img>.recommen-text{
 	position:absolute;
 	left:0;
 	bottom:0;
@@ -156,10 +157,10 @@ ol, ul {
 	align-items:center;
 	line-height:1.7;
 }
-.mui-scroll .recommen-text>span{
+.hotel-list .recommen-text>span{
 	margin-right:5px;
 }
-.mui-scroll .recommen-text>.preferential{
+.hotel-list .recommen-text>.preferential{
 	color:#000;
 	font-size:12px;
 	background:#f6ac1d;
@@ -167,7 +168,7 @@ ol, ul {
 	border-radius:3px;
 	padding:0 5px;
 }
-.mui-scroll .recommen-text>.breakfast{
+.hotel-list .recommen-text>.breakfast{
 	color:#000;
 	font-size:12px;
 	background:#bdd966;
@@ -175,7 +176,7 @@ ol, ul {
 	border-radius:3px;
 	padding:0 5px;
 }
-.mui-scroll .recommen-text>.coupon{
+.hotel-list .recommen-text>.coupon{
 	color:#000;
 	font-size:12px;
 	background:#fa5b5b;
@@ -183,39 +184,39 @@ ol, ul {
 	border-radius:3px;
 	padding:0 5px;
 }
-.mui-scroll .recommen-text>.distance{
+.hotel-list .recommen-text>.distance{
 	color:#fff;
 	font-size:12px;
 	flex:1;
 }
-.mui-scroll .recommen-text>p{
+.hotel-list .recommen-text>p{
 	margin:0;
 	color:#fff;
 	font-size:12px;
 }
-.mui-scroll .recommen-text>p span{
+.hotel-list .recommen-text>p span{
 	font-size:18px;
 }
-.mui-scroll .bottom-text{
+.hotel-list .bottom-text{
 	padding:5px;
 	display:-webkit-flex;
 	display:flex;
 	align-items:flex-start;
 	justify-content:space-between;
 }
-.mui-scroll .bottom-text p{
+.hotel-list .bottom-text p{
 	color:#393939;
 	margin:0;
 	line-height:1.7;
 }
-.mui-scroll .bottom-text .r{
+.hotel-list .bottom-text .r{
 	justify-content:flex-end;
 }
-.mui-scroll .bottom-text .r p{
+.hotel-list .bottom-text .r p{
 	font-size:12px;
 }
 .null-hotel-list{
-	margin-top:40%;
+	margin-top:60%;
 	text-align:center;
 }
 .null-hotel-list img{
@@ -251,9 +252,9 @@ ol, ul {
 
 .selector-content{
 	position: absolute;
-	left: 0;
-	right:0;
 	top:0;
+	left:0;
+	right:0;
 	z-index: 1;
 	padding-top: 93px;
 	padding-bottom:40px;
@@ -396,8 +397,8 @@ ol, ul {
 	bottom:0;
 	z-index:-3;
 	width:100%;
-	-webkit-transform: translate3d(0,-10%,0);
-	transform: translate3d(0,-10%,0);
+	-webkit-transform: translate3d(0,100%,0);
+	transform: translate3d(0,100%,0);
 }
 .btn a{
 	line-height:3;
@@ -418,4 +419,33 @@ ol, ul {
 	z-index:3;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
+}
+
+
+
+
+#updown{
+	position:fixed;
+	top:70%;
+	right:5px;
+	display:none;
+	background:rgba(0,0,0,.8);
+	border-radius:100%;
+	width:30px;
+	height:30px;
+}
+#updown .up:after {
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    right:10px;
+    width:8px;
+    height:8px;
+    border: 1px solid;
+    border-bottom: 0;
+    border-right: 0;
+    margin-top: -2px;
+    color: #ccc;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg)
 }

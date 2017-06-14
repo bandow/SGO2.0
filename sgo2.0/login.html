@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<link href="css/login.css" rel="stylesheet" />
+</head>
+<body>
+
+</body>
+<div class="wrapper mui-content">
+	<header class="login-header">
+		<span class="mui-icon mui-icon-back" onclick="goback()"></span>
+	</header>
+	<div class="container">
+		<div class="img">
+			<img src="img/login_logo.png" alt="">
+		</div>
+		<form action="">
+			<div class="item">
+				<i><img src="img/login_icon1.png" alt=""></i>
+				<input type="tel" placeholder="请输入手机号">
+			</div>
+			<div class="item">
+				<i><img src="img/login_icon2.png" alt=""></i>
+				<input type="password" placeholder="请输入密码">
+			</div>
+			<button class="btn">登录</button>
+		</form>
+		<p>没有账号？<a href="">立即注册</a></p>
+		<a href="">找回密码</a>
+	</div>
+</div>
+<script src="js/mui.min.js"></script>
+<script>
+	mui.init();
+	function goback(){
+		window.history.go(-1);
+	}
+</script>
+</html>

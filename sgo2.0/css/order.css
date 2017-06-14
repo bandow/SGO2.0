@@ -142,3 +142,24 @@ em{
 	color:#fff;
 	border:1px solid #F6AC1D;
 }
+
+.null-order{
+	margin-top:50%;
+	text-align:center;
+}
+.null-order img{
+	width:50px;
+	height:50px;
+}
+.null-order a{
+	margin: 20px auto;
+	display:block;
+	width:25%;
+	height:30px;
+	background:#f6ac1d;
+	color:#fff;
+	text-align:center;
+	line-height:30px;
+	font-size:14px;
+	border-radius:3px;
+}

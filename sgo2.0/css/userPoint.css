@@ -1,0 +1,96 @@
+ol, ul {list-style: none;}
+i,em{font-style: normal;}
+.point-header{
+	width:100%;
+	height:40px;
+	background:#fff;
+	display:-webkit-flex;
+	display:flex;
+	align-content:center;
+	border-bottom:1px solid #ddd;;
+}
+.point-header a{
+	line-height:45px;
+	color:#474747;
+}
+.point-header h1{
+	margin: 0 0 0 -12px;
+	font-size:16px;
+	line-height:40px;
+    color:#474747;
+    text-align:center;
+    flex:1;
+}
+.point-container .point-top{
+	padding:25px 0;
+	background:url('../img/point_bg.jpg') #fff no-repeat;
+	background-size:100% auto;	
+	text-align:center;
+}
+.point-top h2{
+	font-size:20px;
+	font-weight:normal;
+	margin:0;
+	padding:0;
+	color:#fff;
+	margin-bottom:5px;
+}
+.point-top p{
+	margin:0;
+	padding:0;
+	font-size:14px;
+	display:-webkit-flex;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	color:#fff;
+}
+.point-top p i{
+	display:block;
+	width:15px;
+	margin-left:10px;
+	line-height:0;
+}
+.point-top p i img{
+	width:100%;
+}
+.point-list{
+	margin-top:5px;
+	background:#fff;
+}
+.point-list .item{
+	padding:10px;
+	border-bottom:1px solid #ddd;
+	display:-webkit-flex;
+	display:flex;
+}
+.point-list .item p{
+	font-size: 16px
+	margin:0;
+}
+.point-list .item .l{
+	flex:1;
+}
+.point-list .item .l h5{
+	font-size: 16px
+	margin:0;
+	padding:0;
+}
+.point-list .item .l p{
+	font-size: 12px;
+	margin:0;
+	padding:0;
+	color:#969696;
+}
+.point-list .give>p{
+	color:#f6ac1d;
+}
+.point-list .give .l h5{
+	color:#f6ac1d;
+}
+.point-list .consume>p{
+	color:#42b861;
+}
+.point-list .consume .l h5{
+	color:#42b861;
+}

@@ -7,6 +7,7 @@
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/hotelList.css" rel="stylesheet">
 		<link href="css/daterangepicker.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/dropload.css">
 		<link rel="stylesheet" href="css/jquery.range.css">
         <style>
 	    	.date-picker-wrapper{z-index:10!important;}
@@ -125,10 +126,56 @@
 					<span class="mui-icon mui-icon-arrowdown"></span>
 				</div>
 			</div>
-			<div class="hotel-list">
-				<div class="mui-content">
-				</div>
+			<div class="hotel-list lists">
+				<a href="hotelInfo.html" class="">
+					<div class="img"><img src="img/index_hotel1.jpg" alt="">
+						<i><img src="img/collect_color_icon.png" alt="" /></i>
+						<div class="recommen-text">
+							<span class="preferential">特惠</span>
+							<span class="breakfast">送早餐</span>
+							<span class="coupon">入住送劵</span>
+							<span class="distance">距离0.6公里</span>
+							<p>￥<span>388</span>起</p>
+						</div>
+					</div>
+					<div class="bottom-text"><p>广州市永泰商务酒店</p>
+					<div class="r"><i class="star5"></i><p>1.0分 | 388评论</p></div></div>
+				</a>
+				<a href="hotelInfo.html" class="">
+					<div class="img"><img src="img/index_hotel1.jpg" alt="">
+						<i><img src="img/collect_icon.png" alt="" /></i>
+						<div class="recommen-text">
+							<span class="preferential">特惠</span>
+							<span class="breakfast">送早餐</span>
+							<span class="coupon">入住送劵</span>
+							<span class="distance">距离0.6公里</span>
+							<p>￥<span>388</span>起</p>
+						</div>
+					</div>
+					<div class="bottom-text"><p>广州市永泰商务酒店</p>
+					<div class="r"><i class="star5"></i><p>1.0分 | 388评论</p></div></div>
+				</a>
+				<a href="hotelInfo.html" class="">
+					<div class="img"><img src="img/index_hotel1.jpg" alt="">
+						<i><img src="img/collect_icon.png" alt="" /></i>
+						<div class="recommen-text">
+							<span class="preferential">特惠</span>
+							<span class="breakfast">送早餐</span>
+							<span class="coupon">入住送劵</span>
+							<span class="distance">距离0.6公里</span>
+							<p>￥<span>388</span>起</p>
+						</div>
+					</div>
+					<div class="bottom-text"><p>广州市永泰商务酒店</p>
+					<div class="r"><i class="star5"></i><p>1.0分 | 388评论</p></div></div>
+				</a>
 			</div>
+			<!--暂无可用酒店 begin-->
+			<!-- <div class="null-hotel-list">
+				<img src="img/exclamatory_icon.png" alt="" />
+				<p>暂无可用酒店，请重新选择</p>
+			</div> -->
+		    <!--暂无可用酒店 end-->
 		</div>
 		<div class="sgo-mask mui-backdrop"></div>
 		<div class="sort-list">
@@ -144,8 +191,7 @@
 				<div class="title"><h5>价格</h5></div>
 				<div class="line" id="line">
 					<input type="hidden" class="slider-input" value="0,0" />
-				</div>
-					 
+				</div>			 
 			</div>
 			<div class="items">
 				<div class="title"><h5>特色主题</h5></div>
@@ -203,39 +249,20 @@
 			<a id="empty" href="javascript:;">重置</a>
 			<a id="confirmSelector" href="javascript:;">确定</a>
 		</div>
-		<!--<div id="updown"><div class="up"></div></div>-->
+		<div id="updown"><span class="up"></span></div>
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
 			//启用双击监听
-			mui.init({
-				gestureConfig:{
-					doubletap:true
-				},
-				subpages:[{
-					url:'hotelList_sub.html',
-					id:'hotelList_sub.html',
-					styles:{
-						top: '93px',
-						bottom: '0px',
-					}
-				}]
-			});
+			mui.init();
 		
-			var contentWebview = null;
-			document.querySelector('header').addEventListener('doubletap',function () {
-				if(contentWebview==null){
-					contentWebview = plus.webview.currentWebview().children()[0];
-				}
-				contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
-			});
-
 			function goback(){
 				window.history.go(-1);
 			}
 
 			var flag=false;
 			var flag2=false;
-			var items=document.querySelector('.selector-content');  
+			var items=document.querySelector('.selector-content'); 
+			var hotelList=document.querySelector('.hotel-list'); 	
 			var itemsLi=items.getElementsByTagName('li');
 			var mask = document.querySelector('.mui-backdrop');
 			var sort=document.querySelector('.sort');
@@ -318,6 +345,7 @@
 				selector.setAttribute('class','selector on');
 				selectorContent.setAttribute('class','selector-content on');
 				btn.setAttribute('class','btn btn-active');
+				hotelList.style.display='none';
 				mask.style.display='block';
 				flag2=true;
 			}
@@ -325,6 +353,7 @@
 				selector.setAttribute('class','selector');
 				selectorContent.setAttribute('class','selector-content');
 				btn.setAttribute('class','btn');
+				hotelList.style.display='block';
 				mask.style.display='none';
 				flag2=false;
 			}
@@ -337,8 +366,6 @@
  			confirmSelector.onclick=function(){
  				selectorHide();
  			}
-			
-
 		</script>
 		<script src="js/jquery-1.12.2.min.js" ></script>
 		<script src="js/moment.min.js" ></script>
@@ -494,5 +521,72 @@
 				}
 		   });
 	    </script>
+	    <script src="js/zepto.min.js"></script>
+		<script src="js/dropload.min.js"></script>
+		<script>
+			//下拉加载
+			Zepto(function($){
+			  var counter = 0;
+			  // 每页展示4个
+			  var num = 4;
+			  var pageStart = 0,pageEnd = 0;
+			  // dropload
+			  $('.list-page-wrapper').dropload({
+			      scrollArea : window,
+			      loadDownFn : function(me){
+			          $.ajax({
+			              type: 'GET',
+			              url: '/data/update.json',
+			              dataType: 'json',
+			              success: function(data){
+			                  var result = '';
+			                  counter++;
+			                  pageEnd = num * counter;
+			                  pageStart = pageEnd - num;
+
+			                  for(var i = pageStart; i < pageEnd; i++){
+			                      result +=   '<a class="item opacity" href="'+data.lists[i].link+'">'
+			                                      +'<img src="'+data.lists[i].pic+'" alt="">'
+			                                      +'<h3>'+data.lists[i].title+'</h3>'
+			                                      +'<span class="date">'+data.lists[i].date+'</span>'
+			                                  +'</a>';
+			                      if((i + 1) >= data.lists.length){
+			                          // 锁定
+			                          me.lock();
+			                          // 无数据
+			                          me.noData();
+			                          break;
+			                      }
+			                  }
+			                  // 为了测试，延迟1秒加载
+			                  setTimeout(function(){
+			                      $('.lists').append(result);
+			                      // 每次数据加载完，必须重置
+			                      me.resetload();
+			                  },1000);
+			              },
+			              error: function(xhr, type){
+			                  console.log('Ajax error!');
+			                  // 即使加载出错，也得重置
+			                  me.resetload();
+			              }
+			          });
+			      }
+			  });
+			});
+			jQuery(function($){
+				//置顶
+			    $(window).scroll(function() {       
+			        if($(window).scrollTop() >= 100){
+			            $('#updown').fadeIn(300); 
+			        }else{    
+			            $('#updown').fadeOut(300);    
+			        }  
+				});
+				$('#updown .up').click(function(){
+					$('html,body').animate({scrollTop: '0px'}, 800);
+				});
+			})
+		</script>
 	</body>
 </html>

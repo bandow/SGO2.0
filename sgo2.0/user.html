@@ -1,20 +1,110 @@
 <!doctype html>
 <html>
-
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="css/mui.min.css" rel="stylesheet" />
-	</head>
-
-	<body>
-               <p style="color:#000;font-size:100px;" class="title">我的</p>
-	</body>
-    <script src="js/mui.min.js"></script>
-	<script>
-		mui.init({
-			swipeBack:true //启用右滑关闭功能
-		});
-	</script>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<link href="css/user.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="user-wrapper mui-content">
+		<header class="user-header">
+			<a onclick="goback()" href="javascript:;"><span class="mui-icon mui-icon-back"></span></a>
+			<h1>会员中心</h1>
+		</header> 
+		<div class="user-container">
+		    <div class="user-top">
+		    	<div class="t">
+		    		<div>
+			    		<a href="">
+							<h4>5</h4>
+							<p>优惠券</p>
+						</a>
+					</div>
+					<div>
+						<i><img src="img/user_head.jpg" alt=""></i>
+						<h3>YESON</h3>
+					</div>
+					<div>
+					    <a href="userPoint.html">
+					    	<h4>467</h4>
+							<p>会员积分</p>
+					    </a>
+					</div>
+		    	</div>
+				<div class="b">
+					<ul class="tab">
+						<li class="cur">
+							<a href="order.html">
+								<img src="img/order_icon1.png" alt="" />
+								<p>全部订单</p>
+							</a>	
+						</li>
+						<li>
+							<a href="order.html">
+								<i>2</i>
+								<img src="img/order_icon2.png" alt="" />
+								<p>待付款</p>
+							</a>
+						</li>
+						<li>
+							<a href="order.html">
+								<i>5</i>
+								<img src="img/order_icon3.png" alt="" />
+								<p>待入住</p>
+							</a>
+						</li>
+						<li>
+							<a href="order.html">
+								<i>2</i>
+								<img src="img/order_icon4.png" alt="" />
+								<p>待评价</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+		    </div>
+		    <div class="user-item">
+		    	<a href="" class="item sgo-arrow">
+		    		<i><img src="img/login_icon1.png" alt=""></i>
+		    		<p>个人信息</p>
+		    	</a>
+		    	<a href="" class="item sgo-arrow">
+		    		<i><img src="img/user_icon1.png" alt=""></i>
+		    		<p>我的收藏</p>
+		    	</a>
+		    	<a href="" class="item sgo-arrow">
+		    		<i><img src="img/user_icon2.png" alt=""></i>
+		    		<p>我的点评</p>
+		    	</a>
+		    	<a href="" class="item sgo-arrow">
+		    		<i><img src="img/user_icon3.png" alt=""></i>
+		    		<p>关于酒店狗</p>
+		    	</a>
+		    </div>
+		</div>
+	</div>
+	<nav class="mui-bar mui-bar-tab">
+	    <a href="index.html" class="mui-tab-item-sgo">
+	        <div class="img"><img src="img/footer_icon1.png" alt="" /></div>
+	        <span class="mui-tab-label">首页</span>
+	    </a>
+	    <a href="order.html" class="mui-tab-item-sgo">
+	        <div class="img"><img src="img/footer_icon2.png" alt="" /></div>
+	        <span class="mui-tab-label">订单</span>
+	    </a>
+	    <a href="user.html" class="mui-tab-item-sgo">
+	        <div class="img"><img src="img/footer_icon3_on.png" alt="" /></div>
+	        <span class="mui-tab-label on">我的</span>
+	    </a>
+	</nav>
+</body>
+<script src="js/mui.min.js"></script>
+<script>
+	mui.init();
+	function goback(){
+		window.history.go(-1);
+	}
+</script>
 </html>
