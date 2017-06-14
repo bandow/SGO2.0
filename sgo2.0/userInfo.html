@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link href="css/mui.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/userInfo.css" />
+</head>
+<body>
+<div class="info-wrapper mui-content">
+	<header class="info-header">
+		<a onclick="goback()" href="javascript:;"><span class="mui-icon mui-icon-back"></span></a>
+		<h1>个人信息</h1>
+	</header>
+	<div class="info-contaner">
+		<div class="item sgo-arrow">
+			<span>用户头像</span>
+			<i><img src="img/hotel_comment_head.jpg" alt="" /></i>
+		</div>
+		<div class="item sgo-arrow">
+			<span>姓名</span>
+			<span>YESON</span>
+		</div>
+		<div class="item sgo-arrow">
+			<span>身份证</span>
+			<span>440124********7426</span>
+		</div>
+		<div class="item sgo-arrow">
+			<span>联系电话</span>
+			<span>18685285858</span>
+		</div>
+		<div class="item mt sgo-arrow">
+			<span>会员类型</span>
+			<span>普卡会员</span>
+		</div>
+		<div class="item sgo-arrow">
+			<span>卡号</span>
+			<span>01235789</span>
+		</div>
+		<div class="item sgo-arrow">
+			<a href="userForget.html"><span>修改密码</span></a>	
+		</div>
+		<div class="item sgo-arrow">
+			<a href="bindWeChat.html"><span>绑定微信</span></a>	
+		</div>
+	</div>
+</div>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript">
+	mui.init();
+	function goback(){
+		window.history.go(-1);
+	}
+</script>
+</body>
+</html>

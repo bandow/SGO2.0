@@ -64,7 +64,13 @@
 				</div>
 			</div>
 		</div>
-   </div>        
+   </div>  
+   <div class="sgo-mask mui-backdrop"></div>
+   <div class="rule">
+   		<h3>使用规则</h3>
+   		<p>1.会员通过PC官网、微信公众号、APP预订并入住；按照相关比例进行赠送积分</p>
+		<p>2.会员获取的积分2年内有效</p>
+   </div>
 </body>
 <script src="js/mui.min.js"></script>
 <script>
@@ -76,6 +82,16 @@
 <script src="js/zepto.min.js"></script>
 <script src="js/dropload.min.js"></script>
 <script type="text/javascript">
+	$(function(){
+		$(".point-top p").on("click",function(){
+			$(".rule").addClass("on");
+			$(".sgo-mask").show();
+		});
+		$(".sgo-mask").on("click",function(){
+			$(".rule").removeClass("on");
+			$(".sgo-mask").hide();
+		});
+	})
 	//下拉加载
 	$(function(){
 	  var counter = 0;
