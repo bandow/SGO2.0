@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link href="css/mui.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/dropload.css">
+<link href="css/userCoupon.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="selector-coupon">
+		<header class="orders-coupon-header">
+		    <a onclick="goback();" href="javascript:;"><span class="mui-icon mui-icon-back"></span></a>
+		    <h1>选择优惠券</h1>
+		    <!--<a href="javascript:couponNoHide();">放弃使用</a>-->
+		</header>
+		<div class="coupon-container">
+			<p>共有3张可用优惠券</p>
+			<div class="coupon-list lists">
+				<i><img src="img/g_icon.png" alt="" /></i>
+				<div class="t">
+					<div class="l">
+						<h2><span>¥</span>20</h2>
+						<p>满¥100可用</p>
+					</div>
+					<div class="r">
+					    <h2>新人红包</h2>
+					    <p>使用期限2017.08.24-2017.11.28 </p>
+					</div>
+				</div>
+				<div class="b">
+					<p><span>使用规则</span><span class="mui-icon mui-icon-arrowdown"></span></p>
+					<div class="text">
+						<p>1、不可退还</p>
+						<p>2、优惠不可叠加使用</p>
+						<p>3、仅限酒店狗预订房晚使用</p>
+					</div>
+				</div>
+			</div>
+			<div class="coupon-list lists">
+				<i><img src="img/g_icon.png" alt="" /></i>
+				<div class="t">
+					<div class="l">
+						<h2><span>¥</span>20</h2>
+						<p>满¥100可用</p>
+					</div>
+					<div class="r">
+					    <h2>新人红包</h2>
+					    <p>使用期限2017.08.24-2017.11.28 </p>
+					</div>
+				</div>
+				<div class="b">
+					<p><span>使用规则</span><span class="mui-icon mui-icon-arrowdown"></span></p>
+					<div class="text">
+						<p>1、不可退还</p>
+						<p>2、优惠不可叠加使用</p>
+						<p>3、仅限酒店狗预订房晚使用</p>
+					</div>
+				</div>
+			</div>
+			<div class="coupon-list lists">
+				<i><img src="img/g_icon.png" alt="" /></i>
+				<div class="t">
+					<div class="l">
+						<h2><span>¥</span>80</h2>
+						<p>满¥100可用</p>
+					</div>
+					<div class="r">
+					    <h2>新人红包</h2>
+					    <p>使用期限2017.08.24-2017.11.28 </p>
+					</div>
+				</div>
+				<div class="b">
+					<p><span>使用规则</span><span class="mui-icon mui-icon-arrowdown"></span></p>
+					<div class="text">
+						<p>1、不可退还</p>
+						<p>2、优惠不可叠加使用</p>
+						<p>3、仅限酒店狗预订房晚使用</p>
+					</div>
+				</div>
+			</div>
+			<div class="coupon-list lists">
+				<i><img src="img/g_icon.png" alt="" /></i>
+				<div class="t">
+					<div class="l">
+						<h2><span>¥</span>20</h2>
+						<p>满¥100可用</p>
+					</div>
+					<div class="r">
+					    <h2>新人红包</h2>
+					    <p>使用期限2017.08.24-2017.11.28 </p>
+					</div>
+				</div>
+				<div class="b">
+					<p><span>使用规则</span><span class="mui-icon mui-icon-arrowdown"></span></p>
+					<div class="text">
+						<p>1、不可退还</p>
+						<p>2、优惠不可叠加使用</p>
+						<p>3、仅限酒店狗预订房晚使用</p>
+					</div>
+				</div>
+			</div>
+			<div class="coupon-list lists">
+				<i><img src="img/g_icon.png" alt="" /></i>
+				<div class="t">
+					<div class="l">
+						<h2><span>¥</span>20</h2>
+						<p>满¥100可用</p>
+					</div>
+					<div class="r">
+					    <h2>新人红包</h2>
+					    <p>使用期限2017.08.24-2017.11.28 </p>
+					</div>
+				</div>
+				<div class="b">
+					<p><span>使用规则</span><span class="mui-icon mui-icon-arrowdown"></span></p>
+					<div class="text">
+						<p>1、不可退还</p>
+						<p>2、优惠不可叠加使用</p>
+						<p>3、仅限酒店狗预订房晚使用</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init();
+		function goback(){
+			window.history.go(-1);
+		}
+	</script>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/dropload.min.js"></script>
+	<script>
+		$(function(){
+			//点击使用规则
+			$(".coupon-list .b>p").on("click",function(){
+				$(this).next().toggle();
+			});
+		});
+		//下拉加载
+		$(function(){
+		  var counter = 0;
+		  // 每页展示4个
+		  var num = 4;
+		  var pageStart = 0,pageEnd = 0;
+		  // dropload
+		  $('.coupon-container').dropload({
+		      scrollArea : window,
+		      loadDownFn : function(me){
+		          $.ajax({
+		              type: 'GET',
+		              url: '/data/update.json',
+		              dataType: 'json',
+		              success: function(data){
+		                  var result = '';
+		                  counter++;
+		                  pageEnd = num * counter;
+		                  pageStart = pageEnd - num;
+
+		                  for(var i = pageStart; i < pageEnd; i++){
+		                      result +=   '<a class="item opacity" href="'+data.lists[i].link+'">'
+		                                      +'<img src="'+data.lists[i].pic+'" alt="">'
+		                                      +'<h3>'+data.lists[i].title+'</h3>'
+		                                      +'<span class="date">'+data.lists[i].date+'</span>'
+		                                  +'</a>';
+		                      if((i + 1) >= data.lists.length){
+		                          // 锁定
+		                          me.lock();
+		                          // 无数据
+		                          me.noData();
+		                          break;
+		                      }
+		                  }
+		                  // 为了测试，延迟1秒加载
+		                  setTimeout(function(){
+		                      $('.lists').append(result);
+		                      // 每次数据加载完，必须重置
+		                      me.resetload();
+		                  },1000);
+		              },
+		              error: function(xhr, type){
+		                  console.log('Ajax error!');
+		                  // 即使加载出错，也得重置
+		                  me.resetload();
+		              }
+		          });
+		      }
+		  });
+		});
+	</script>
+</body>
+</html>

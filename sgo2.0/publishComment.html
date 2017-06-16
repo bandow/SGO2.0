@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link href="css/mui.min.css" rel="stylesheet" />
+<link href="css/publishComment.css" rel="stylesheet" />
+</head>
+<body>
+<div class="doghouse-publish-wrapper">
+	<header class="publish-header">
+	    <a onclick="goback();" href="javascript:;"><span class="mui-icon mui-icon-back"></span></a>
+	    <h1>发表评论</h1>
+	</header>
+	<div class="publish-container">
+		<div class="comment-text-head">
+			
+		</div>
+		<div class="star-comment">
+			
+		</div>
+		<div class="publish">
+			<textarea placeholder="环境如何？服务周到吗？请写下您的入住感受可以帮助需要的小伙伴哦~"></textarea>
+			<div class="upload img-box full">
+				<section class=" img-section">
+					<div class="z_photo upimg-div clear" >
+			               	 <section class="z_file fl">
+			               	 	<img src="img/a11.png" class="add-img">
+			               	 	<input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+			               	 </section>
+			               	 <p class="up-p">最多上传3张照片</p>
+			         </div>
+				 </section>
+			</div>
+	        <aside class="mask works-mask">
+				<div class="mask-content">
+					<p class="del-p">您确定要删除作品图片吗？</p>
+					<p class="check-p"><span class="del-com wsdel-ok">确定</span><span class="wsdel-no">取消</span></p>
+				</div>
+			</aside>
+		</div>
+		<div class="publish-btn">
+			<p><i><img src="img/dog_icon3.png" alt="" /></i><span>匿名</span><span>李二狗</span></p>
+			<a href="">我要发布</a>
+		</div>
+	</div>
+</div>	
+<script src="js/mui.min.js"></script>
+<script type="text/javascript">
+	mui.init();
+	function goback(){
+		window.history.go(-1);
+	}
+</script>
+<script src="js/jquery-1.12.2.min.js"></script>
+<script src="js/imgUp.js"></script>
+</body>
+</html>

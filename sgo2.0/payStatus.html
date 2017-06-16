@@ -6,20 +6,30 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="css/payFail.css" />
+		<link rel="stylesheet" href="css/payStatus.css" />
 	</head>
 
 	<body>
-		<header class="pay-fail-header">
+		<header class="pay-status-header">
 		    <a onclick="goback()" href="javascript:;"><span class="mui-icon mui-icon-back"></span></a>
 		    <h1>温馨提示</h1>
 		</header>
-		<div class="fail">
+		<!--支付成功 begin-->
+		<div class="success">
+			<img src="img/confirm_icon1.png" alt="" />
+			<h5>支付成功</h5>
+			<p>您的订单号：0245876</p>
+			<a href="ordersConfirm.html">确 认</a>
+		</div>
+		<!--支付成功 end-->
+		<!--支付失败 begin-->
+		<!--<div class="fail">
 			<img src="img/fail_icon.png" alt="" />
 			<h5>支付失败</h5>
 			<p>您的订单号：0245876</p>
 			<a href="ordersConfirm.html">重新支付</a>
-		</div>
+		</div>-->
+		<!--支付失败 end-->
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init()

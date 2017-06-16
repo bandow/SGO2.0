@@ -1,0 +1,67 @@
+ol, ul {
+  list-style: none;  /*去掉列表点*/
+}
+i{font-style: normal;}
+em{
+	font-style: normal;
+}
+.agt-container{
+	padding:10px;
+	margin-top:50px;
+	background:#fff;
+}
+.agt-container .text{
+	border-bottom:1px solid #ddd;
+}
+.agt-container h3{
+	font-size:16px;
+	color:#F6AC1D;
+	font-weight:normal;
+}
+.agt-container p{
+	font-size:14px;
+	color:#4e4e4e;
+	display:-webkit-flex;
+	display:flex;
+	line-height: 1.5;
+}
+.agt-container p i{
+	margin-top:5px;
+	background:#F6AC1D;
+	font-size:12px;
+	width:15px;
+	height:15px;
+	line-height:15px;
+	border-radius:100%;
+	text-align:center;
+	color:#fff;
+	margin-right:5px;
+}
+.agt-container p span{
+	flex:1;
+}
+.agt-header{
+	position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+	width:100%;
+	height:40px;
+	background:#fff;
+	display:-webkit-flex;
+	display:flex;
+	align-content:center;
+	border-bottom:1px solid #ddd;;
+}
+.agt-header a{
+	line-height:40px;
+	color:#474747;
+}
+.agt-header h1{
+	margin: 0 0 0 -12px;
+	font-size:16px;
+	line-height:40px;
+    color:#474747;
+    text-align:center;
+    flex:1;
+}

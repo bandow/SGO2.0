@@ -54,6 +54,7 @@ html,body{
 	border:none;
 	outline:none;
 	height:30px;
+	font-size:14px;
 }
 .container form .btn{
 	margin:20px 0;
@@ -61,7 +62,7 @@ html,body{
 	height:50px;
 	background:#f6ac1d;
 	border:none;
-	font-size:18px;
+	font-size:16px;
 	color:#fff;
 }
 .container>p{
