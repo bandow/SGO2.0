@@ -4,22 +4,70 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<style type="text/css">
 		body, html {width: 100%;height: 100%; margin:0;font-family:"微软雅黑";}
-		#l-map{height:300px;width:100%;}
-		#r-result,#r-result table{width:100%;}
+		#allmap{height:100%;width:100%;}
+		#text{position:relative;padding:2px;margin-top: -25px;display:-webkit-flex;display: flex;background: #fff;box-shadow:1px 5px 10px #ccc;}
+		#text:before{
+			position: absolute;
+		    content: "";
+		    left: 50%;
+		    bottom: -20px;
+		    margin-left: -5px;
+			width:0;
+			height:0;
+			border:solid 10px;
+			border-color:#fff transparent transparent transparent;
+		}
+		#text>div{flex:1;padding:10px;}
+		#text>div h3{color:#F6AC1D; font-size:14px;margin:0;line-height:1.2;}
+		#text>div p{color:#393939; font-size:12px;margin:0;line-height:1.2;}
+		#text>span{
+			padding:0 10px;
+			line-height:50px;
+			background:#F6AC1D;
+			color:#fff;font-size:14px;margin:0;
+			border-radius:3px;
+		}
 	</style>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ia21oG6eioiE5yKW2ERRB2P6lOcpAyGh"></script>
 	<title>酒店狗</title>
 </head>
 <body>
-	<div id="l-map"></div>
-	<div id="r-result"></div>
+	<div id="allmap"></div>
 </body>
 </html>
 <script type="text/javascript">
+	
+	var oText='<div id="text"><div><h3>广州市天河区天河北路278号岗顶大厦</h3><p>广州市天河区天河北路278号岗顶大厦</p></div><span>去这里</span></div>';
+	
 	// 百度地图API功能
-	var map = new BMap.Map("l-map");
-	map.centerAndZoom(new BMap.Point(116.404, 39.915), 15);
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(113.345651,23.140021);
+	//创建自己logo
+	var pt = new BMap.Point(113.345651,23.140021);
+	var myIcon = new BMap.Icon("img/map_logo.png", new BMap.Size(40,40));
+	var marker2 = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+	map.addOverlay(marker2);              // 将标注添加到地图
+	map.centerAndZoom(new BMap.Point(113.345382,23.14145), 16);        //设置中心点
+    var opts = {
+	  position : point,    // 指定文本标注所在的地理位置
+	  offset   : new BMap.Size(-160, -60)    //设置文本偏移量
+	}
+	var label = new BMap.Label(oText, opts);  // 创建文本标注对象
+	label.setStyle({
+		 color : "#474747",
+		 fontSize : "12px",
+		 height : "30px",
+		 lineHeight : "30px",
+		 fontFamily:"微软雅黑",
+		 border:"none"
+	 });
+	 
+	label.addEventListener("click", function(e){
+        window.open('http://a.app.qq.com/o/simple.jsp?pkgname=com.baidu.BaiduMap','_blank');
+    });
 
-	var driving = new BMap.DrivingRoute(map, {renderOptions: {map: map, panel: "r-result", autoViewport: true}});
-	driving.search("上海", "广州市天河区天河北路278号岗顶大厦");
+		 
+	map.addOverlay(label);  
+	
+	
 </script>
