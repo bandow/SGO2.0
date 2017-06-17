@@ -1,0 +1,82 @@
+.benefits-wrapper{
+	padding-top:40px;
+}
+.benefits-header{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	z-index:2;
+	width:100%;
+	height:40px;
+	background:#fff;
+	display:-webkit-flex;
+	display:flex;
+	align-content:center;
+	border-bottom:1px solid #ddd;;
+}
+.benefits-header a{
+	line-height:40px;
+	color:#474747;
+}
+.benefits-header h1{
+	margin:0;
+	font-size:16px;
+	line-height:40px;
+    color:#474747;
+    text-align:center;
+    flex:1;
+    margin-left: -20px;
+}
+
+.benefits-container{
+	margin-top:10px;
+	padding:10px;
+	background:#fff;
+}
+.benefits-container h3{
+	font-size:14px;
+	color:#F6AC1D;
+	font-weight:normal;
+}
+.benefits-container table{
+	margin-top:10px;
+	margin-bottom:40px;
+	font-size:12px;
+	width:100%;
+	border:1px solid #ccc;
+	color:#474747;
+}
+.benefits-container table td{
+	border:1px solid #ccc;
+	text-align:center;
+	line-height: 1.2;
+	padding:5px 0;
+}
+.benefits-container table thead{
+	background:#F6AC1D;
+	text-align:center;
+	color:#fff;
+}
+.benefits-container table thead tr{
+	height:30px;
+}
+.benefits-container table thead tr td{
+	font-size:14px;
+}
+.benefits-container table thead tr td:nth-child(1),.benefits-container table thead tr td:nth-child(3){
+	width:40%;
+}
+.benefits-container table thead tr td:nth-child(2){
+	width:20%;
+}
+.benefits-container table tbody tr td:nth-child(1){
+	width:20%;
+}
+.benefits-container table tbody tr:nth-child(2n){
+	background:#f0f0f0;
+}
+.benefits-container table tbody tr:nth-child(2) td:nth-child(1),
+.benefits-container table tbody tr:nth-child(8) td:nth-child(1){
+	background:#fff;
+}
