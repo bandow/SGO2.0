@@ -43,12 +43,26 @@
 						<i><img src="img/dog_icon1.png" alt="" /></i>
 						<span>228</span>
 					</p>
-					<p>
+					<p class="comment-p">
 						<i><img src="img/dog_icon2.png" alt="" /></i>
 						<span>15</span>
 					</p>
 				</div>
 			</div>
+			<div class="reply">
+				<p><span>阿猫：</span><span>感谢您的认可，您的十分满意就是对我们的肯定。</span></p>
+				<p><span>狗狗：</span><span>你的评论太屌了，谢谢您的肯定。</span></p>
+				<p><span>老王不装：</span><span>谢谢您</span></p>
+			</div>
+			
+			<div class="publish-btn">
+				<textarea placeholder="评论"></textarea>
+				<div class="b">
+					<p><i><img src="img/dog_icon3_color.png" alt="" /></i><span>匿名</span><span class="name">李二狗</span></p>
+					<a href="javascript:;">我要发布</a>
+				</div>
+			</div>
+			
 		</div>
 		<div class="items lists">
 			<div class="t">
@@ -76,12 +90,26 @@
 						<i><img src="img/dog_icon1.png" alt="" /></i>
 						<span>228</span>
 					</p>
-					<p>
+					<p class="comment-p">
 						<i><img src="img/dog_icon2.png" alt="" /></i>
 						<span>15</span>
 					</p>
 				</div>
 			</div>
+			<div class="reply">
+				<p><span>阿猫：</span><span>感谢您的认可，您的十分满意就是对我们的肯定。</span></p>
+				<p><span>狗狗：</span><span>你的评论太屌了，谢谢您的肯定。</span></p>
+				<p><span>老王不装：</span><span>谢谢您</span></p>
+			</div>
+			
+			<div class="publish-btn">
+				<textarea placeholder="评论"></textarea>
+				<div class="b">
+					<p><i><img src="img/dog_icon3_color.png" alt="" /></i><span>匿名</span><span class="name">李二狗</span></p>
+					<a href="javascript:;">我要发布</a>
+				</div>
+			</div>
+			
 		</div>
 		<div class="items lists">
 			<div class="t">
@@ -109,14 +137,31 @@
 						<i><img src="img/dog_icon1.png" alt="" /></i>
 						<span>228</span>
 					</p>
-					<p>
+					<p class="comment-p">
 						<i><img src="img/dog_icon2.png" alt="" /></i>
 						<span>15</span>
 					</p>
 				</div>
 			</div>
+			<div class="reply">
+				<p><span>阿猫：</span><span>感谢您的认可，您的十分满意就是对我们的肯定。</span></p>
+				<p><span>狗狗：</span><span>你的评论太屌了，谢谢您的肯定。</span></p>
+				<p><span>老王不装：</span><span>谢谢您</span></p>
+			</div>
+			
+			<div class="publish-btn">
+				<textarea placeholder="评论"></textarea>
+				<div class="b">
+					<p><i><img src="img/dog_icon3_color.png" alt="" /></i><span>匿名</span><span class="name">李二狗</span></p>
+					<a href="javascript:;">我要发布</a>
+				</div>
+			</div>
+			
 		</div>
 	</div>
+	
+	
+	
 </div>
 <div class="sgo-page-img">
 	<header class="img-header">
@@ -138,6 +183,7 @@
 	    </div>
 	    <div class="swiper-pagination"></div>
 	</div>
+	
 </div>
 <script src="js/mui.min.js"></script>
 <script type="text/javascript">
@@ -225,6 +271,35 @@
 			$(this).parent().parent().remove();
 		})
 	});
+	
+	
+	var noName=$(".publish-btn p .name").text()+'：';
+	
+	var flag;
+	$(".publish-btn p").on("click",function(){
+		if(flag==true){
+			$(this).find("img").attr("src","img/dog_icon3.png");
+			noName="匿名：";
+			flag=false;
+		}else{
+			$(this).find("img").attr("src","img/dog_icon3_color.png");
+			noName=noName;
+			flag=true;
+		}
+	});
+	
+
+	$(".comment-p").on("click",function(){
+		$(this).parent().parent().next().next().show();
+		
+	});
+	$(".publish-btn a").on("click",function(){
+		var tVal=$(this).parent().prev().val();
+		$(this).parent().parent().prev().append("<p><span>"+noName+"</span><span>"+tVal+"<span></p>")
+		$(".publish-btn").hide();
+	});
+
+	
 </script>
 </body>
 </html>

@@ -106,6 +106,8 @@
 	display:flex;
 	align-items:center;
 	justify-content:space-between;
+	padding-bottom:5px;
+	border-bottom:1px solid #ddd;
 }
 .doghouse-container .items .b>p{
 	display:-webkit-flex;
@@ -214,4 +216,71 @@
 	text-align: center;
 	color: #fff;
 	border-radius: 30px;
+}
+
+.reply{
+	padding-top:10px;
+}
+.reply p{
+	font-size:12px;
+	color:#4c4c4c;
+	margin:0;
+}
+.reply p span:first-child{
+	color:#F6AC1D;
+}
+
+
+.publish-btn{
+	display:none;
+	margin-top:50px;
+	background:#fff;
+	position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.publish-btn textarea{
+	margin:0;
+	font-size:12px;
+    padding:10px;
+    border:none;
+    border-bottom: 1px solid #ddd;
+    line-height:12px;
+}
+.publish-btn .b{
+	display:-webkit-flex;
+	display: flex;
+	align-items:center;	
+	margin:0 !important;
+	padding: 0 !important;
+}
+.publish-btn p{
+	flex:1;
+	margin:0;
+	display:-webkit-flex;
+	display: flex;
+	align-items:center;
+}
+.publish-btn p i{
+	width:18px !important;
+	line-height:0 !important;
+	margin-left:10px !important;
+	margin-right:0 !important;
+}
+.publish-btn p i img{
+	width:100%;
+}
+.publish-btn p span{
+	font-size:12px;
+	margin-left:10px;
+}
+.publish-btn a{
+	flex:1.5;
+	color:#fff;
+	background:#f6ac1d;
+	text-align:center;
+	padding:15px 0;
+	font-size:16px;
 }

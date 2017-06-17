@@ -48,7 +48,7 @@
 			</div>
 		</div>
 		<div class="publish-btn">
-			<p><i><img src="img/dog_icon3.png" alt="" /></i><span>匿名</span><span>李二狗</span></p>
+			<p><i><img src="img/dog_icon3_color.png" alt="" /></i><span>匿名</span><span>李二狗</span></p>
 			<a href="">我要发布</a>
 		</div>
 	</div>
@@ -66,6 +66,16 @@
 	$(function(){
 		$(".mood ul li").on("click",function(){
 			$(this).addClass("active").siblings().removeClass("active");
+		})
+		var flag=false;
+		$(".publish-btn p").on("click",function(){
+			if(!flag){
+				$(this).find("img").attr("src","img/dog_icon3.png");
+				flag=true;
+			}else{
+				$(this).find("img").attr("src","img/dog_icon3_color.png");
+				flag=false;
+			}
 		})
 	})
 </script>
