@@ -58,7 +58,7 @@
 			<div class="publish-btn">
 				<textarea placeholder="评论"></textarea>
 				<div class="b">
-					<p><i><img src="img/dog_icon3_color.png" alt="" /></i><span>匿名</span><span class="name">李二狗</span></p>
+					<p><i></i><span>匿名</span><span class="name">李二狗</span></p>
 					<a href="javascript:;">我要发布</a>
 				</div>
 			</div>
@@ -105,7 +105,7 @@
 			<div class="publish-btn">
 				<textarea placeholder="评论"></textarea>
 				<div class="b">
-					<p><i><img src="img/dog_icon3_color.png" alt="" /></i><span>匿名</span><span class="name">李二狗</span></p>
+					<p><i></i><span>匿名</span><span class="name">李二狗</span></p>
 					<a href="javascript:;">我要发布</a>
 				</div>
 			</div>
@@ -152,7 +152,7 @@
 			<div class="publish-btn">
 				<textarea placeholder="评论"></textarea>
 				<div class="b">
-					<p><i><img src="img/dog_icon3_color.png" alt="" /></i><span>匿名</span><span class="name">李二狗</span></p>
+					<p><i></i><span>匿名</span><span class="name">李二狗</span></p>
 					<a href="javascript:;">我要发布</a>
 				</div>
 			</div>
@@ -273,18 +273,14 @@
 	});
 	
 	
-	var noName=$(".publish-btn p .name").text()+'：';
+
 	
-	var flag;
 	$(".publish-btn p").on("click",function(){
-		if(flag==true){
-			$(this).find("img").attr("src","img/dog_icon3.png");
+		$(this).toggleClass("active");
+		if($(this).hasClass("active")){
 			noName="匿名：";
-			flag=false;
 		}else{
-			$(this).find("img").attr("src","img/dog_icon3_color.png");
-			noName=noName;
-			flag=true;
+			noName=$(this).find(".name").text()+'：';
 		}
 	});
 	
@@ -292,9 +288,11 @@
 	$(".comment-p").on("click",function(){
 		$(this).parent().parent().next().next().show();
 		
+		$(this).parent().parent().next().next().find("p").removeClass("active");
 	});
 	$(".publish-btn a").on("click",function(){
 		var tVal=$(this).parent().prev().val();
+		var noName=$(this).find(".name").text()+'：';
 		$(this).parent().parent().prev().append("<p><span>"+noName+"</span><span>"+tVal+"<span></p>")
 		$(".publish-btn").hide();
 	});

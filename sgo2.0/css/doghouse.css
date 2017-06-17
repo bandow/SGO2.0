@@ -117,6 +117,7 @@
 }
 .doghouse-container .items .b>p i{
 	width:10px;
+	height:10px;;
 	line-height:0;
 	margin-right:5px;
 }
@@ -265,9 +266,16 @@
 }
 .publish-btn p i{
 	width:18px !important;
+	height:18px !important;
 	line-height:0 !important;
 	margin-left:10px !important;
 	margin-right:0 !important;
+	background:url(../img/dog_icon3_color.png) no-repeat;
+	background-size: 100% 100%;
+}
+.publish-btn p.active i{
+	background:url(../img/dog_icon3.png) no-repeat;
+	background-size: 100% 100%;
 }
 .publish-btn p i img{
 	width:100%;
