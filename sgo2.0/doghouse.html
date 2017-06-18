@@ -273,26 +273,33 @@
 	});
 	
 	
-
+   var noName;
 	
 	$(".publish-btn p").on("click",function(){
 		$(this).toggleClass("active");
 		if($(this).hasClass("active")){
-			noName="匿名：";
+			noName=$(this).find("span:nth-child(2)").text()+'：';
 		}else{
 			noName=$(this).find(".name").text()+'：';
 		}
+		console.log(noName);
 	});
 	
 
 	$(".comment-p").on("click",function(){
 		$(this).parent().parent().next().next().show();
-		
-		$(this).parent().parent().next().next().find("p").removeClass("active");
+
+		if($(this).parent().parent().next().next().find("p").hasClass("active")){
+			noName=$(this).parent().parent().next().next().find("span:nth-child(2)").text()+'：';
+		}else{
+			noName=$(this).parent().parent().next().next().find(".name").text()+'：';
+		}
+
+		console.log(noName);
 	});
 	$(".publish-btn a").on("click",function(){
 		var tVal=$(this).parent().prev().val();
-		var noName=$(this).find(".name").text()+'：';
+		//noName=$(this).find(".name").text()+'：';
 		$(this).parent().parent().prev().append("<p><span>"+noName+"</span><span>"+tVal+"<span></p>")
 		$(".publish-btn").hide();
 	});
