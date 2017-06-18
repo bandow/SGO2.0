@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link href="css/mui.min.css" rel="stylesheet" />
+<link href="css/orderInfo.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="orders-info-header">
+	    <a onclick="goback()" href="javascript:;"><span class="mui-icon mui-icon-back"></span></a>
+	    <h1>订单详情</h1>
+	</header>
+	<div class="orders-info-container">
+		<div class="info-content">
+			<div class="title">
+				<div class="l">
+					<h2>广州市永泰商务酒店</h2>
+					<p><span>广州市天河区天河北路278号岗顶大厦</span></p>
+				</div>
+				<div class="r">
+					<a class="sgo-arrow" href="">详情</a>
+				</div>
+			</div>
+			<div class="text">
+				<h2>高级豪华大床房</h2>
+				<p>2017-5-25 至 2017-5-27<span>2晚</span>2间</p>
+				<p>含早：1份</p>
+				<p>预订人：YESON</p>
+				<p>联系电话：18685255588</p>
+			</div>
+			<div class="btn">
+				<a href="map.html">
+					<i><img src="img/index_icon6.png" alt=""></i>
+					<span>地图导航</span>
+				</a>
+				<a href="tel:12345678;">
+					<i><img src="img/phone_icon.png" alt=""></i>
+					<span>联系酒店</span>
+				</a>
+			</div>
+		</div>
+		
+		<div class="order-info">
+			<h5><span>订单信息</span><span>预订成功</span></h5>
+			<p><span>订单号</span><span>10023587</span></p>
+			<p><span>订单金额</span><span>¥358</span></p>
+			<p><span>优惠券抵扣</span><span>-¥10</span></p>
+			<p><span>下单日期</span><span>2017-05-26 15:25</span></p>
+		</div>
+		<div class="order-info-prompt">
+			<h5><i><img src="img/ordersubmit_icon2.png" alt="" /></i>温馨提示</h5> 
+			<p>1.预订房费，我们将为您一直保留房间并不可取消 </p>
+			<p>2.取消预订单或预订未到优惠券不返还 </p>
+			<p>3.酒店办理入住若为当天14:00，早到可能需要等待</p>
+			<p>4.索要发票请到酒店前台</p>
+		</div>
+		<div class="order-info-btn">
+			<a href="">取消</a>
+			<a href="">支付 ￥358</a>
+		</div>	
+	</div>   
+</body>
+<script src="js/mui.min.js"></script>
+<script>
+	mui.init({
+		swipeBack:true //启用右滑关闭功能
+	});
+	function goback(){
+		window.history.go(-1);
+	}
+</script>
+</html>
