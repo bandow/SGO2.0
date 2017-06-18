@@ -1,4 +1,5 @@
 .slider-container {
+	margin:0 auto;
   width: 300px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -66,7 +67,8 @@
   cursor: auto;
 }
 .theme-green .back-bar {
-  height: 5px;
+  height:2px;
+  margin:15px 0;
   border-radius: 2px;
   background-color: #eeeeee;
   background-color: #e7e7e7;
@@ -106,22 +108,23 @@
   background-image: linear-gradient(to bottom, #eeeeee, #dddddd);*/
   background-repeat: repeat-x;
   /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffdddddd', GradientType=0);*/
-  background-image:url('../img/range2.png');
-  background-size:30px 30px;
+  /*background-image:url('../img/range2.png');
+  background-size:30px 30px;*/
 }
 .theme-green .back-bar .pointer.low{
   background-image:url('../img/range1.png');
   background-size:30px 30px;
 }
-/*.theme-green .back-bar .pointer.last-active{
-   background-image:url('../img/range1.png');
+.theme-green .back-bar .pointer.high{
+  background-image:url('../img/range2.png');
   background-size:30px 30px;
-}*/
+}
 
 
 
 .theme-green .back-bar .pointer-label {
   color: #999;
+  opacity:0;
 }
 .theme-green .back-bar .focused {
   color: #333;

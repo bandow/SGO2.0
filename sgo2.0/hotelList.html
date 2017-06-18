@@ -190,7 +190,7 @@
 			<div class="price">
 				<div class="title"><h5>价格</h5></div>
 				<div class="line" id="line">
-					<input type="hidden" class="slider-input" value="0,0" />
+					<input type="hidden" class="slider-input" value="0,2500" />
 				</div>			 
 			</div>
 			<div class="items">
@@ -465,20 +465,24 @@
 	    	//滑动选取数值范围
 	    	$('.slider-input').jRange({
 			    from: 0,
-			    to: 2500,
-			    //step: 1,
-			    scale: ['¥0','¥500','¥1000','¥1500','¥2000','不限'],
-			    format: '%s',
-			    width: 'auto',
-			    showLabels: false,
-			    isRange : false
+				to: 2500,
+				step: 1,
+				scale: [0,500,1000,1500,2000,'不限'],
+				format: '%s',
+				width: 300,
+				showLabels: true,
+				isRange : true,
 			});
 
 			//重置
 			empty.onclick=function(){
 				$(".slider-input").val(0);
-				$(".pointer").css("left","0");
-				$(".selected-bar").css("width","0");
+				$(".low").css("left","-15px");
+				$(".high").css("left",285);
+				$(".selected-bar").css({
+					width:"300px",
+					left:0
+				});
                 for(var i=0;i<itemsLi.length;i++){
             		itemsLi[i].className='';
             	}  

@@ -8,7 +8,6 @@
     <link href="css/swiper-3.4.2.min.css" rel="stylesheet"/>
     <link href="css/index.css" rel="stylesheet"/>
     <link href="css/daterangepicker.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/cityPicker.css">
     <style>
     	.date-picker-wrapper{z-index:10!important;}
     	.date-picker-wrapper .last-date-selected{background-color: #ffe5b4 !important;border-radius: 0 100% 100% 0;}
@@ -331,11 +330,71 @@
 		    			<dd><a href="">阿拉尔</a></dd>
 		    			<dd><a href="">阿拉善盟</a></dd>
 		    			<dd><a href="">阿拉善盟阿拉善盟</a></dd>
+		    			<dd><a href="">阿贝</a></dd>
+		    			<dd><a href="">阿尔山市</a></dd>
+		    			<dd><a href="">阿克苏</a></dd>
+		    			<dd><a href="">阿拉尔</a></dd>
+		    			<dd><a href="">阿拉善盟</a></dd>
+		    			<dd><a href="">阿拉善盟阿拉善盟</a></dd>
+		    			<dd><a href="">阿贝</a></dd>
+		    			<dd><a href="">阿尔山市</a></dd>
+		    			<dd><a href="">阿克苏</a></dd>
+		    			<dd><a href="">阿拉尔</a></dd>
+		    			<dd><a href="">阿拉善盟</a></dd>
+		    			<dd><a href="">阿拉善盟阿拉善盟</a></dd>
+		    			<dd><a href="">阿贝</a></dd>
+		    			<dd><a href="">阿尔山市</a></dd>
+		    			<dd><a href="">阿克苏</a></dd>
+		    			<dd><a href="">阿拉尔</a></dd>
+		    			<dd><a href="">阿拉善盟</a></dd>
+		    			<dd><a href="">阿拉善盟阿拉善盟</a></dd>
+		    			<dd><a href="">阿贝</a></dd>
+		    			<dd><a href="">阿尔山市</a></dd>
+		    			<dd><a href="">阿克苏</a></dd>
+		    			<dd><a href="">阿拉尔</a></dd>
+		    			<dd><a href="">阿拉善盟</a></dd>
+		    			<dd><a href="">阿拉善盟阿拉善盟</a></dd>
+		    			<dd><a href="">阿贝</a></dd>
+		    			<dd><a href="">阿尔山市</a></dd>
+		    			<dd><a href="">阿克苏</a></dd>
+		    			<dd><a href="">阿拉尔</a></dd>
+		    			<dd><a href="">阿拉善盟</a></dd>
+		    			<dd><a href="">阿拉善盟阿拉善盟</a></dd>
 		    		</dl>
 		    	</div>
-		    	<div class="city-title" id="B"><h6>A</h6></div>
+		    	<div class="city-title" id="B"><h6>B</h6></div>
 		    	<div class="city-list-select">
 		    		<dl>
+		    			<dd><a href="">阿贝</a></dd>
+		    			<dd><a href="">阿尔山市</a></dd>
+		    			<dd><a href="">阿克苏</a></dd>
+		    			<dd><a href="">阿拉尔</a></dd>
+		    			<dd><a href="">阿拉善盟</a></dd>
+		    			<dd><a href="">阿拉善盟阿拉善盟</a></dd>
+		    			<dd><a href="">阿贝</a></dd>
+		    			<dd><a href="">阿尔山市</a></dd>
+		    			<dd><a href="">阿克苏</a></dd>
+		    			<dd><a href="">阿拉尔</a></dd>
+		    			<dd><a href="">阿拉善盟</a></dd>
+		    			<dd><a href="">阿拉善盟阿拉善盟</a></dd>
+		    			<dd><a href="">阿贝</a></dd>
+		    			<dd><a href="">阿尔山市</a></dd>
+		    			<dd><a href="">阿克苏</a></dd>
+		    			<dd><a href="">阿拉尔</a></dd>
+		    			<dd><a href="">阿拉善盟</a></dd>
+		    			<dd><a href="">阿拉善盟阿拉善盟</a></dd>
+		    			<dd><a href="">阿贝</a></dd>
+		    			<dd><a href="">阿尔山市</a></dd>
+		    			<dd><a href="">阿克苏</a></dd>
+		    			<dd><a href="">阿拉尔</a></dd>
+		    			<dd><a href="">阿拉善盟</a></dd>
+		    			<dd><a href="">阿拉善盟阿拉善盟</a></dd>
+		    			<dd><a href="">阿贝</a></dd>
+		    			<dd><a href="">阿尔山市</a></dd>
+		    			<dd><a href="">阿克苏</a></dd>
+		    			<dd><a href="">阿拉尔</a></dd>
+		    			<dd><a href="">阿拉善盟</a></dd>
+		    			<dd><a href="">阿拉善盟阿拉善盟</a></dd>
 		    			<dd><a href="">阿贝</a></dd>
 		    			<dd><a href="">阿尔山市</a></dd>
 		    			<dd><a href="">阿克苏</a></dd>
@@ -345,6 +404,7 @@
 		    		</dl>
 		    	</div>
 		    </div>
+		    
 		    <div id="listName">  
 	            <ul>  
 	                <li>刘一</li>  
@@ -391,6 +451,7 @@
 		<a href="#D"><span>D</span></a>
 		<a href="#E"><span>E</span></a>
 	</div>
+	<div class="list-bar-tip"></div>
 	<script src="js/mui.min.js"></script>
 	<script type="text/javascript" charset="utf-8">
 		//mui初始化
@@ -427,17 +488,24 @@
 		var sgoPageWrapperHeader=document.querySelector('.sgo-page-wrapper-header');
 		var sidebarRightSide=document.querySelector('.sidebar-right-side');
 		var hotelList=document.getElementById('hotelList');
+		
+		var listBarTip=document.querySelector(".list-bar-tip");
+		
 		citySelected.onclick=function(){
 			appPageWrapper.setAttribute('class','app-page-wrapper active');
 			citySelectPage.style.display='block';
 			sgoPageWrapperHeader.style.zIndex=12;
 			sidebarRightSide.style.zIndex=12;
+			listBarTip.style.zIndex=12;
 			setTimeout(function(){
 				appPageWrapper.style.display='none';
 			},500)
 			setTimeout(function(){	
 				citySelectPage.setAttribute('class','sgo-page-wrapper active');
 			},0)
+			setTimeout(function(){
+				citySelectPage.setAttribute('class','sgo-page-wrapper active on');
+			},500)
 		}
 		closePage.onclick=function(){
 			citySelectPage.setAttribute('class','sgo-page-wrapper');
@@ -449,8 +517,12 @@
 				appPageWrapper.setAttribute('class','app-page-wrapper');
 				sgoPageWrapperHeader.style.zIndex=-1;
 				sidebarRightSide.style.zIndex=-1;
+				listBarTip.style.zIndex=-1;
 			},0)
 		}
+		
+		
+		
 		hotelList.onclick=function(){
 			location.href="hotelList.html";
 		}
@@ -680,13 +752,18 @@
 		}  
 
         $(document).ready(function(){init();}); 
-
-
+	
         
-    </script>
-    <script src="js/cityPicker.js"></script>
-    <script type="text/javascript">
-	    $("#citySelected").CityPicker();
-	</script>
+        $(".sidebar-right-side a").on("touchstart",function(){
+        	var href = $(this).attr("href");
+			var pos = $(href).offset().top-40;
+			$(".list-bar-tip").text($(this).text()).show();
+			setTimeout(function(){
+				$(".list-bar-tip").hide();
+			},1000);
+			$("html,body").animate({scrollTop: pos}, 1000);
+			return false;
+        })
+   </script>
 </body>
 </html>
