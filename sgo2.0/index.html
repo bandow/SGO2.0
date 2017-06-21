@@ -286,9 +286,11 @@
 	<div class="sgo-page-wrapper" id="citySelectPage">		
 		<div class="mui-content">
 			<div class="search">
-				<div class="mui-input-row mui-search">
+				<!-- <div class="mui-input-row mui-search">
 				    <input type="search" class="mui-input-clear" placeholder="" id="s_custname" value=""  AutoComplete="off" size=60 maxlength=256>
-				</div>
+				</div> -->
+				<div id="search-form"></div>
+		        <!-- <div id="message"></div> -->
 			</div>
 		    <div class="list">
 		    	<div class="city-title"><h6>当前位置</h6></div>
@@ -405,39 +407,7 @@
 		    	</div>
 		    </div>
 		    
-		    <div id="listName">  
-	            <ul>  
-	                <li>刘一</li>  
-	                <li>刘二</li>  
-	                <li>刘三</li>  
-	                <li>陈一</li>  
-	                <li>陈二</li>  
-	                <li>陈三</li>  
-	                <li>张一</li>  
-	                <li>张二</li>  
-	                <li>张三</li>  
-	                <li>李二</li>  
-	                <li>李三</li>  
-	                <li>李四</li>  
-	                <li>王三</li>  
-	                <li>王四 </li>  
-	                <li>王五 </li>  
-	                <li>赵四 </li>  
-	                <li>赵五 </li>  
-	                <li>赵五</li>  
-	                <li>孙五</li>  
-	                <li>孙六 </li>  
-	                <li>孙七</li>  
-	                <li>周六</li>  
-	                <li>周七  </li>  
-	                <li>周八</li>  
-	                <li>吴七</li>  
-	                <li>吴八 </li>  
-	                <li>吴九 </li>  
-	                <li>郑八</li>  
-	                <li>郑十</li>  
-	            </ul>  
-	        </div>
+		 
 		</div>
 	</div>
     <div class="sgo-page-wrapper-header">
@@ -645,136 +615,166 @@
 		});           
 	}); 
 	</script>
-	<script>
-	    //编辑框下拉列表
-        var flag1 = 0;  
-		var flag2 = 0;  
-		var pos=-1, pos2=-1;  
-		  
-		function init(){      
-		    var t, t2;    
-		    //$("#listName").css("top",$("#inputBox").css("top")+$("#inputBox").css("height"));  
-		   // $("#listName").css("left",$("#inputBox").css("left"));  
-		    hide();  
-		    //$("li").css("font-size",$("#s_custemail").css("font-size"));  
-		   // $("li").css("font-size",$("#s_custname").css("font-size"));  
-		   // $("li").css("text-align","left");  
-		      
-		    bindInput();  
-		   
-		    var name = $("#s_custname");  
-		  
-		    $("#listName li").mouseup(function(){  
-		        var str = $(this).text();  
-		        setValue(name, str);  
-		    });   
-		  
-		    $('#listName li').mousemove(function(e){  
-		        pos2 = getMouseLocation(e);  
-		    });  
-		  
-		    $("#s_custname").blur(function(){  
-		        if( pos==-1 || !isOutOfBound(pos,0) ){  
-		            pos = -1;  
-		            hide();  
-		        }  
-		    });
+	<script>   
+		(function($) {
+			$.fn.autocomplete = function(params) {
+				
+				//Selections
+				var currentSelection = -1;
+				var currentProposals = [];
+				
+				//Default parameters
+				params = $.extend({
+					hints: [],
+					placeholder: 'Search',
+					width: 200,
+					height: 16,
+					showButton: true,
+					buttonText: 'Search',
+					onSubmit: function(text){},
+					onBlur: function(){}
+				}, params);
+
+				//Build messagess
+				this.each(function() {
+					//Container
+					var searchContainer = $('<div></div>')
+						.addClass('autocomplete-container')
+						.css('height', params.height * 2);	
+						
+					//Text input		
+					var input = $('<input type="text" autocomplete="off" name="query">')
+						.attr('placeholder', params.placeholder)
+						.addClass('autocomplete-input')
+						.css({
+							'width' : params.width,
+							'height' : params.height
+						});
+					
+					if(params.showButton){
+						input.css('border-radius', '3px');
+					}
+
+					//Proposals
+					var proposals = $('<div></div>')
+						.addClass('proposal-box')
+						.css('width', params.width + 18)
+						.css('top', input.height() + 20);
+					var proposalList = $('<ul></ul>')
+						.addClass('proposal-list');
+
+					proposals.append(proposalList);
+					
+					input.keydown(function(e) {
+						switch(e.which) {
+							case 38: // Up arrow
+							e.preventDefault();
+							$('ul.proposal-list li').removeClass('selected');
+							if((currentSelection - 1) >= 0){
+								currentSelection--;
+								$( "ul.proposal-list li:eq(" + currentSelection + ")" )
+									.addClass('selected');
+							} else {
+								currentSelection = -1;
+							}
+							break;
+							case 40: // Down arrow
+							e.preventDefault();
+							if((currentSelection + 1) < currentProposals.length){
+								$('ul.proposal-list li').removeClass('selected');
+								currentSelection++;
+								$( "ul.proposal-list li:eq(" + currentSelection + ")" )
+									.addClass('selected');
+							}
+							break;
+							case 13: // Enter
+								if(currentSelection > -1){
+									var text = $( "ul.proposal-list li:eq(" + currentSelection + ")" ).html();
+									input.val(text);
+								}
+								currentSelection = -1;
+								proposalList.empty();
+								params.onSubmit(input.val());
+								break;
+							case 27: // Esc button
+								currentSelection = -1;
+								proposalList.empty();
+								input.val('');
+								break;
+						}
+					});
+						
+					input.bind("change paste keyup", function(e){
+						if(e.which != 13 && e.which != 27 
+								&& e.which != 38 && e.which != 40){				
+							currentProposals = [];
+							currentSelection = -1;
+							proposalList.empty();
+							if(input.val() != ''){
+								var word = "^" + input.val() + ".*";
+								proposalList.empty();
+								for(var test in params.hints){
+									if(params.hints[test].match(word)){
+										currentProposals.push(params.hints[test]);	
+										var element = $('<li></li>')
+											.html(params.hints[test])
+											.addClass('proposal')
+											.click(function(){
+												input.val($(this).html());
+												proposalList.empty();
+												params.onSubmit(input.val());
+											})
+											.mouseenter(function() {
+												$(this).addClass('selected');
+											})
+											.mouseleave(function() {
+												$(this).removeClass('selected');
+											});
+										proposalList.append(element);
+									}
+								}
+							}
+						}
+					});
+					
+					input.blur(function(e){
+						currentSelection = -1;
+						//proposalList.empty();
+						params.onBlur();
+					});
+					
+					searchContainer.append(input);
+					searchContainer.append(proposals);		
+					
+					/*if(params.showButton){
+						//Search button
+						var button = $('<div></div>')
+							.addClass('autocomplete-button')
+							.html(params.buttonText)
+							.css({
+								'height': params.height + 2,
+								'line-height': params.height + 2 + 'px'
+							})
+							.click(function(){
+								proposalList.empty();
+								params.onSubmit(input.val());
+							});
+						searchContainer.append(button);	
+					}*/
 			
-			$("#s_custname").on("input",function(){
-				 if($("#s_custname").val()==""){
-			    	hide();
-			    }  
-			})
-		}  
-		  
-		  
-		function bindInput(){  
-		    //IE  
-		    if (window.ActiveXObject){  
-		        document.getElementById('s_custname').attachEvent("onpropertychange",show2);  
-		    }else{  
-		        $("#s_custname").bind("input",show2);  
-		    }  
-		}  
-		   	  
-		function show2(){  
-		    var s_value = $("#s_custname").val();  
-		    $("#listName").children().children("li").hide();  
-		    showListName();  
-		    if(s_value.length >= 1){  
-		        $("#listName").children().children("li").each(function(){  
-		            var tmp = $(this).text().substr(0,$(this).text().length);  
-		                          
-		            if(tmp && s_value==tmp.substr(0,s_value.length)){  
-		                $(this).show();  
-		                flag1 = 1;  
-		            }  
-		        });  
-		    }  
-		}  
-		  
-		function hide(){  
-		    $("#listName").css("display","none");  
+					$(this).append(searchContainer);	
+					
+					/*if(params.showButton){
+						//Width fix
+						searchContainer.css('width', params.width + button.width() + 50);
+					}*/
+				});
 
-		    $(".list").css('display', 'block'); 
-		    $(".sidebar-right-side").css('display', 'block');
-		}  
-		  
-		function setValue(obj, str){  
-		    obj.val(str);  
-		    hide();  
-		    obj.focus();  
-		}  
-		  	  
-		function showListName(){  
-		    var obj = $('#s_custname');  
-		    $("#listName").css("left",0);  
-		    $("#listName").css("top", parseInt(obj.offset().top + obj.outerHeight()));      
-		    $("#listName").css('display', 'block'); 
+				return this;
+			};
 
+		})(jQuery);
 
-		    $(".list").css('display', 'none'); 
-		    $(".sidebar-right-side").css('display', 'none');
-		}  
-		  
-		
-		  
-		function getMouseLocation(event) {  
-		    var __is_ff = (navigator.userAgent.indexOf("Firefox") != -1); //Firefox   
-		    var e = getEvent(event);  
-		    var mouseX = 0;  
-		    var mouseY = 0;  
-		    var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;  
-		    var scrollY = document.documentElement.scrollTop || document.body.scrollTop;  
-		    if (__is_ff) {  
-		        mouseX = e.layerX + document.body.scrollLeft;  
-		        mouseY = e.layerY + document.body.scrollLeft;  
-		    }  
-		    else {  
-		        mouseX = e.pageX || e.clientX + scrollX;  
-		        mouseY = e.pageY || e.clientY + scrollY;  
-		    }  
-		    return { x: mouseX, y: mouseY };  
-		}  
-		  
-		function isOutOfBound(pos, flag){  
-		    var obj;  
-		    if (flag) {  
-		        obj = $('#listName');  
-		    }  
-		    if (pos && obj   
-		        &&pos.x >= obj.offset().left  
-		        && pos.x <= obj.offset().left+obj.outerWidth()  
-		        && pos.y >= obj.offset().top  
-		        && pos.y <= obj.offset().top+obj.outerHeight() ) {  
-		        return true;  
-		    };  
-		    return false;  
-		}  
-
-        $(document).ready(function(){init();}); 
-	
-        
         $(".sidebar-right-side a").on("touchstart",function(){
         	var href = $(this).attr("href");
 			var pos = $(href).offset().top-40;
@@ -786,5 +786,22 @@
 			return false;
         })
    </script>
+
+
+<script type="text/javascript">
+var proposals = ['百度1', '百度2', '百度3', '百度4', '百度5', '百度6', '百度7','呵呵呵呵呵呵呵','百度','新浪','a1','a2','a3','a4','b1','b2','b3','b4'];
+
+$(document).ready(function(){
+	$('#search-form').autocomplete({
+		hints: proposals,
+		width: '100%',
+		height: 36,
+		onSubmit: function(text){
+			$('#message').html('Selected: <b>' + text + '</b>');			
+		}
+	});
+});
+</script>
+
 </body>
 </html>
