@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link href="css/mui.min.css" rel="stylesheet" />
+<link href="css/indexSgo.css" rel="stylesheet" />
+<link href="css/swiper-3.4.2.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="warpper sgo-warpper">
+	<header class="header">
+		<div class="top">
+			<a href="javascript:;"></a>
+			<p><i><img src="img/index/index_icon1.png" alt=""></i><span>清除全部</span></p>
+		</div>
+		<div class="item">
+			<i><img src="img/index/index_icon2.png" alt=""></i><span>搜索你的鹿驻</span>
+		</div>
+		<div class="item">
+			<i><img src="img/index/index_icon3.png" alt=""></i><span>任何时间</span>
+		</div>
+		<div class="item">
+			<i><img src="img/index/index_icon4.png" alt=""></i><span>1位</span>
+		</div>
+	</header>
+	<div class="swiper-container swiper1">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide"><img src="img/index/1-1.jpg" alt=""></div>
+	        <div class="swiper-slide"><img src="img/index/1-1.jpg" alt=""></div>
+	        <div class="swiper-slide"><img src="img/index/1-1.jpg" alt=""></div>
+	    </div>
+	    <div class="swiper-pagination"></div>
+	</div>
+    <div class="title">
+    	<h2>城央民宿 放心鹿驻</h2>
+    	<p>放心品质 放心服务 放心入住</p>
+    </div>
+	<div class="swiper-container swiper2">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide"><img src="img/index/2-1.jpg" alt=""></div>
+	        <div class="swiper-slide"><img src="img/index/2-1.jpg" alt=""></div>
+	        <div class="swiper-slide"><img src="img/index/2-1.jpg" alt=""></div>
+	    </div>
+	    <div class="swiper-pagination"></div>
+	    <div class="money">
+	    	<p>每晚最低</p>
+	    	<h6 class="money-tab">¥268</h6>
+	    </div>
+	</div>
+    <div class="title">
+    	<h2>最新活动</h2>
+    	<p>不安一隅 给出行多一个理由</p>
+    </div>
+    <div class="swiper-container swiper3">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide"><img src="img/index/3-1.jpg" alt=""></div>
+	        <div class="swiper-slide"><img src="img/index/3-1.jpg" alt=""></div>
+	        <div class="swiper-slide"><img src="img/index/3-1.jpg" alt=""></div>
+	    </div>
+	    <div class="swiper-pagination"></div>
+	</div>
+	<div class="title-list">
+		<a href="" class="itmes">
+			<h3>差旅发票</h3>
+			<p>商务差旅，开具发票</p>
+			<i><img src="img/index/index_icon5.png" alt=""></i>
+		</a>
+		<a href="" class="itmes">
+			<h3>芝麻信用</h3>
+			<p>累积信用，居住自由</p>
+			<i><img src="img/index/index_icon5.png" alt=""></i>
+		</a>
+		<a href="" class="itmes">
+			<h3>蚂蚁花呗</h3>
+			<p>先住后付，分期还款</p>
+			<i><img src="img/index/index_icon5.png" alt=""></i>
+		</a>
+		<a href="" class="itmes">
+			<h3>鹿驻保险</h3>
+			<p>房东房客，免费保险</p>
+			<i><img src="img/index/index_icon5.png" alt=""></i>
+		</a>
+	</div>
+	<div class="img">
+		<img src="img/index/bg1.jpg" alt="">
+	</div>
+</div>
+<!-- script begin -->
+<script src="js/mui.min.js"></script>
+<script type="text/javascript">
+	mui.init()
+</script>
+<script src="js/jquery-1.12.2.min.js"></script>
+<script src="js/swiper-3.4.2.min.js"></script>
+<script language="javascript"> 
+	var mySwiper = new Swiper('.swiper1',{
+		pagination:'.swiper-pagination',
+		loop:true,
+		autoplay:3000,
+	})
+	var mySwiper = new Swiper('.swiper2',{
+		pagination:'.swiper-pagination',
+		loop:true,
+		autoplay:3000,
+		paginationClickable: true,
+		paginationBulletRender: function (swiper, index, className) {
+		  return '<span class="' + className + '">' + (index + 1) + '</span>';
+		},
+		onSlideChangeEnd: function(swiper){
+	      console.log(swiper.activeIndex) //切换结束时，告诉我现在是第几个slide
+	      if(swiper.activeIndex==1||swiper.activeIndex==4){
+	      	$(".money-tab").text("¥268");
+	      }else if(swiper.activeIndex==2){
+	      	$(".money-tab").text("¥988");
+	      }else if(swiper.activeIndex==3){
+	      	$(".money-tab").text("¥128");
+	      }
+	    }
+	})
+	var mySwiper = new Swiper('.swiper3',{
+		pagination:'.swiper-pagination',
+		loop:true,
+		autoplay:3000,
+	})
+
+</script>
+<!-- script end -->
+</body>
+</html>
