@@ -90,7 +90,14 @@
 	padding-right:10px;
 }
 .info-content .text{
+	position:relative;
 	padding:0 10px 10px 10px;
+}
+.info-content .text img{
+	position: absolute;
+	top:40px;
+	right:15px;
+	width:80px;
 }
 .info-content .text h2{
 	font-size:16px;
