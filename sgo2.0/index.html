@@ -286,11 +286,7 @@
 	<div class="sgo-page-wrapper" id="citySelectPage">		
 		<div class="mui-content">
 			<div class="search">
-				<!-- <div class="mui-input-row mui-search">
-				    <input type="search" class="mui-input-clear" placeholder="" id="s_custname" value=""  AutoComplete="off" size=60 maxlength=256>
-				</div> -->
 				<div id="search-form"></div>
-		        <!-- <div id="message"></div> -->
 			</div>
 		    <div class="list">
 		    	<div class="city-title"><h6>当前位置</h6></div>
@@ -626,7 +622,7 @@
 				//Default parameters
 				params = $.extend({
 					hints: [],
-					placeholder: 'Search',
+					placeholder: '请输入位置/酒店名/关键词',
 					width: 200,
 					height: 16,
 					showButton: true,
@@ -647,7 +643,7 @@
 						.attr('placeholder', params.placeholder)
 						.addClass('autocomplete-input')
 						.css({
-							'width' : params.width,
+							'width' : '90%',
 							'height' : params.height
 						});
 					
@@ -659,13 +655,13 @@
 					var proposals = $('<div></div>')
 						.addClass('proposal-box')
 						.css('width', params.width + 18)
-						.css('top', input.height() + 20);
+						.css('top', input.height()  -10);
 					var proposalList = $('<ul></ul>')
 						.addClass('proposal-list');
 
 					proposals.append(proposalList);
 					
-					input.keydown(function(e) {
+					input.keydown(function(e) { 
 						switch(e.which) {
 							case 38: // Up arrow
 							e.preventDefault();
@@ -710,6 +706,12 @@
 							currentProposals = [];
 							currentSelection = -1;
 							proposalList.empty();
+
+							//为空的时候
+							$(".list").show();
+							$("#search-form").css("min-height",30 );
+							$(".sidebar-right-side").css("z-index",12);
+
 							if(input.val() != ''){
 								var word = "^" + input.val() + ".*";
 								proposalList.empty();
@@ -723,9 +725,22 @@
 												input.val($(this).html());
 												proposalList.empty();
 												params.onSubmit(input.val());
+												//跳转页面
+												$(".list").show();
+												$("#search-form").css("min-height",30 );
+												$(".sidebar-right-side").css("z-index",12);
 											})
 											.mouseenter(function() {
 												$(this).addClass('selected');
+
+												input.val($(this).html());
+												proposalList.empty();
+												params.onSubmit(input.val());
+												//跳转页面
+												$(".list").show();
+												$("#search-form").css("min-height",30 );
+												$(".sidebar-right-side").css("z-index",12);
+
 											})
 											.mouseleave(function() {
 												$(this).removeClass('selected');
@@ -733,9 +748,18 @@
 										proposalList.append(element);
 									}
 								}
+								//不为空的时候
+								$(".list").hide();
+								$("#search-form").css("min-height",667 );
+								$(".sidebar-right-side").css("z-index",-1);
 							}
 						}
+						
 					});
+
+					// $(".autocomplete-container i").on("click",function(){
+					// 	input.val() == '';
+					// })
 					
 					input.blur(function(e){
 						currentSelection = -1;
@@ -795,7 +819,7 @@ $(document).ready(function(){
 	$('#search-form').autocomplete({
 		hints: proposals,
 		width: '100%',
-		height: 36,
+		height: 30,
 		onSubmit: function(text){
 			$('#message').html('Selected: <b>' + text + '</b>');			
 		}

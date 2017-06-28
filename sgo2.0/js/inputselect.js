@@ -45,7 +45,7 @@
 			hoverBackgroundColor: "#fff",
 			divHeight: "5rem",
 			divWidth: "90%",
-			divBorder: "1px solid gray",
+			divBorder: "0 solid gray",
 			overflowY: "scroll",
 			inputHeight: 20
 		};
