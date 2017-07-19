@@ -231,7 +231,6 @@
 	color:#F6AC1D;
 }
 
-
 .publish-btn{
 	display:none;
 	margin-top:50px;
@@ -239,8 +238,14 @@
 	position: fixed;
     width: 100%;
     left: 0;
-    bottom: 0;
+    bottom:0;
     z-index: 1;
+    -webkit-overflow-scrolling: touch;   /*这句是为了滑动更顺畅*/
+}
+
+.publish-btn .t{
+	padding:5%;
+	background:#ccc;
 }
 .publish-btn textarea{
 	margin:0;
@@ -249,6 +254,7 @@
     border:none;
     border-bottom: 1px solid #ddd;
     line-height:12px;
+     
 }
 .publish-btn .b{
 	display:-webkit-flex;
